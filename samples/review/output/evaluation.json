@@ -1,0 +1,92 @@
+{
+  "mode": "hybrid",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "git_commit": "b39062ce619319fd15c67e74cc03ca68f4fa6461",
+  "working_tree_modified": false,
+  "python": "3.13.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "invoice_count": 2,
+  "field_count": 10,
+  "exact_matches": 9,
+  "present_field_exact_matches": 9,
+  "present_field_count": 10,
+  "absent_field_correct_nulls": 0,
+  "absent_field_count": 0,
+  "mean_iou_present_fields_misses_count_zero": 0.986,
+  "cases": [
+    {
+      "file": "sidebar.png",
+      "split": "heldout",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9977,
+          "expected": "Atlas Technical Services",
+          "predicted": "Atlas Technical Services"
+        },
+        "company_address": {
+          "exact_match": false,
+          "bbox_iou": 0.9883,
+          "expected": "Building 9, 18 Station Road\nLeeds LS1 2AB",
+          "predicted": "Building a 9, 18 Station. Road\nLeeds LS1 2AB"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9862,
+          "expected": "AT-982/26",
+          "predicted": "AT-982/26"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.98,
+          "expected": "26 August 2026",
+          "predicted": "26 August 2026"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9909,
+          "expected": "GBP 2,940.00",
+          "predicted": "GBP 2,940.00"
+        }
+      },
+      "processing_time_sec": 0.674
+    },
+    {
+      "file": "centered.png",
+      "split": "heldout",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9902,
+          "expected": "MAPLE CREEK CONSULTING",
+          "predicted": "MAPLE CREEK CONSULTING"
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9886,
+          "expected": "61 Harbour Avenue\nToronto, ON M5J 2N8",
+          "predicted": "61 Harbour Avenue\nToronto, ON M5J 2N8"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9724,
+          "expected": "MC-2026-557",
+          "predicted": "MC-2026-557"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.974,
+          "expected": "2026/08/27",
+          "predicted": "2026/08/27"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9912,
+          "expected": "CAD 2,768.50",
+          "predicted": "CAD 2,768.50"
+        }
+      },
+      "processing_time_sec": 0.58
+    }
+  ]
+}

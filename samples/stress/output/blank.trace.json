@@ -1,0 +1,23 @@
+{
+  "thresholds": {
+    "model_seed": 0.5,
+    "ocr_word_floor": 0.15,
+    "ocr_field_floor": 0.35,
+    "minimum_rank": 0.68
+  },
+  "selected": {},
+  "candidates": [],
+  "input_file": "samples\\stress\\input\\blank.png",
+  "mode": "hybrid",
+  "rotation_clockwise": 0,
+  "working_image_size": [
+    1200,
+    1600
+  ],
+  "trace_box_space": "rotated working-image pixels",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "model_executed": false,
+  "model_windows": 0,
+  "words": [],
+  "predictions": {}
+}

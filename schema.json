@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Invoice extraction result",
+  "type": "object",
+  "required": ["meta", "fields"],
+  "additionalProperties": false,
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["input_file", "image_size", "ocr_engine", "model", "processing_time_sec"],
+      "additionalProperties": false,
+      "properties": {
+        "input_file": {"type": "string"},
+        "image_size": {"type": "array", "items": {"type": "integer", "minimum": 1}, "minItems": 2, "maxItems": 2},
+        "ocr_engine": {"type": "string"},
+        "model": {"type": "string"},
+        "processing_time_sec": {"type": "number", "minimum": 0}
+      }
+    },
+    "fields": {
+      "type": "object",
+      "required": ["vendor_name", "company_address", "invoice_number", "invoice_date", "total"],
+      "additionalProperties": false,
+      "properties": {
+        "vendor_name": {"$ref": "#/$defs/field"},
+        "company_address": {"$ref": "#/$defs/field"},
+        "invoice_number": {"$ref": "#/$defs/field"},
+        "invoice_date": {"$ref": "#/$defs/field"},
+        "total": {"$ref": "#/$defs/field"}
+      }
+    }
+  },
+  "$defs": {
+    "box": {"type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 4, "maxItems": 4},
+    "field": {
+      "anyOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["value", "bbox", "confidence"],
+          "additionalProperties": false,
+          "properties": {
+            "value": {"type": "string", "minLength": 1},
+            "bbox": {"$ref": "#/$defs/box"},
+            "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+            "token_count": {"type": "integer", "minimum": 1},
+            "normalized": {"type": "string", "format": "date"},
+            "currency": {"enum": ["USD", "INR", "EUR", "GBP", "CAD", "AUD"]},
+            "line_boxes": {"type": "array", "items": {"$ref": "#/$defs/box"}, "minItems": 2}
+          }
+        }
+      ]
+    }
+  }
+}

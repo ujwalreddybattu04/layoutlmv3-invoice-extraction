@@ -1,0 +1,421 @@
+[
+  {
+    "file": "faint_total.png",
+    "split": "stress",
+    "note": "Very faint printed total tests OCR loss; null is preferable to guessing.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1600
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "Northstar Analytics Pvt. Ltd.",
+        "bbox": [
+          75,
+          71,
+          590,
+          102
+        ],
+        "line_boxes": [
+          [
+            75,
+            71,
+            590,
+            102
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+        "bbox": [
+          75,
+          130,
+          481,
+          190
+        ],
+        "line_boxes": [
+          [
+            75,
+            130,
+            296,
+            149
+          ],
+          [
+            75,
+            166,
+            481,
+            190
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "NS-2026-01842",
+        "bbox": [
+          720,
+          309,
+          958,
+          329
+        ],
+        "line_boxes": [
+          [
+            720,
+            309,
+            958,
+            329
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "15/08/2026",
+        "bbox": [
+          720,
+          409,
+          874,
+          430
+        ],
+        "line_boxes": [
+          [
+            720,
+            409,
+            874,
+            430
+          ]
+        ]
+      },
+      "total": {
+        "value": "INR 2,891.00",
+        "bbox": [
+          915,
+          1226,
+          1112,
+          1250
+        ],
+        "line_boxes": [
+          [
+            915,
+            1226,
+            1112,
+            1250
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "wrapped_vendor.png",
+    "split": "stress",
+    "note": "Two-line legal name tests separation from the address below.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1600
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "NORTHSTAR\nANALYTICS PRIVATE LIMITED",
+        "bbox": [
+          75,
+          72,
+          513,
+          132
+        ],
+        "line_boxes": [
+          [
+            75,
+            72,
+            298,
+            95
+          ],
+          [
+            75,
+            112,
+            513,
+            132
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+        "bbox": [
+          75,
+          159,
+          481,
+          219
+        ],
+        "line_boxes": [
+          [
+            75,
+            159,
+            296,
+            178
+          ],
+          [
+            75,
+            195,
+            481,
+            219
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "NS-2026-01842",
+        "bbox": [
+          720,
+          309,
+          958,
+          329
+        ],
+        "line_boxes": [
+          [
+            720,
+            309,
+            958,
+            329
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "15/08/2026",
+        "bbox": [
+          720,
+          409,
+          874,
+          430
+        ],
+        "line_boxes": [
+          [
+            720,
+            409,
+            874,
+            430
+          ]
+        ]
+      },
+      "total": {
+        "value": "INR 2,891.00",
+        "bbox": [
+          915,
+          1226,
+          1112,
+          1250
+        ],
+        "line_boxes": [
+          [
+            915,
+            1226,
+            1112,
+            1250
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "rupee_symbol.png",
+    "split": "stress",
+    "note": "Currency glyph recognition by the English OCR model.",
+    "rotate": 0,
+    "image_size": [
+      1400,
+      1650
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "CEDAR & FINCH DESIGN STUDIO",
+        "bbox": [
+          90,
+          72,
+          721,
+          98
+        ],
+        "line_boxes": [
+          [
+            90,
+            72,
+            721,
+            98
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "Suite 4, 280 Market Street\nSan Francisco, CA 94103",
+        "bbox": [
+          90,
+          130,
+          420,
+          188
+        ],
+        "line_boxes": [
+          [
+            90,
+            130,
+            420,
+            152
+          ],
+          [
+            90,
+            166,
+            401,
+            188
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "CFD-1048-A",
+        "bbox": [
+          90,
+          391,
+          261,
+          412
+        ],
+        "line_boxes": [
+          [
+            90,
+            391,
+            261,
+            412
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "2026-08-24",
+        "bbox": [
+          630,
+          391,
+          794,
+          412
+        ],
+        "line_boxes": [
+          [
+            630,
+            391,
+            794,
+            412
+          ]
+        ]
+      },
+      "total": {
+        "value": "₹2,646.00",
+        "bbox": [
+          1090,
+          1266,
+          1243,
+          1290
+        ],
+        "line_boxes": [
+          [
+            1090,
+            1266,
+            1243,
+            1290
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "blank.png",
+    "split": "stress",
+    "note": "Blank page: every field must be null.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1600
+    ],
+    "fields": {
+      "vendor_name": null,
+      "company_address": null,
+      "invoice_number": null,
+      "invoice_date": null,
+      "total": null
+    }
+  },
+  {
+    "file": "missing_total.png",
+    "split": "stress",
+    "note": "Grand total absent; subtotal and tax remain.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1600
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "Northstar Analytics Pvt. Ltd.",
+        "bbox": [
+          75,
+          71,
+          590,
+          102
+        ],
+        "line_boxes": [
+          [
+            75,
+            71,
+            590,
+            102
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+        "bbox": [
+          75,
+          130,
+          481,
+          190
+        ],
+        "line_boxes": [
+          [
+            75,
+            130,
+            296,
+            149
+          ],
+          [
+            75,
+            166,
+            481,
+            190
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "NS-2026-01842",
+        "bbox": [
+          720,
+          309,
+          958,
+          329
+        ],
+        "line_boxes": [
+          [
+            720,
+            309,
+            958,
+            329
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "15/08/2026",
+        "bbox": [
+          720,
+          409,
+          874,
+          430
+        ],
+        "line_boxes": [
+          [
+            720,
+            409,
+            874,
+            430
+          ]
+        ]
+      },
+      "total": null
+    }
+  }
+]

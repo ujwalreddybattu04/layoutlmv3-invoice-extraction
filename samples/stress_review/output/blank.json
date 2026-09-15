@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "input_file": "blank.png",
+    "image_size": [
+      1200,
+      1600
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+    "processing_time_sec": 0.262
+  },
+  "fields": {
+    "vendor_name": null,
+    "company_address": null,
+    "invoice_number": null,
+    "invoice_date": null,
+    "total": null
+  }
+}

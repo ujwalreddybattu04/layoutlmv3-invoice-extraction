@@ -1,0 +1,128 @@
+{
+  "mode": "hybrid",
+  "model": "../.cache/invoice-model",
+  "git_commit": "69afb3e36b191c969597ed568cbd7503f45fa43c",
+  "python": "3.13.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "invoice_count": 3,
+  "field_count": 15,
+  "exact_matches": 11,
+  "present_field_exact_matches": 11,
+  "present_field_count": 15,
+  "absent_field_correct_nulls": 0,
+  "absent_field_count": 0,
+  "mean_iou_present_fields_misses_count_zero": 0.723,
+  "cases": [
+    {
+      "file": "classic.png",
+      "split": "development",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": false,
+          "bbox_iou": 0.0,
+          "expected": "Northstar Analytics Pvt. Ltd.",
+          "predicted": "for"
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9926,
+          "expected": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+          "predicted": "42 Crescent Road\nIndore, Madhya Pradesh 452001"
+        },
+        "invoice_number": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "NS-2026-01842",
+          "predicted": null
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9675,
+          "expected": "15/08/2026",
+          "predicted": "15/08/2026"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9848,
+          "expected": "INR 2,891.00",
+          "predicted": "INR 2,891.00"
+        }
+      },
+      "processing_time_sec": 1.675
+    },
+    {
+      "file": "right_header.png",
+      "split": "development",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9931,
+          "expected": "Oakbridge Office Supplies",
+          "predicted": "Oakbridge Office Supplies"
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9854,
+          "expected": "17 Willow Street\nBristol BS1 4AA",
+          "predicted": "17 Willow Street\nBristol BS1 4AA"
+        },
+        "invoice_number": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "OB/2026/0719",
+          "predicted": null
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.98,
+          "expected": "21 August 2026",
+          "predicted": "21 August 2026"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9903,
+          "expected": "GBP 2,940.00",
+          "predicted": "GBP 2,940.00"
+        }
+      },
+      "processing_time_sec": 0.674
+    },
+    {
+      "file": "ledger.png",
+      "split": "development",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9937,
+          "expected": "CEDAR & FINCH DESIGN STUDIO",
+          "predicted": "CEDAR & FINCH DESIGN STUDIO"
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9909,
+          "expected": "Suite 4, 280 Market Street\nSan Francisco, CA 94103",
+          "predicted": "Suite 4, 280 Market Street\nSan Francisco, CA 94103"
+        },
+        "invoice_number": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "CFD-1048-A",
+          "predicted": null
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9817,
+          "expected": "2026-08-24",
+          "predicted": "2026-08-24"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9854,
+          "expected": "USD 2,646.00",
+          "predicted": "USD 2,646.00"
+        }
+      },
+      "processing_time_sec": 0.72
+    }
+  ]
+}

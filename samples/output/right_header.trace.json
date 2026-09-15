@@ -1,0 +1,4641 @@
+{
+  "thresholds": {
+    "model_seed": 0.5,
+    "ocr_word_floor": 0.15,
+    "ocr_field_floor": 0.35,
+    "minimum_rank": 0.68
+  },
+  "selected": {
+    "invoice_number": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.9796,
+      "model_score": 0.9235,
+      "anchor": "Invoice No",
+      "word_ids": [
+        16
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    "invoice_date": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.9853,
+      "model_score": 0.9946,
+      "anchor": "Date",
+      "word_ids": [
+        18,
+        19,
+        20
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    "total": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.9931,
+      "model_score": 0.9947,
+      "anchor": "Invoice Total",
+      "word_ids": [
+        55,
+        56
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    "vendor_name": {
+      "decision": "selected",
+      "source": "model",
+      "rank": 0.9875,
+      "model_score": 0.9955,
+      "anchor": "",
+      "word_ids": [
+        1,
+        2,
+        3
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    "company_address": {
+      "decision": "selected",
+      "source": "model",
+      "rank": 0.999,
+      "model_score": 0.9795,
+      "anchor": "",
+      "word_ids": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Aligned multi-line model span",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "field": "vendor_name",
+      "value": "Oakbridge Office Supplies",
+      "bbox": [
+        661,
+        75,
+        1095,
+        104
+      ],
+      "source": "model",
+      "rank": 0.9875,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "17 Willow Street",
+      "bbox": [
+        663,
+        130,
+        864,
+        149
+      ],
+      "source": "model",
+      "rank": 0.9739,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "Bristol BS1 4AA",
+      "bbox": [
+        662,
+        166,
+        854,
+        185
+      ],
+      "source": "model",
+      "rank": 0.974,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "Tel: 0117 555 0100",
+      "bbox": [
+        660,
+        219,
+        856,
+        234
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: value syntax does not fit field"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "value": "OB/2026/0719",
+      "bbox": [
+        238,
+        331,
+        429,
+        353
+      ],
+      "source": "model",
+      "rank": 0.9796,
+      "anchor": "Invoice No",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "invoice_date",
+      "value": "21 August 2026",
+      "bbox": [
+        192,
+        386,
+        388,
+        409
+      ],
+      "source": "model",
+      "rank": 0.9853,
+      "anchor": "Date",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "GBP",
+      "bbox": [
+        361,
+        1036,
+        410,
+        1054
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: value syntax does not fit field"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "GBP 2,940.00",
+      "bbox": [
+        361,
+        1116,
+        565,
+        1140
+      ],
+      "source": "model",
+      "rank": 0.9931,
+      "anchor": "Invoice Total",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "GBP 1,000.00",
+      "bbox": [
+        361,
+        1195,
+        522,
+        1216
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: nearest key belongs to blocked_total"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "GBP 1,940.00",
+      "bbox": [
+        361,
+        1245,
+        522,
+        1266
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: nearest key belongs to blocked_total"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "17 Willow Street\nBristol BS1 4AA",
+      "bbox": [
+        662,
+        130,
+        864,
+        185
+      ],
+      "source": "model",
+      "rank": 0.999,
+      "anchor": "",
+      "reasons": [
+        "Aligned multi-line model span",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "value": "OB/2026/0719",
+      "bbox": [
+        238,
+        331,
+        429,
+        353
+      ],
+      "source": "heuristic",
+      "rank": 0.9796,
+      "anchor": "Invoice No",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "invoice_date",
+      "value": "21 August 2026",
+      "bbox": [
+        192,
+        386,
+        388,
+        409
+      ],
+      "source": "heuristic",
+      "rank": 0.9853,
+      "anchor": "Date",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "GBP 2,940.00",
+      "bbox": [
+        361,
+        1116,
+        565,
+        1140
+      ],
+      "source": "heuristic",
+      "rank": 0.9931,
+      "anchor": "Invoice Total",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "value": "when",
+      "bbox": [
+        411,
+        1394,
+        462,
+        1409
+      ],
+      "source": "heuristic",
+      "rank": 0.904,
+      "anchor": "invoice number",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "vendor_name",
+      "value": "Oakbridge Office Supplies",
+      "bbox": [
+        661,
+        75,
+        1095,
+        104
+      ],
+      "source": "heuristic",
+      "rank": 0.8616,
+      "anchor": "",
+      "reasons": [
+        "Header adjacent to a plausible postal address"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "17 Willow Street\nBristol BS1 4AA",
+      "bbox": [
+        662,
+        130,
+        864,
+        185
+      ],
+      "source": "heuristic",
+      "rank": 0.989,
+      "anchor": "",
+      "reasons": [
+        "Postal lines directly below seller name",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "17 Willow Street\nBristol BS1 4AA",
+      "bbox": [
+        662,
+        130,
+        864,
+        185
+      ],
+      "source": "heuristic",
+      "rank": 0.989,
+      "anchor": "",
+      "reasons": [
+        "Postal lines directly below seller name",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    }
+  ],
+  "input_file": "samples\\input\\right_header.png",
+  "mode": "hybrid",
+  "rotation_clockwise": 0,
+  "working_image_size": [
+    1200,
+    1500
+  ],
+  "trace_box_space": "rotated working-image pixels",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "model_executed": true,
+  "model_windows": 1,
+  "words": [
+    {
+      "id": 0,
+      "text": "INVOICE",
+      "bbox": [
+        79,
+        79,
+        293,
+        116
+      ],
+      "confidence": 0.95,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          79,
+          80,
+          88,
+          115
+        ],
+        [
+          97,
+          80,
+          129,
+          115
+        ],
+        [
+          133,
+          80,
+          170,
+          115
+        ],
+        [
+          172,
+          79,
+          208,
+          116
+        ],
+        [
+          215,
+          80,
+          224,
+          115
+        ],
+        [
+          231,
+          79,
+          261,
+          116
+        ],
+        [
+          268,
+          80,
+          293,
+          115
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "text": "Oakbridge",
+      "bbox": [
+        661,
+        75,
+        833,
+        104
+      ],
+      "confidence": 0.96,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          661,
+          76,
+          684,
+          98
+        ],
+        [
+          687,
+          82,
+          704,
+          98
+        ],
+        [
+          708,
+          75,
+          726,
+          98
+        ],
+        [
+          718,
+          75,
+          738,
+          104
+        ],
+        [
+          728,
+          75,
+          746,
+          98
+        ],
+        [
+          749,
+          75,
+          770,
+          98
+        ],
+        [
+          773,
+          75,
+          791,
+          98
+        ],
+        [
+          794,
+          82,
+          812,
+          104
+        ],
+        [
+          815,
+          82,
+          833,
+          98
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Office",
+      "bbox": [
+        845,
+        75,
+        943,
+        98
+      ],
+      "confidence": 0.96,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          845,
+          76,
+          868,
+          98
+        ],
+        [
+          871,
+          75,
+          883,
+          98
+        ],
+        [
+          884,
+          75,
+          896,
+          98
+        ],
+        [
+          898,
+          75,
+          904,
+          98
+        ],
+        [
+          907,
+          82,
+          922,
+          98
+        ],
+        [
+          925,
+          82,
+          943,
+          98
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Supplies",
+      "bbox": [
+        956,
+        75,
+        1095,
+        104
+      ],
+      "confidence": 0.96,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          956,
+          76,
+          973,
+          98
+        ],
+        [
+          978,
+          82,
+          995,
+          98
+        ],
+        [
+          999,
+          82,
+          1017,
+          104
+        ],
+        [
+          1020,
+          82,
+          1038,
+          104
+        ],
+        [
+          1041,
+          75,
+          1047,
+          98
+        ],
+        [
+          1051,
+          75,
+          1057,
+          98
+        ],
+        [
+          1060,
+          82,
+          1078,
+          98
+        ],
+        [
+          1080,
+          82,
+          1095,
+          98
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "text": "17",
+      "bbox": [
+        663,
+        131,
+        690,
+        149
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          663,
+          131,
+          674,
+          149
+        ],
+        [
+          678,
+          131,
+          690,
+          149
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Willow",
+      "bbox": [
+        701,
+        130,
+        780,
+        149
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          701,
+          131,
+          724,
+          149
+        ],
+        [
+          714,
+          130,
+          725,
+          149
+        ],
+        [
+          727,
+          130,
+          737,
+          149
+        ],
+        [
+          741,
+          130,
+          744,
+          149
+        ],
+        [
+          747,
+          135,
+          760,
+          149
+        ],
+        [
+          762,
+          135,
+          780,
+          149
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Street",
+      "bbox": [
+        791,
+        131,
+        864,
+        149
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          791,
+          131,
+          804,
+          149
+        ],
+        [
+          806,
+          131,
+          814,
+          149
+        ],
+        [
+          817,
+          135,
+          825,
+          149
+        ],
+        [
+          826,
+          135,
+          839,
+          149
+        ],
+        [
+          841,
+          135,
+          854,
+          149
+        ],
+        [
+          856,
+          131,
+          864,
+          149
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Bristol",
+      "bbox": [
+        662,
+        166,
+        737,
+        185
+      ],
+      "confidence": 0.93,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          662,
+          167,
+          675,
+          185
+        ],
+        [
+          671,
+          166,
+          683,
+          185
+        ],
+        [
+          679,
+          166,
+          692,
+          185
+        ],
+        [
+          695,
+          171,
+          706,
+          185
+        ],
+        [
+          708,
+          167,
+          716,
+          185
+        ],
+        [
+          718,
+          171,
+          731,
+          185
+        ],
+        [
+          734,
+          166,
+          737,
+          185
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "text": "BS1",
+      "bbox": [
+        749,
+        167,
+        794,
+        185
+      ],
+      "confidence": 0.9,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          749,
+          167,
+          762,
+          185
+        ],
+        [
+          766,
+          167,
+          779,
+          185
+        ],
+        [
+          783,
+          167,
+          794,
+          185
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "text": "4AA",
+      "bbox": [
+        805,
+        167,
+        854,
+        185
+      ],
+      "confidence": 0.92,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          805,
+          167,
+          819,
+          185
+        ],
+        [
+          820,
+          167,
+          854,
+          185
+        ],
+        [
+          839,
+          167,
+          854,
+          185
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Tel:",
+      "bbox": [
+        660,
+        219,
+        694,
+        234
+      ],
+      "confidence": 0.96,
+      "line": "line_1_4",
+      "char_boxes": [
+        [
+          660,
+          219,
+          672,
+          234
+        ],
+        [
+          673,
+          223,
+          683,
+          234
+        ],
+        [
+          686,
+          219,
+          688,
+          234
+        ],
+        [
+          692,
+          224,
+          694,
+          234
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "text": "0117",
+      "bbox": [
+        704,
+        219,
+        753,
+        234
+      ],
+      "confidence": 0.94,
+      "line": "line_1_4",
+      "char_boxes": [
+        [
+          704,
+          219,
+          714,
+          234
+        ],
+        [
+          718,
+          219,
+          727,
+          234
+        ],
+        [
+          731,
+          219,
+          740,
+          234
+        ],
+        [
+          744,
+          219,
+          753,
+          234
+        ]
+      ]
+    },
+    {
+      "id": 12,
+      "text": "555",
+      "bbox": [
+        762,
+        219,
+        798,
+        234
+      ],
+      "confidence": 0.94,
+      "line": "line_1_4",
+      "char_boxes": [
+        [
+          762,
+          219,
+          772,
+          234
+        ],
+        [
+          775,
+          219,
+          785,
+          234
+        ],
+        [
+          788,
+          219,
+          798,
+          234
+        ]
+      ]
+    },
+    {
+      "id": 13,
+      "text": "0100",
+      "bbox": [
+        807,
+        219,
+        856,
+        234
+      ],
+      "confidence": 0.96,
+      "line": "line_1_4",
+      "char_boxes": [
+        [
+          807,
+          219,
+          817,
+          234
+        ],
+        [
+          821,
+          219,
+          830,
+          234
+        ],
+        [
+          833,
+          219,
+          843,
+          234
+        ],
+        [
+          846,
+          219,
+          856,
+          234
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Invoice",
+      "bbox": [
+        78,
+        330,
+        171,
+        351
+      ],
+      "confidence": 0.96,
+      "line": "line_1_5",
+      "char_boxes": [
+        [
+          78,
+          331,
+          80,
+          351
+        ],
+        [
+          85,
+          336,
+          98,
+          351
+        ],
+        [
+          101,
+          336,
+          115,
+          351
+        ],
+        [
+          117,
+          336,
+          131,
+          351
+        ],
+        [
+          135,
+          330,
+          138,
+          351
+        ],
+        [
+          142,
+          336,
+          154,
+          351
+        ],
+        [
+          157,
+          336,
+          171,
+          351
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "text": "No:",
+      "bbox": [
+        185,
+        331,
+        225,
+        351
+      ],
+      "confidence": 0.93,
+      "line": "line_1_5",
+      "char_boxes": [
+        [
+          185,
+          331,
+          200,
+          351
+        ],
+        [
+          203,
+          336,
+          217,
+          351
+        ],
+        [
+          222,
+          337,
+          225,
+          351
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "text": "OB/2026/0719",
+      "bbox": [
+        238,
+        331,
+        429,
+        353
+      ],
+      "confidence": 0.91,
+      "line": "line_1_5",
+      "char_boxes": [
+        [
+          238,
+          331,
+          257,
+          351
+        ],
+        [
+          261,
+          331,
+          275,
+          351
+        ],
+        [
+          277,
+          331,
+          286,
+          353
+        ],
+        [
+          288,
+          331,
+          301,
+          351
+        ],
+        [
+          305,
+          331,
+          318,
+          351
+        ],
+        [
+          322,
+          331,
+          335,
+          351
+        ],
+        [
+          339,
+          331,
+          353,
+          351
+        ],
+        [
+          354,
+          331,
+          363,
+          353
+        ],
+        [
+          365,
+          331,
+          378,
+          351
+        ],
+        [
+          382,
+          331,
+          395,
+          351
+        ],
+        [
+          400,
+          331,
+          412,
+          351
+        ],
+        [
+          416,
+          331,
+          429,
+          351
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Date:",
+      "bbox": [
+        77,
+        382,
+        140,
+        413
+      ],
+      "confidence": 0.96,
+      "line": "line_1_6",
+      "char_boxes": [
+        [
+          77,
+          386,
+          93,
+          404
+        ],
+        [
+          88,
+          382,
+          102,
+          413
+        ],
+        [
+          95,
+          390,
+          107,
+          404
+        ],
+        [
+          110,
+          386,
+          133,
+          404
+        ],
+        [
+          137,
+          391,
+          140,
+          404
+        ]
+      ]
+    },
+    {
+      "id": 18,
+      "text": "21",
+      "bbox": [
+        192,
+        386,
+        220,
+        404
+      ],
+      "confidence": 0.95,
+      "line": "line_1_6",
+      "char_boxes": [
+        [
+          192,
+          386,
+          203,
+          404
+        ],
+        [
+          209,
+          386,
+          220,
+          404
+        ]
+      ]
+    },
+    {
+      "id": 19,
+      "text": "August",
+      "bbox": [
+        230,
+        386,
+        317,
+        409
+      ],
+      "confidence": 0.95,
+      "line": "line_1_6",
+      "char_boxes": [
+        [
+          230,
+          386,
+          247,
+          404
+        ],
+        [
+          249,
+          390,
+          261,
+          404
+        ],
+        [
+          264,
+          390,
+          277,
+          409
+        ],
+        [
+          281,
+          390,
+          293,
+          404
+        ],
+        [
+          288,
+          386,
+          302,
+          409
+        ],
+        [
+          296,
+          386,
+          317,
+          404
+        ]
+      ]
+    },
+    {
+      "id": 20,
+      "text": "2026",
+      "bbox": [
+        328,
+        386,
+        388,
+        404
+      ],
+      "confidence": 0.96,
+      "line": "line_1_6",
+      "char_boxes": [
+        [
+          328,
+          386,
+          339,
+          404
+        ],
+        [
+          344,
+          386,
+          356,
+          404
+        ],
+        [
+          360,
+          386,
+          371,
+          404
+        ],
+        [
+          376,
+          386,
+          388,
+          404
+        ]
+      ]
+    },
+    {
+      "id": 21,
+      "text": "Customer:",
+      "bbox": [
+        76,
+        490,
+        207,
+        507
+      ],
+      "confidence": 0.96,
+      "line": "line_1_7",
+      "char_boxes": [
+        [
+          76,
+          490,
+          90,
+          507
+        ],
+        [
+          94,
+          494,
+          107,
+          507
+        ],
+        [
+          109,
+          494,
+          121,
+          507
+        ],
+        [
+          122,
+          491,
+          133,
+          507
+        ],
+        [
+          134,
+          494,
+          148,
+          507
+        ],
+        [
+          151,
+          494,
+          171,
+          507
+        ],
+        [
+          162,
+          490,
+          178,
+          507
+        ],
+        [
+          174,
+          494,
+          188,
+          507
+        ],
+        [
+          191,
+          494,
+          207,
+          507
+        ]
+      ]
+    },
+    {
+      "id": 22,
+      "text": "Hawthorn",
+      "bbox": [
+        77,
+        535,
+        199,
+        555
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          77,
+          536,
+          92,
+          555
+        ],
+        [
+          97,
+          541,
+          109,
+          555
+        ],
+        [
+          112,
+          541,
+          131,
+          555
+        ],
+        [
+          122,
+          535,
+          137,
+          555
+        ],
+        [
+          133,
+          535,
+          156,
+          555
+        ],
+        [
+          152,
+          535,
+          167,
+          555
+        ],
+        [
+          159,
+          541,
+          173,
+          555
+        ],
+        [
+          176,
+          541,
+          199,
+          555
+        ]
+      ]
+    },
+    {
+      "id": 23,
+      "text": "Learning",
+      "bbox": [
+        211,
+        535,
+        319,
+        560
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          211,
+          536,
+          223,
+          555
+        ],
+        [
+          224,
+          541,
+          238,
+          555
+        ],
+        [
+          241,
+          541,
+          253,
+          555
+        ],
+        [
+          257,
+          541,
+          266,
+          555
+        ],
+        [
+          268,
+          541,
+          280,
+          555
+        ],
+        [
+          284,
+          535,
+          287,
+          555
+        ],
+        [
+          291,
+          541,
+          303,
+          555
+        ],
+        [
+          306,
+          541,
+          319,
+          560
+        ]
+      ]
+    },
+    {
+      "id": 24,
+      "text": "Centre",
+      "bbox": [
+        331,
+        536,
+        416,
+        555
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          331,
+          536,
+          347,
+          555
+        ],
+        [
+          349,
+          541,
+          363,
+          555
+        ],
+        [
+          366,
+          541,
+          378,
+          555
+        ],
+        [
+          381,
+          537,
+          390,
+          555
+        ],
+        [
+          392,
+          541,
+          401,
+          555
+        ],
+        [
+          402,
+          541,
+          416,
+          555
+        ]
+      ]
+    },
+    {
+      "id": 25,
+      "text": "Delivery",
+      "bbox": [
+        662,
+        534,
+        751,
+        556
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          662,
+          535,
+          676,
+          551
+        ],
+        [
+          671,
+          534,
+          682,
+          556
+        ],
+        [
+          678,
+          534,
+          695,
+          551
+        ],
+        [
+          699,
+          534,
+          701,
+          551
+        ],
+        [
+          704,
+          539,
+          715,
+          551
+        ],
+        [
+          717,
+          539,
+          728,
+          551
+        ],
+        [
+          732,
+          539,
+          739,
+          551
+        ],
+        [
+          740,
+          539,
+          751,
+          556
+        ]
+      ]
+    },
+    {
+      "id": 26,
+      "text": "Date:",
+      "bbox": [
+        761,
+        535,
+        817,
+        551
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          761,
+          535,
+          775,
+          551
+        ],
+        [
+          777,
+          539,
+          788,
+          551
+        ],
+        [
+          790,
+          536,
+          797,
+          551
+        ],
+        [
+          799,
+          539,
+          810,
+          551
+        ],
+        [
+          815,
+          540,
+          817,
+          551
+        ]
+      ]
+    },
+    {
+      "id": 27,
+      "text": "23/08/2026",
+      "bbox": [
+        828,
+        535,
+        951,
+        553
+      ],
+      "confidence": 0.96,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          828,
+          535,
+          838,
+          551
+        ],
+        [
+          842,
+          535,
+          852,
+          551
+        ],
+        [
+          854,
+          535,
+          861,
+          553
+        ],
+        [
+          862,
+          535,
+          874,
+          551
+        ],
+        [
+          876,
+          535,
+          888,
+          551
+        ],
+        [
+          889,
+          535,
+          896,
+          553
+        ],
+        [
+          898,
+          535,
+          908,
+          551
+        ],
+        [
+          911,
+          535,
+          923,
+          551
+        ],
+        [
+          926,
+          535,
+          936,
+          551
+        ],
+        [
+          939,
+          535,
+          951,
+          551
+        ]
+      ]
+    },
+    {
+      "id": 28,
+      "text": "92",
+      "bbox": [
+        76,
+        575,
+        103,
+        593
+      ],
+      "confidence": 0.96,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          76,
+          575,
+          89,
+          593
+        ],
+        [
+          92,
+          575,
+          103,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 29,
+      "text": "Mill",
+      "bbox": [
+        115,
+        575,
+        152,
+        593
+      ],
+      "confidence": 0.96,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          115,
+          575,
+          131,
+          593
+        ],
+        [
+          125,
+          575,
+          138,
+          593
+        ],
+        [
+          136,
+          575,
+          145,
+          593
+        ],
+        [
+          150,
+          575,
+          152,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 30,
+      "text": "Road,",
+      "bbox": [
+        165,
+        575,
+        230,
+        596
+      ],
+      "confidence": 0.96,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          165,
+          575,
+          179,
+          593
+        ],
+        [
+          181,
+          580,
+          193,
+          593
+        ],
+        [
+          196,
+          580,
+          208,
+          593
+        ],
+        [
+          211,
+          575,
+          223,
+          593
+        ],
+        [
+          227,
+          590,
+          230,
+          596
+        ]
+      ]
+    },
+    {
+      "id": 31,
+      "text": "Bath",
+      "bbox": [
+        243,
+        575,
+        294,
+        593
+      ],
+      "confidence": 0.93,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          243,
+          575,
+          256,
+          593
+        ],
+        [
+          258,
+          580,
+          270,
+          593
+        ],
+        [
+          273,
+          576,
+          281,
+          593
+        ],
+        [
+          283,
+          575,
+          294,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 32,
+      "text": "BA1",
+      "bbox": [
+        306,
+        575,
+        349,
+        593
+      ],
+      "confidence": 0.86,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          306,
+          575,
+          319,
+          593
+        ],
+        [
+          320,
+          575,
+          336,
+          593
+        ],
+        [
+          339,
+          575,
+          349,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 33,
+      "text": "1AB",
+      "bbox": [
+        362,
+        575,
+        405,
+        593
+      ],
+      "confidence": 0.92,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          362,
+          575,
+          372,
+          593
+        ],
+        [
+          374,
+          575,
+          390,
+          593
+        ],
+        [
+          392,
+          575,
+          405,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 34,
+      "text": "DESCRIPTION",
+      "bbox": [
+        90,
+        689,
+        238,
+        717
+      ],
+      "confidence": 0.96,
+      "line": "line_1_10",
+      "char_boxes": [
+        [
+          90,
+          693,
+          104,
+          708
+        ],
+        [
+          107,
+          693,
+          117,
+          708
+        ],
+        [
+          120,
+          693,
+          132,
+          708
+        ],
+        [
+          134,
+          693,
+          146,
+          708
+        ],
+        [
+          144,
+          689,
+          156,
+          717
+        ],
+        [
+          150,
+          693,
+          169,
+          708
+        ],
+        [
+          172,
+          693,
+          184,
+          708
+        ],
+        [
+          185,
+          693,
+          199,
+          708
+        ],
+        [
+          201,
+          693,
+          205,
+          708
+        ],
+        [
+          207,
+          693,
+          222,
+          708
+        ],
+        [
+          225,
+          693,
+          238,
+          708
+        ]
+      ]
+    },
+    {
+      "id": 35,
+      "text": "QTy",
+      "bbox": [
+        816,
+        689,
+        860,
+        717
+      ],
+      "confidence": 0.85,
+      "line": "line_1_10",
+      "char_boxes": [
+        [
+          816,
+          693,
+          831,
+          711
+        ],
+        [
+          830,
+          689,
+          845,
+          717
+        ],
+        [
+          832,
+          693,
+          860,
+          708
+        ]
+      ]
+    },
+    {
+      "id": 36,
+      "text": "AMOUNT",
+      "bbox": [
+        945,
+        693,
+        1044,
+        708
+      ],
+      "confidence": 0.96,
+      "line": "line_1_10",
+      "char_boxes": [
+        [
+          945,
+          693,
+          960,
+          708
+        ],
+        [
+          962,
+          693,
+          978,
+          708
+        ],
+        [
+          981,
+          693,
+          996,
+          708
+        ],
+        [
+          999,
+          693,
+          1011,
+          708
+        ],
+        [
+          1015,
+          693,
+          1028,
+          708
+        ],
+        [
+          1030,
+          693,
+          1044,
+          708
+        ]
+      ]
+    },
+    {
+      "id": 37,
+      "text": "Implementation",
+      "bbox": [
+        90,
+        760,
+        268,
+        782
+      ],
+      "confidence": 0.95,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          90,
+          760,
+          93,
+          777
+        ],
+        [
+          97,
+          764,
+          116,
+          777
+        ],
+        [
+          119,
+          764,
+          130,
+          782
+        ],
+        [
+          134,
+          760,
+          136,
+          777
+        ],
+        [
+          139,
+          764,
+          151,
+          777
+        ],
+        [
+          154,
+          764,
+          173,
+          777
+        ],
+        [
+          168,
+          760,
+          181,
+          782
+        ],
+        [
+          175,
+          764,
+          187,
+          777
+        ],
+        [
+          190,
+          764,
+          201,
+          777
+        ],
+        [
+          204,
+          760,
+          212,
+          777
+        ],
+        [
+          213,
+          764,
+          224,
+          777
+        ],
+        [
+          227,
+          760,
+          239,
+          777
+        ],
+        [
+          242,
+          764,
+          254,
+          777
+        ],
+        [
+          257,
+          764,
+          268,
+          777
+        ]
+      ]
+    },
+    {
+      "id": 38,
+      "text": "services",
+      "bbox": [
+        278,
+        760,
+        370,
+        777
+      ],
+      "confidence": 0.96,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          278,
+          764,
+          288,
+          777
+        ],
+        [
+          290,
+          764,
+          302,
+          777
+        ],
+        [
+          298,
+          760,
+          311,
+          777
+        ],
+        [
+          305,
+          764,
+          325,
+          777
+        ],
+        [
+          328,
+          760,
+          330,
+          777
+        ],
+        [
+          333,
+          764,
+          343,
+          777
+        ],
+        [
+          346,
+          764,
+          358,
+          777
+        ],
+        [
+          360,
+          764,
+          370,
+          777
+        ]
+      ]
+    },
+    {
+      "id": 39,
+      "text": "1",
+      "bbox": [
+        837,
+        760,
+        848,
+        777
+      ],
+      "confidence": 0.95,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          837,
+          760,
+          848,
+          777
+        ]
+      ]
+    },
+    {
+      "id": 40,
+      "text": "2,000.00",
+      "bbox": [
+        947,
+        760,
+        1047,
+        780
+      ],
+      "confidence": 0.96,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          947,
+          760,
+          957,
+          777
+        ],
+        [
+          962,
+          774,
+          965,
+          780
+        ],
+        [
+          968,
+          760,
+          980,
+          777
+        ],
+        [
+          983,
+          760,
+          995,
+          777
+        ],
+        [
+          998,
+          760,
+          1010,
+          777
+        ],
+        [
+          1014,
+          774,
+          1017,
+          777
+        ],
+        [
+          1020,
+          760,
+          1032,
+          777
+        ],
+        [
+          1035,
+          760,
+          1047,
+          777
+        ]
+      ]
+    },
+    {
+      "id": 41,
+      "text": "Support",
+      "bbox": [
+        89,
+        822,
+        180,
+        844
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          89,
+          822,
+          101,
+          839
+        ],
+        [
+          105,
+          826,
+          116,
+          839
+        ],
+        [
+          120,
+          826,
+          131,
+          844
+        ],
+        [
+          127,
+          822,
+          140,
+          844
+        ],
+        [
+          135,
+          826,
+          146,
+          844
+        ],
+        [
+          149,
+          826,
+          161,
+          839
+        ],
+        [
+          164,
+          822,
+          180,
+          839
+        ]
+      ]
+    },
+    {
+      "id": 42,
+      "text": "and",
+      "bbox": [
+        188,
+        822,
+        229,
+        839
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          188,
+          826,
+          199,
+          839
+        ],
+        [
+          203,
+          826,
+          214,
+          839
+        ],
+        [
+          217,
+          822,
+          229,
+          839
+        ]
+      ]
+    },
+    {
+      "id": 43,
+      "text": "maintenance",
+      "bbox": [
+        240,
+        822,
+        388,
+        839
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          240,
+          826,
+          259,
+          839
+        ],
+        [
+          261,
+          826,
+          272,
+          839
+        ],
+        [
+          276,
+          822,
+          278,
+          839
+        ],
+        [
+          282,
+          826,
+          293,
+          839
+        ],
+        [
+          296,
+          822,
+          304,
+          839
+        ],
+        [
+          305,
+          826,
+          317,
+          839
+        ],
+        [
+          320,
+          826,
+          331,
+          839
+        ],
+        [
+          334,
+          826,
+          345,
+          839
+        ],
+        [
+          349,
+          826,
+          360,
+          839
+        ],
+        [
+          363,
+          826,
+          373,
+          839
+        ],
+        [
+          376,
+          826,
+          388,
+          839
+        ]
+      ]
+    },
+    {
+      "id": 44,
+      "text": "1",
+      "bbox": [
+        837,
+        822,
+        848,
+        839
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          837,
+          822,
+          848,
+          839
+        ]
+      ]
+    },
+    {
+      "id": 45,
+      "text": "450.00",
+      "bbox": [
+        946,
+        822,
+        1025,
+        839
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          946,
+          822,
+          958,
+          839
+        ],
+        [
+          962,
+          822,
+          973,
+          839
+        ],
+        [
+          976,
+          822,
+          988,
+          839
+        ],
+        [
+          992,
+          836,
+          995,
+          839
+        ],
+        [
+          998,
+          822,
+          1010,
+          839
+        ],
+        [
+          1013,
+          822,
+          1025,
+          839
+        ]
+      ]
+    },
+    {
+      "id": 46,
+      "text": "Sub",
+      "bbox": [
+        77,
+        990,
+        122,
+        1009
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          77,
+          991,
+          90,
+          1009
+        ],
+        [
+          93,
+          995,
+          105,
+          1009
+        ],
+        [
+          109,
+          990,
+          122,
+          1009
+        ]
+      ]
+    },
+    {
+      "id": 47,
+      "text": "Total:",
+      "bbox": [
+        131,
+        990,
+        199,
+        1009
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          131,
+          991,
+          146,
+          1009
+        ],
+        [
+          139,
+          990,
+          153,
+          1009
+        ],
+        [
+          147,
+          995,
+          160,
+          1009
+        ],
+        [
+          162,
+          991,
+          170,
+          1009
+        ],
+        [
+          172,
+          995,
+          184,
+          1009
+        ],
+        [
+          188,
+          990,
+          199,
+          1009
+        ]
+      ]
+    },
+    {
+      "id": 48,
+      "text": "GBP",
+      "bbox": [
+        361,
+        991,
+        410,
+        1009
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          361,
+          991,
+          377,
+          1009
+        ],
+        [
+          381,
+          991,
+          394,
+          1009
+        ],
+        [
+          398,
+          991,
+          410,
+          1009
+        ]
+      ]
+    },
+    {
+      "id": 49,
+      "text": "2,450.00",
+      "bbox": [
+        421,
+        991,
+        529,
+        1012
+      ],
+      "confidence": 0.95,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          421,
+          991,
+          432,
+          1009
+        ],
+        [
+          437,
+          1006,
+          441,
+          1012
+        ],
+        [
+          444,
+          991,
+          458,
+          1009
+        ],
+        [
+          461,
+          991,
+          473,
+          1009
+        ],
+        [
+          477,
+          991,
+          489,
+          1009
+        ],
+        [
+          494,
+          1006,
+          496,
+          1009
+        ],
+        [
+          501,
+          991,
+          513,
+          1009
+        ],
+        [
+          517,
+          991,
+          529,
+          1009
+        ]
+      ]
+    },
+    {
+      "id": 50,
+      "text": "VAT:",
+      "bbox": [
+        75,
+        1036,
+        130,
+        1054
+      ],
+      "confidence": 0.95,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          75,
+          1036,
+          92,
+          1054
+        ],
+        [
+          92,
+          1036,
+          109,
+          1054
+        ],
+        [
+          109,
+          1036,
+          124,
+          1054
+        ],
+        [
+          127,
+          1041,
+          130,
+          1054
+        ]
+      ]
+    },
+    {
+      "id": 51,
+      "text": "GBP",
+      "bbox": [
+        361,
+        1036,
+        410,
+        1054
+      ],
+      "confidence": 0.94,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          361,
+          1036,
+          377,
+          1054
+        ],
+        [
+          381,
+          1036,
+          394,
+          1054
+        ],
+        [
+          398,
+          1036,
+          410,
+          1054
+        ]
+      ]
+    },
+    {
+      "id": 52,
+      "text": "490.00",
+      "bbox": [
+        420,
+        1036,
+        505,
+        1054
+      ],
+      "confidence": 0.95,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          420,
+          1036,
+          434,
+          1054
+        ],
+        [
+          437,
+          1036,
+          449,
+          1054
+        ],
+        [
+          453,
+          1036,
+          465,
+          1054
+        ],
+        [
+          470,
+          1051,
+          472,
+          1054
+        ],
+        [
+          477,
+          1036,
+          489,
+          1054
+        ],
+        [
+          493,
+          1036,
+          505,
+          1054
+        ]
+      ]
+    },
+    {
+      "id": 53,
+      "text": "Invoice",
+      "bbox": [
+        77,
+        1115,
+        183,
+        1136
+      ],
+      "confidence": 0.96,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          77,
+          1116,
+          83,
+          1136
+        ],
+        [
+          87,
+          1121,
+          102,
+          1136
+        ],
+        [
+          105,
+          1121,
+          121,
+          1136
+        ],
+        [
+          123,
+          1121,
+          139,
+          1136
+        ],
+        [
+          143,
+          1115,
+          148,
+          1136
+        ],
+        [
+          151,
+          1121,
+          164,
+          1136
+        ],
+        [
+          167,
+          1121,
+          183,
+          1136
+        ]
+      ]
+    },
+    {
+      "id": 54,
+      "text": "Total:",
+      "bbox": [
+        193,
+        1115,
+        278,
+        1136
+      ],
+      "confidence": 0.96,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          193,
+          1116,
+          211,
+          1136
+        ],
+        [
+          212,
+          1121,
+          228,
+          1136
+        ],
+        [
+          221,
+          1115,
+          236,
+          1136
+        ],
+        [
+          230,
+          1117,
+          242,
+          1136
+        ],
+        [
+          244,
+          1121,
+          259,
+          1136
+        ],
+        [
+          263,
+          1115,
+          278,
+          1136
+        ]
+      ]
+    },
+    {
+      "id": 55,
+      "text": "GBP",
+      "bbox": [
+        361,
+        1116,
+        422,
+        1136
+      ],
+      "confidence": 0.95,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          361,
+          1116,
+          380,
+          1136
+        ],
+        [
+          384,
+          1116,
+          401,
+          1136
+        ],
+        [
+          405,
+          1116,
+          422,
+          1136
+        ]
+      ]
+    },
+    {
+      "id": 56,
+      "text": "2,940.00",
+      "bbox": [
+        434,
+        1116,
+        565,
+        1140
+      ],
+      "confidence": 0.96,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          434,
+          1116,
+          449,
+          1136
+        ],
+        [
+          452,
+          1131,
+          459,
+          1140
+        ],
+        [
+          462,
+          1116,
+          478,
+          1136
+        ],
+        [
+          481,
+          1116,
+          498,
+          1136
+        ],
+        [
+          500,
+          1116,
+          517,
+          1136
+        ],
+        [
+          521,
+          1131,
+          526,
+          1136
+        ],
+        [
+          529,
+          1116,
+          546,
+          1136
+        ],
+        [
+          548,
+          1116,
+          565,
+          1136
+        ]
+      ]
+    },
+    {
+      "id": 57,
+      "text": "Paid:",
+      "bbox": [
+        77,
+        1190,
+        131,
+        1223
+      ],
+      "confidence": 0.96,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          77,
+          1195,
+          89,
+          1213
+        ],
+        [
+          84,
+          1190,
+          95,
+          1223
+        ],
+        [
+          90,
+          1200,
+          102,
+          1213
+        ],
+        [
+          106,
+          1195,
+          108,
+          1213
+        ],
+        [
+          112,
+          1195,
+          131,
+          1213
+        ]
+      ]
+    },
+    {
+      "id": 58,
+      "text": "GBP",
+      "bbox": [
+        361,
+        1195,
+        409,
+        1213
+      ],
+      "confidence": 0.96,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          361,
+          1195,
+          377,
+          1213
+        ],
+        [
+          373,
+          1195,
+          388,
+          1213
+        ],
+        [
+          381,
+          1195,
+          409,
+          1213
+        ]
+      ]
+    },
+    {
+      "id": 59,
+      "text": "1,000.00",
+      "bbox": [
+        420,
+        1195,
+        522,
+        1216
+      ],
+      "confidence": 0.96,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          420,
+          1195,
+          430,
+          1213
+        ],
+        [
+          434,
+          1210,
+          437,
+          1216
+        ],
+        [
+          442,
+          1195,
+          454,
+          1213
+        ],
+        [
+          457,
+          1195,
+          469,
+          1213
+        ],
+        [
+          472,
+          1195,
+          484,
+          1213
+        ],
+        [
+          487,
+          1210,
+          490,
+          1213
+        ],
+        [
+          495,
+          1195,
+          507,
+          1213
+        ],
+        [
+          510,
+          1195,
+          522,
+          1213
+        ]
+      ]
+    },
+    {
+      "id": 60,
+      "text": "Balance",
+      "bbox": [
+        77,
+        1245,
+        170,
+        1263
+      ],
+      "confidence": 0.96,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          77,
+          1245,
+          90,
+          1263
+        ],
+        [
+          92,
+          1250,
+          104,
+          1263
+        ],
+        [
+          108,
+          1245,
+          110,
+          1263
+        ],
+        [
+          114,
+          1250,
+          126,
+          1263
+        ],
+        [
+          130,
+          1250,
+          141,
+          1263
+        ],
+        [
+          144,
+          1250,
+          155,
+          1263
+        ],
+        [
+          157,
+          1250,
+          170,
+          1263
+        ]
+      ]
+    },
+    {
+      "id": 61,
+      "text": "Due:",
+      "bbox": [
+        181,
+        1245,
+        232,
+        1263
+      ],
+      "confidence": 0.96,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          181,
+          1245,
+          196,
+          1263
+        ],
+        [
+          199,
+          1250,
+          210,
+          1263
+        ],
+        [
+          205,
+          1245,
+          218,
+          1263
+        ],
+        [
+          213,
+          1250,
+          232,
+          1263
+        ]
+      ]
+    },
+    {
+      "id": 62,
+      "text": "GBP",
+      "bbox": [
+        361,
+        1245,
+        409,
+        1263
+      ],
+      "confidence": 0.96,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          361,
+          1245,
+          377,
+          1263
+        ],
+        [
+          381,
+          1245,
+          394,
+          1263
+        ],
+        [
+          397,
+          1245,
+          409,
+          1263
+        ]
+      ]
+    },
+    {
+      "id": 63,
+      "text": "1,940.00",
+      "bbox": [
+        420,
+        1245,
+        522,
+        1266
+      ],
+      "confidence": 0.94,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          420,
+          1245,
+          430,
+          1263
+        ],
+        [
+          434,
+          1260,
+          437,
+          1266
+        ],
+        [
+          441,
+          1245,
+          454,
+          1263
+        ],
+        [
+          456,
+          1245,
+          469,
+          1263
+        ],
+        [
+          472,
+          1245,
+          484,
+          1263
+        ],
+        [
+          487,
+          1260,
+          490,
+          1263
+        ],
+        [
+          495,
+          1245,
+          507,
+          1263
+        ],
+        [
+          510,
+          1245,
+          522,
+          1263
+        ]
+      ]
+    },
+    {
+      "id": 64,
+      "text": "Please",
+      "bbox": [
+        77,
+        1394,
+        138,
+        1409
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          77,
+          1394,
+          86,
+          1409
+        ],
+        [
+          89,
+          1394,
+          91,
+          1409
+        ],
+        [
+          94,
+          1398,
+          104,
+          1409
+        ],
+        [
+          106,
+          1398,
+          116,
+          1409
+        ],
+        [
+          118,
+          1398,
+          126,
+          1409
+        ],
+        [
+          128,
+          1398,
+          138,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 65,
+      "text": "quote",
+      "bbox": [
+        146,
+        1395,
+        202,
+        1413
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          146,
+          1398,
+          156,
+          1413
+        ],
+        [
+          160,
+          1398,
+          169,
+          1409
+        ],
+        [
+          172,
+          1398,
+          182,
+          1409
+        ],
+        [
+          183,
+          1395,
+          190,
+          1409
+        ],
+        [
+          192,
+          1398,
+          202,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 66,
+      "text": "the",
+      "bbox": [
+        209,
+        1394,
+        241,
+        1409
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          209,
+          1395,
+          216,
+          1409
+        ],
+        [
+          219,
+          1394,
+          228,
+          1409
+        ],
+        [
+          231,
+          1398,
+          241,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 67,
+      "text": "invoice",
+      "bbox": [
+        250,
+        1394,
+        319,
+        1409
+      ],
+      "confidence": 0.95,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          250,
+          1394,
+          252,
+          1409
+        ],
+        [
+          256,
+          1398,
+          265,
+          1409
+        ],
+        [
+          268,
+          1398,
+          278,
+          1409
+        ],
+        [
+          280,
+          1398,
+          290,
+          1409
+        ],
+        [
+          293,
+          1394,
+          295,
+          1409
+        ],
+        [
+          298,
+          1398,
+          307,
+          1409
+        ],
+        [
+          309,
+          1398,
+          319,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 68,
+      "text": "number",
+      "bbox": [
+        328,
+        1394,
+        404,
+        1409
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          328,
+          1398,
+          337,
+          1409
+        ],
+        [
+          341,
+          1398,
+          350,
+          1409
+        ],
+        [
+          354,
+          1398,
+          370,
+          1409
+        ],
+        [
+          373,
+          1394,
+          383,
+          1409
+        ],
+        [
+          379,
+          1394,
+          391,
+          1409
+        ],
+        [
+          385,
+          1398,
+          404,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 69,
+      "text": "when",
+      "bbox": [
+        411,
+        1394,
+        462,
+        1409
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          411,
+          1398,
+          425,
+          1409
+        ],
+        [
+          428,
+          1394,
+          437,
+          1409
+        ],
+        [
+          433,
+          1394,
+          445,
+          1409
+        ],
+        [
+          440,
+          1398,
+          462,
+          1409
+        ]
+      ]
+    },
+    {
+      "id": 70,
+      "text": "paying.",
+      "bbox": [
+        472,
+        1394,
+        543,
+        1413
+      ],
+      "confidence": 0.96,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          472,
+          1398,
+          482,
+          1413
+        ],
+        [
+          478,
+          1394,
+          490,
+          1413
+        ],
+        [
+          484,
+          1398,
+          494,
+          1409
+        ],
+        [
+          496,
+          1398,
+          506,
+          1413
+        ],
+        [
+          509,
+          1394,
+          524,
+          1409
+        ],
+        [
+          520,
+          1394,
+          532,
+          1413
+        ],
+        [
+          527,
+          1398,
+          543,
+          1413
+        ]
+      ]
+    }
+  ],
+  "predictions": {
+    "0": {
+      "label": "O",
+      "confidence": 0.9994254112243652,
+      "scores": {
+        "O": 0.9994254112243652,
+        "vendor_name": 0.00010791924432851374,
+        "company_address": 3.702780304593034e-06,
+        "invoice_number": 0.0004520811198744923,
+        "invoice_date": 2.3000209239398828e-06,
+        "total": 8.700942089490127e-06
+      }
+    },
+    "1": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.9996752738952637,
+      "scores": {
+        "O": 7.112418825272471e-05,
+        "vendor_name": 0.9996752738952637,
+        "company_address": 0.00018810364417731762,
+        "invoice_number": 7.791991265548859e-07,
+        "invoice_date": 7.067096134960593e-07,
+        "total": 6.399177073035389e-05
+      }
+    },
+    "2": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.994060218334198,
+      "scores": {
+        "O": 0.005278721451759338,
+        "vendor_name": 0.994060218334198,
+        "company_address": 0.0003300942771602422,
+        "invoice_number": 6.260627856136125e-07,
+        "invoice_date": 9.698883332021069e-06,
+        "total": 0.00032065529376268387
+      }
+    },
+    "3": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.9919089674949646,
+      "scores": {
+        "O": 0.005779756233096123,
+        "vendor_name": 0.9919089674949646,
+        "company_address": 0.0014227571664378047,
+        "invoice_number": 2.0588788629538612e-06,
+        "invoice_date": 1.7250244127353653e-05,
+        "total": 0.0008692442206665874
+      }
+    },
+    "4": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.8193250298500061,
+      "scores": {
+        "O": 5.230007445788942e-06,
+        "vendor_name": 0.00021491992811206728,
+        "company_address": 0.8193250298500061,
+        "invoice_number": 0.00032551310141570866,
+        "invoice_date": 0.17256221175193787,
+        "total": 0.007567071355879307
+      }
+    },
+    "5": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9940662384033203,
+      "scores": {
+        "O": 4.045867171953432e-06,
+        "vendor_name": 0.002716133138164878,
+        "company_address": 0.9940662384033203,
+        "invoice_number": 1.7257058061659336e-05,
+        "invoice_date": 0.000154648267198354,
+        "total": 0.003041717456653714
+      }
+    },
+    "6": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9980425834655762,
+      "scores": {
+        "O": 1.329936640104279e-05,
+        "vendor_name": 5.175159822101705e-05,
+        "company_address": 0.9980425834655762,
+        "invoice_number": 8.985312888398767e-06,
+        "invoice_date": 0.0001549862208776176,
+        "total": 0.0017283771885558963
+      }
+    },
+    "7": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9967527985572815,
+      "scores": {
+        "O": 9.374605838274874e-07,
+        "vendor_name": 0.00013225976726971567,
+        "company_address": 0.9967527985572815,
+        "invoice_number": 1.4438391190196853e-05,
+        "invoice_date": 0.00024964215117506683,
+        "total": 0.0028498596511781216
+      }
+    },
+    "8": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9621696472167969,
+      "scores": {
+        "O": 8.912168414099142e-05,
+        "vendor_name": 0.0007965366239659488,
+        "company_address": 0.9621696472167969,
+        "invoice_number": 3.788932372117415e-05,
+        "invoice_date": 0.0009099506423808634,
+        "total": 0.03599684685468674
+      }
+    },
+    "9": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9968484044075012,
+      "scores": {
+        "O": 7.750564691377804e-06,
+        "vendor_name": 1.820149009290617e-05,
+        "company_address": 0.9968484044075012,
+        "invoice_number": 4.262607399141416e-05,
+        "invoice_date": 0.00019318732665851712,
+        "total": 0.0028897984884679317
+      }
+    },
+    "10": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.8276432752609253,
+      "scores": {
+        "O": 0.05975893884897232,
+        "vendor_name": 4.5276814489625394e-05,
+        "company_address": 0.8276432752609253,
+        "invoice_number": 0.0006484042969532311,
+        "invoice_date": 0.0549820214509964,
+        "total": 0.05692215636372566
+      }
+    },
+    "11": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.8588749766349792,
+      "scores": {
+        "O": 0.0003256973868701607,
+        "vendor_name": 2.318336328244186e-06,
+        "company_address": 0.8588749766349792,
+        "invoice_number": 0.004038843791931868,
+        "invoice_date": 0.05329418554902077,
+        "total": 0.08346393704414368
+      }
+    },
+    "12": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9757035970687866,
+      "scores": {
+        "O": 5.539069024962373e-05,
+        "vendor_name": 4.9515729187987745e-06,
+        "company_address": 0.9757035970687866,
+        "invoice_number": 0.0018567763036116958,
+        "invoice_date": 0.004334953147917986,
+        "total": 0.018044356256723404
+      }
+    },
+    "13": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9203282594680786,
+      "scores": {
+        "O": 0.0017167475307360291,
+        "vendor_name": 1.8411118389849435e-06,
+        "company_address": 0.9203282594680786,
+        "invoice_number": 0.00197121175006032,
+        "invoice_date": 0.02081945165991783,
+        "total": 0.05516247823834419
+      }
+    },
+    "14": {
+      "label": "O",
+      "confidence": 0.9999603033065796,
+      "scores": {
+        "O": 0.9999603033065796,
+        "vendor_name": 2.3298611040445394e-07,
+        "company_address": 2.0565570579833548e-08,
+        "invoice_number": 3.839749479084276e-05,
+        "invoice_date": 8.765007919464551e-07,
+        "total": 2.1355920409860119e-07
+      }
+    },
+    "15": {
+      "label": "O",
+      "confidence": 0.9947922825813293,
+      "scores": {
+        "O": 0.9947922825813293,
+        "vendor_name": 3.143365574942436e-06,
+        "company_address": 0.0005438958760350943,
+        "invoice_number": 0.0035827874671667814,
+        "invoice_date": 0.0010016702581197023,
+        "total": 7.6234748121351e-05
+      }
+    },
+    "16": {
+      "label": "INVOICE_NUM",
+      "confidence": 0.9234791994094849,
+      "scores": {
+        "O": 0.00040099129546433687,
+        "vendor_name": 3.132115580228856e-07,
+        "company_address": 0.010791686363518238,
+        "invoice_number": 0.9234791994094849,
+        "invoice_date": 0.03318893164396286,
+        "total": 0.032138947397470474
+      }
+    },
+    "17": {
+      "label": "O",
+      "confidence": 0.9999936819076538,
+      "scores": {
+        "O": 0.9999936819076538,
+        "vendor_name": 1.4533364378621627e-07,
+        "company_address": 2.032517976147119e-08,
+        "invoice_number": 1.5611493608957971e-06,
+        "invoice_date": 4.4910816541232634e-06,
+        "total": 5.791573443048037e-08
+      }
+    },
+    "18": {
+      "label": "INVOICE_DATE",
+      "confidence": 0.9906806349754333,
+      "scores": {
+        "O": 0.00025601586094126105,
+        "vendor_name": 1.1191748399141943e-06,
+        "company_address": 0.0034738422837108374,
+        "invoice_number": 0.005364894866943359,
+        "invoice_date": 0.9906806349754333,
+        "total": 0.00022351105872076005
+      }
+    },
+    "19": {
+      "label": "INVOICE_DATE",
+      "confidence": 0.9928523898124695,
+      "scores": {
+        "O": 3.7236131902318448e-06,
+        "vendor_name": 4.530051285200898e-07,
+        "company_address": 0.002122526289895177,
+        "invoice_number": 0.004906272049993277,
+        "invoice_date": 0.9928523898124695,
+        "total": 0.00011470843310235068
+      }
+    },
+    "20": {
+      "label": "INVOICE_DATE",
+      "confidence": 0.9990463852882385,
+      "scores": {
+        "O": 2.0539007891784422e-05,
+        "vendor_name": 3.7980193212661106e-08,
+        "company_address": 0.00023281948233488947,
+        "invoice_number": 0.0006936448626220226,
+        "invoice_date": 0.9990463852882385,
+        "total": 6.6198281274409965e-06
+      }
+    },
+    "21": {
+      "label": "O",
+      "confidence": 0.9999890327453613,
+      "scores": {
+        "O": 0.9999890327453613,
+        "vendor_name": 2.1759981905233872e-07,
+        "company_address": 2.2967377333316108e-08,
+        "invoice_number": 3.53478935721796e-06,
+        "invoice_date": 7.132623068173416e-06,
+        "total": 3.945200077737354e-08
+      }
+    },
+    "22": {
+      "label": "O",
+      "confidence": 0.9993945360183716,
+      "scores": {
+        "O": 0.9993945360183716,
+        "vendor_name": 0.00015592963609378785,
+        "company_address": 5.00914347867365e-06,
+        "invoice_number": 0.0004411469853948802,
+        "invoice_date": 2.038178990915185e-06,
+        "total": 1.381820993628935e-06
+      }
+    },
+    "23": {
+      "label": "O",
+      "confidence": 0.9999916553497314,
+      "scores": {
+        "O": 0.9999916553497314,
+        "vendor_name": 3.8473402241834265e-07,
+        "company_address": 3.966767891938616e-08,
+        "invoice_number": 6.031220436852891e-06,
+        "invoice_date": 1.932350642164238e-06,
+        "total": 3.497169842603398e-08
+      }
+    },
+    "24": {
+      "label": "O",
+      "confidence": 0.999997615814209,
+      "scores": {
+        "O": 0.999997615814209,
+        "vendor_name": 1.612896909364281e-07,
+        "company_address": 1.7258841467082675e-08,
+        "invoice_number": 7.721510542069154e-07,
+        "invoice_date": 1.406019237037981e-06,
+        "total": 1.3259592535064257e-08
+      }
+    },
+    "25": {
+      "label": "O",
+      "confidence": 0.9999958276748657,
+      "scores": {
+        "O": 0.9999958276748657,
+        "vendor_name": 5.770335747001809e-07,
+        "company_address": 2.1758779222835756e-09,
+        "invoice_number": 7.789640932287512e-08,
+        "invoice_date": 3.462812173893326e-06,
+        "total": 3.135453852110004e-08
+      }
+    },
+    "26": {
+      "label": "O",
+      "confidence": 0.9999995231628418,
+      "scores": {
+        "O": 0.9999995231628418,
+        "vendor_name": 4.39352696446349e-08,
+        "company_address": 5.885634202229539e-10,
+        "invoice_number": 1.054438403258473e-08,
+        "invoice_date": 3.359770914812543e-07,
+        "total": 1.114350567377187e-08
+      }
+    },
+    "27": {
+      "label": "O",
+      "confidence": 0.9877413511276245,
+      "scores": {
+        "O": 0.9877413511276245,
+        "vendor_name": 1.1873111134264036e-06,
+        "company_address": 3.365074690009351e-07,
+        "invoice_number": 8.899880776880309e-05,
+        "invoice_date": 0.012145614251494408,
+        "total": 2.2503279978991486e-05
+      }
+    },
+    "28": {
+      "label": "O",
+      "confidence": 0.9999899864196777,
+      "scores": {
+        "O": 0.9999899864196777,
+        "vendor_name": 6.897629418745055e-07,
+        "company_address": 2.5846460971479246e-07,
+        "invoice_number": 3.383325292816153e-06,
+        "invoice_date": 5.434784270619275e-06,
+        "total": 1.7963486698135966e-07
+      }
+    },
+    "29": {
+      "label": "O",
+      "confidence": 0.9999915361404419,
+      "scores": {
+        "O": 0.9999915361404419,
+        "vendor_name": 2.3857928681536578e-06,
+        "company_address": 1.3160329217498656e-06,
+        "invoice_number": 1.6884681599549367e-06,
+        "invoice_date": 2.1758326056442456e-06,
+        "total": 9.035944117385952e-07
+      }
+    },
+    "30": {
+      "label": "O",
+      "confidence": 0.9999994039535522,
+      "scores": {
+        "O": 0.9999994039535522,
+        "vendor_name": 2.1948567408003328e-08,
+        "company_address": 2.768067730585244e-08,
+        "invoice_number": 3.462202471382625e-07,
+        "invoice_date": 2.8202748580952175e-07,
+        "total": 1.3849600577486854e-08
+      }
+    },
+    "31": {
+      "label": "O",
+      "confidence": 0.9999992847442627,
+      "scores": {
+        "O": 0.9999992847442627,
+        "vendor_name": 5.838577976646775e-08,
+        "company_address": 1.0757212010048534e-08,
+        "invoice_number": 3.14642363719031e-07,
+        "invoice_date": 3.241689228161704e-07,
+        "total": 2.1241731928967056e-08
+      }
+    },
+    "32": {
+      "label": "O",
+      "confidence": 0.9999986886978149,
+      "scores": {
+        "O": 0.9999986886978149,
+        "vendor_name": 3.960913375067321e-08,
+        "company_address": 4.721883772873525e-09,
+        "invoice_number": 5.72513556562626e-07,
+        "invoice_date": 7.093229328347661e-07,
+        "total": 2.507033336485165e-08
+      }
+    },
+    "33": {
+      "label": "O",
+      "confidence": 0.9999793767929077,
+      "scores": {
+        "O": 0.9999793767929077,
+        "vendor_name": 1.8219250108586493e-08,
+        "company_address": 1.8269508927915012e-07,
+        "invoice_number": 2.639209014887456e-06,
+        "invoice_date": 1.749948387441691e-05,
+        "total": 1.8682311520024086e-07
+      }
+    },
+    "34": {
+      "label": "O",
+      "confidence": 0.9999974966049194,
+      "scores": {
+        "O": 0.9999974966049194,
+        "vendor_name": 5.247003969088837e-07,
+        "company_address": 1.4635041623023426e-08,
+        "invoice_number": 1.8138688346880372e-06,
+        "invoice_date": 1.675824989888497e-07,
+        "total": 7.987852512769678e-08
+      }
+    },
+    "35": {
+      "label": "O",
+      "confidence": 0.9999994039535522,
+      "scores": {
+        "O": 0.9999994039535522,
+        "vendor_name": 1.616356684053244e-07,
+        "company_address": 1.0535893268937002e-09,
+        "invoice_number": 3.137661153118643e-08,
+        "invoice_date": 3.3054936920962064e-07,
+        "total": 8.007011587096713e-08
+      }
+    },
+    "36": {
+      "label": "O",
+      "confidence": 0.9999998807907104,
+      "scores": {
+        "O": 0.9999998807907104,
+        "vendor_name": 4.3884870848387436e-08,
+        "company_address": 1.490235157497466e-10,
+        "invoice_number": 6.547412567670108e-08,
+        "invoice_date": 3.632365874750576e-08,
+        "total": 1.7437091770489133e-08
+      }
+    },
+    "37": {
+      "label": "O",
+      "confidence": 0.9999994039535522,
+      "scores": {
+        "O": 0.9999994039535522,
+        "vendor_name": 2.595328680854436e-07,
+        "company_address": 8.269686602169202e-10,
+        "invoice_number": 1.779430931492243e-07,
+        "invoice_date": 1.0391946858590018e-07,
+        "total": 8.001542539659567e-09
+      }
+    },
+    "38": {
+      "label": "O",
+      "confidence": 0.9999992847442627,
+      "scores": {
+        "O": 0.9999992847442627,
+        "vendor_name": 1.8912554367034318e-07,
+        "company_address": 5.997654040079681e-10,
+        "invoice_number": 4.2378172793178237e-07,
+        "invoice_date": 1.3491749939475994e-07,
+        "total": 1.1254233100999045e-08
+      }
+    },
+    "39": {
+      "label": "O",
+      "confidence": 0.998515784740448,
+      "scores": {
+        "O": 0.998515784740448,
+        "vendor_name": 7.888753316365182e-05,
+        "company_address": 5.5924119806149974e-05,
+        "invoice_number": 4.75056585855782e-05,
+        "invoice_date": 0.00043966673547402024,
+        "total": 0.0008622129098512232
+      }
+    },
+    "40": {
+      "label": "O",
+      "confidence": 0.9999116659164429,
+      "scores": {
+        "O": 0.9999116659164429,
+        "vendor_name": 7.67929805078893e-07,
+        "company_address": 2.329056911776206e-07,
+        "invoice_number": 2.5675162760308012e-06,
+        "invoice_date": 8.4146286098985e-06,
+        "total": 7.626473234267905e-05
+      }
+    },
+    "41": {
+      "label": "O",
+      "confidence": 0.9999990463256836,
+      "scores": {
+        "O": 0.9999990463256836,
+        "vendor_name": 9.378786103297898e-07,
+        "company_address": 3.3467714710688767e-10,
+        "invoice_number": 4.3660993043204144e-08,
+        "invoice_date": 2.502619977917675e-08,
+        "total": 1.4458685804186189e-08
+      }
+    },
+    "42": {
+      "label": "O",
+      "confidence": 0.9999992847442627,
+      "scores": {
+        "O": 0.9999992847442627,
+        "vendor_name": 3.091754763318022e-07,
+        "company_address": 8.643679549891203e-09,
+        "invoice_number": 2.0201085249027528e-07,
+        "invoice_date": 1.0390737514853754e-07,
+        "total": 4.811099785229089e-08
+      }
+    },
+    "43": {
+      "label": "O",
+      "confidence": 0.9999994039535522,
+      "scores": {
+        "O": 0.9999994039535522,
+        "vendor_name": 3.946176434510562e-07,
+        "company_address": 1.3351734162725393e-09,
+        "invoice_number": 8.071350521277054e-08,
+        "invoice_date": 6.397605289976127e-08,
+        "total": 3.888945698804491e-08
+      }
+    },
+    "44": {
+      "label": "O",
+      "confidence": 0.9982553124427795,
+      "scores": {
+        "O": 0.9982553124427795,
+        "vendor_name": 9.290201705880463e-05,
+        "company_address": 6.141368794487789e-05,
+        "invoice_number": 4.8374546167906374e-05,
+        "invoice_date": 0.0004362081817816943,
+        "total": 0.0011057087685912848
+      }
+    },
+    "45": {
+      "label": "O",
+      "confidence": 0.9999992847442627,
+      "scores": {
+        "O": 0.9999992847442627,
+        "vendor_name": 7.543225422068645e-08,
+        "company_address": 1.6240188083216367e-09,
+        "invoice_number": 1.6346065478956007e-07,
+        "invoice_date": 6.522131457131763e-08,
+        "total": 3.0871970579937624e-07
+      }
+    },
+    "46": {
+      "label": "O",
+      "confidence": 0.9999997615814209,
+      "scores": {
+        "O": 0.9999997615814209,
+        "vendor_name": 1.1560191381931872e-07,
+        "company_address": 1.344850342199777e-09,
+        "invoice_number": 8.402714257726984e-08,
+        "invoice_date": 3.3394567111599827e-08,
+        "total": 4.6237307316232545e-08
+      }
+    },
+    "47": {
+      "label": "O",
+      "confidence": 0.9999996423721313,
+      "scores": {
+        "O": 0.9999996423721313,
+        "vendor_name": 4.091454997023902e-08,
+        "company_address": 5.382495338324134e-09,
+        "invoice_number": 2.848508984243381e-07,
+        "invoice_date": 2.4543753696093518e-08,
+        "total": 4.111685214525096e-08
+      }
+    },
+    "48": {
+      "label": "O",
+      "confidence": 0.8083449006080627,
+      "scores": {
+        "O": 0.8083449006080627,
+        "vendor_name": 0.00020874870824627578,
+        "company_address": 1.9150864318362437e-05,
+        "invoice_number": 6.825100717833266e-05,
+        "invoice_date": 9.856763790594414e-05,
+        "total": 0.19126032292842865
+      }
+    },
+    "49": {
+      "label": "O",
+      "confidence": 0.857012927532196,
+      "scores": {
+        "O": 0.857012927532196,
+        "vendor_name": 2.8741782443830743e-05,
+        "company_address": 3.950016980525106e-05,
+        "invoice_number": 0.00038372183917090297,
+        "invoice_date": 0.007548811845481396,
+        "total": 0.13498622179031372
+      }
+    },
+    "50": {
+      "label": "O",
+      "confidence": 0.9999279975891113,
+      "scores": {
+        "O": 0.9999279975891113,
+        "vendor_name": 1.8581627045932692e-06,
+        "company_address": 7.026992676628652e-08,
+        "invoice_number": 2.322604996152222e-05,
+        "invoice_date": 6.145713200567116e-07,
+        "total": 4.6245786506915465e-05
+      }
+    },
+    "51": {
+      "label": "TOTAL",
+      "confidence": 0.981834888458252,
+      "scores": {
+        "O": 0.017003312706947327,
+        "vendor_name": 1.7331702110823244e-05,
+        "company_address": 0.0007472814759239554,
+        "invoice_number": 0.00016493332805112004,
+        "invoice_date": 0.0002322991203982383,
+        "total": 0.981834888458252
+      }
+    },
+    "52": {
+      "label": "O",
+      "confidence": 0.8311970829963684,
+      "scores": {
+        "O": 0.8311970829963684,
+        "vendor_name": 1.1794929378083907e-05,
+        "company_address": 0.0024557828437536955,
+        "invoice_number": 0.038541290909051895,
+        "invoice_date": 0.006057993043214083,
+        "total": 0.12173614650964737
+      }
+    },
+    "53": {
+      "label": "O",
+      "confidence": 0.999996542930603,
+      "scores": {
+        "O": 0.999996542930603,
+        "vendor_name": 1.014005761135195e-06,
+        "company_address": 2.0402441958111694e-09,
+        "invoice_number": 1.7901808178066858e-06,
+        "invoice_date": 7.120992506770563e-08,
+        "total": 5.456442977447296e-07
+      }
+    },
+    "54": {
+      "label": "O",
+      "confidence": 0.9999980926513672,
+      "scores": {
+        "O": 0.9999980926513672,
+        "vendor_name": 4.0062868578161215e-08,
+        "company_address": 2.9202753992763064e-08,
+        "invoice_number": 1.0124148275281186e-06,
+        "invoice_date": 1.407239835771179e-07,
+        "total": 7.345349786191946e-07
+      }
+    },
+    "55": {
+      "label": "TOTAL",
+      "confidence": 0.9990614056587219,
+      "scores": {
+        "O": 8.862079994287342e-05,
+        "vendor_name": 2.5379244107170962e-05,
+        "company_address": 0.000729150022380054,
+        "invoice_number": 1.832901943998877e-05,
+        "invoice_date": 7.714994717389345e-05,
+        "total": 0.9990614056587219
+      }
+    },
+    "56": {
+      "label": "TOTAL",
+      "confidence": 0.9930735230445862,
+      "scores": {
+        "O": 0.0014046687865629792,
+        "vendor_name": 1.0606448995531537e-05,
+        "company_address": 8.651230746181682e-05,
+        "invoice_number": 5.5050753871910274e-05,
+        "invoice_date": 0.00536959245800972,
+        "total": 0.9930735230445862
+      }
+    },
+    "57": {
+      "label": "O",
+      "confidence": 0.9999840259552002,
+      "scores": {
+        "O": 0.9999840259552002,
+        "vendor_name": 3.3675285067147342e-06,
+        "company_address": 1.1786268316882342e-07,
+        "invoice_number": 5.852646722814825e-07,
+        "invoice_date": 2.2954071710046264e-07,
+        "total": 1.1714628271874972e-05
+      }
+    },
+    "58": {
+      "label": "TOTAL",
+      "confidence": 0.986933171749115,
+      "scores": {
+        "O": 3.556908268365078e-05,
+        "vendor_name": 2.350934846617747e-05,
+        "company_address": 0.012897568754851818,
+        "invoice_number": 3.2704523619031534e-05,
+        "invoice_date": 7.749703217996284e-05,
+        "total": 0.986933171749115
+      }
+    },
+    "59": {
+      "label": "TOTAL",
+      "confidence": 0.9937134385108948,
+      "scores": {
+        "O": 0.0009800768457353115,
+        "vendor_name": 6.297620529949199e-06,
+        "company_address": 0.0025777777191251516,
+        "invoice_number": 0.0004097541095688939,
+        "invoice_date": 0.0023126727901399136,
+        "total": 0.9937134385108948
+      }
+    },
+    "60": {
+      "label": "O",
+      "confidence": 0.9999548196792603,
+      "scores": {
+        "O": 0.9999548196792603,
+        "vendor_name": 1.1066737215514877e-06,
+        "company_address": 5.440336963147274e-07,
+        "invoice_number": 1.1332273061270826e-05,
+        "invoice_date": 4.5940896598040126e-07,
+        "total": 3.1714171200292185e-05
+      }
+    },
+    "61": {
+      "label": "O",
+      "confidence": 0.9999933242797852,
+      "scores": {
+        "O": 0.9999933242797852,
+        "vendor_name": 4.346606274907572e-08,
+        "company_address": 6.691025333793732e-08,
+        "invoice_number": 7.054750881252403e-07,
+        "invoice_date": 3.333890674639406e-07,
+        "total": 5.4712108976673335e-06
+      }
+    },
+    "62": {
+      "label": "TOTAL",
+      "confidence": 0.9920593500137329,
+      "scores": {
+        "O": 7.612114859512076e-05,
+        "vendor_name": 1.0592910257400945e-05,
+        "company_address": 0.007669388782233,
+        "invoice_number": 6.380724516930059e-05,
+        "invoice_date": 0.00012062662426615134,
+        "total": 0.9920593500137329
+      }
+    },
+    "63": {
+      "label": "TOTAL",
+      "confidence": 0.9886713027954102,
+      "scores": {
+        "O": 0.0015776419313624501,
+        "vendor_name": 6.09195285505848e-06,
+        "company_address": 0.00418892502784729,
+        "invoice_number": 0.0007600949611514807,
+        "invoice_date": 0.004795944318175316,
+        "total": 0.9886713027954102
+      }
+    },
+    "64": {
+      "label": "O",
+      "confidence": 0.9999948740005493,
+      "scores": {
+        "O": 0.9999948740005493,
+        "vendor_name": 3.6598139558918774e-06,
+        "company_address": 3.4016764516309195e-08,
+        "invoice_number": 9.905335218718392e-07,
+        "invoice_date": 5.676647774066623e-08,
+        "total": 4.312806254347379e-07
+      }
+    },
+    "65": {
+      "label": "O",
+      "confidence": 0.9999936819076538,
+      "scores": {
+        "O": 0.9999936819076538,
+        "vendor_name": 2.684682158360374e-06,
+        "company_address": 5.240630684966163e-08,
+        "invoice_number": 1.310687480327033e-06,
+        "invoice_date": 3.531732417627609e-08,
+        "total": 2.320635076102917e-06
+      }
+    },
+    "66": {
+      "label": "O",
+      "confidence": 0.9999940395355225,
+      "scores": {
+        "O": 0.9999940395355225,
+        "vendor_name": 2.6449154688634735e-07,
+        "company_address": 4.581415282700618e-07,
+        "invoice_number": 2.0628101538022747e-06,
+        "invoice_date": 5.441585315679731e-08,
+        "total": 3.1401109481521416e-06
+      }
+    },
+    "67": {
+      "label": "O",
+      "confidence": 0.9999973773956299,
+      "scores": {
+        "O": 0.9999973773956299,
+        "vendor_name": 5.08582274960645e-07,
+        "company_address": 2.4137849052863203e-08,
+        "invoice_number": 8.913221449802222e-07,
+        "invoice_date": 4.158286870392658e-08,
+        "total": 1.2674720437644282e-06
+      }
+    },
+    "68": {
+      "label": "O",
+      "confidence": 0.9999960660934448,
+      "scores": {
+        "O": 0.9999960660934448,
+        "vendor_name": 1.040024031340181e-07,
+        "company_address": 1.9411260154811316e-07,
+        "invoice_number": 1.9838516891468316e-06,
+        "invoice_date": 1.7341878333354543e-07,
+        "total": 1.5079456261446467e-06
+      }
+    },
+    "69": {
+      "label": "O",
+      "confidence": 0.999891996383667,
+      "scores": {
+        "O": 0.999891996383667,
+        "vendor_name": 4.628978444998211e-07,
+        "company_address": 5.3008043323643506e-06,
+        "invoice_number": 8.658271690364927e-05,
+        "invoice_date": 5.250136837275932e-06,
+        "total": 1.0445089174027089e-05
+      }
+    },
+    "70": {
+      "label": "O",
+      "confidence": 0.9999783039093018,
+      "scores": {
+        "O": 0.9999783039093018,
+        "vendor_name": 2.5787781510189234e-07,
+        "company_address": 1.7179202416173212e-07,
+        "invoice_number": 3.641920102381846e-06,
+        "invoice_date": 1.0902487019848195e-06,
+        "total": 1.658254404901527e-05
+      }
+    }
+  }
+}

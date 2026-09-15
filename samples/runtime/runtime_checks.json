@@ -1,0 +1,11 @@
+{
+  "blank_page_five_nulls": true,
+  "long_sequence": {
+    "ocr_words": 750,
+    "predicted_words": 750,
+    "windows": 2,
+    "last_word_preserved": true
+  },
+  "rotation_values_and_original_pixel_boxes": true,
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6"
+}

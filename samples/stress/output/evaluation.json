@@ -1,0 +1,203 @@
+{
+  "mode": "hybrid",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "git_commit": "4846c2901f63f5fe1cabe6cd2ad84bf61bb75c99",
+  "working_tree_modified": false,
+  "python": "3.13.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "invoice_count": 5,
+  "field_count": 25,
+  "exact_matches": 21,
+  "present_field_exact_matches": 15,
+  "present_field_count": 19,
+  "absent_field_correct_nulls": 6,
+  "absent_field_count": 6,
+  "mean_iou_present_fields_misses_count_zero": 0.8027,
+  "cases": [
+    {
+      "file": "faint_total.png",
+      "split": "stress",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9883,
+          "expected": "Northstar Analytics Pvt. Ltd.",
+          "predicted": "Northstar Analytics Pvt. Ltd."
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9926,
+          "expected": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+          "predicted": "42 Crescent Road\nIndore, Madhya Pradesh 452001"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9832,
+          "expected": "NS-2026-01842",
+          "predicted": "NS-2026-01842"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9675,
+          "expected": "15/08/2026",
+          "predicted": "15/08/2026"
+        },
+        "total": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "INR 2,891.00",
+          "predicted": null
+        }
+      },
+      "processing_time_sec": 0.65
+    },
+    {
+      "file": "wrapped_vendor.png",
+      "split": "stress",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "NORTHSTAR\nANALYTICS PRIVATE LIMITED",
+          "predicted": null
+        },
+        "company_address": {
+          "exact_match": false,
+          "bbox_iou": 0.5043,
+          "expected": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+          "predicted": "ANALYTICS PRIVATE LIMITED\n42 Crescent Road\nIndore, Madhya Pradesh 452001"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9832,
+          "expected": "NS-2026-01842",
+          "predicted": "NS-2026-01842"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9675,
+          "expected": "15/08/2026",
+          "predicted": "15/08/2026"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": 0.9848,
+          "expected": "INR 2,891.00",
+          "predicted": "INR 2,891.00"
+        }
+      },
+      "processing_time_sec": 0.648
+    },
+    {
+      "file": "rupee_symbol.png",
+      "split": "stress",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9937,
+          "expected": "CEDAR & FINCH DESIGN STUDIO",
+          "predicted": "CEDAR & FINCH DESIGN STUDIO"
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9909,
+          "expected": "Suite 4, 280 Market Street\nSan Francisco, CA 94103",
+          "predicted": "Suite 4, 280 Market Street\nSan Francisco, CA 94103"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9825,
+          "expected": "CFD-1048-A",
+          "predicted": "CFD-1048-A"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9817,
+          "expected": "2026-08-24",
+          "predicted": "2026-08-24"
+        },
+        "total": {
+          "exact_match": false,
+          "bbox_iou": null,
+          "expected": "₹2,646.00",
+          "predicted": null
+        }
+      },
+      "processing_time_sec": 0.971
+    },
+    {
+      "file": "blank.png",
+      "split": "stress",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        }
+      },
+      "processing_time_sec": 0.283
+    },
+    {
+      "file": "missing_total.png",
+      "split": "stress",
+      "metrics": {
+        "vendor_name": {
+          "exact_match": true,
+          "bbox_iou": 0.9883,
+          "expected": "Northstar Analytics Pvt. Ltd.",
+          "predicted": "Northstar Analytics Pvt. Ltd."
+        },
+        "company_address": {
+          "exact_match": true,
+          "bbox_iou": 0.9926,
+          "expected": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+          "predicted": "42 Crescent Road\nIndore, Madhya Pradesh 452001"
+        },
+        "invoice_number": {
+          "exact_match": true,
+          "bbox_iou": 0.9832,
+          "expected": "NS-2026-01842",
+          "predicted": "NS-2026-01842"
+        },
+        "invoice_date": {
+          "exact_match": true,
+          "bbox_iou": 0.9675,
+          "expected": "15/08/2026",
+          "predicted": "15/08/2026"
+        },
+        "total": {
+          "exact_match": true,
+          "bbox_iou": null,
+          "expected": null,
+          "predicted": null
+        }
+      },
+      "processing_time_sec": 0.639
+    }
+  ]
+}

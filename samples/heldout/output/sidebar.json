@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "input_file": "sidebar.png",
+    "image_size": [
+      1200,
+      1500
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+    "processing_time_sec": 0.859
+  },
+  "fields": {
+    "vendor_name": {
+      "value": "Atlas Technical Services",
+      "bbox": [
+        530,
+        122,
+        968,
+        146
+      ],
+      "confidence": 0.6569,
+      "token_count": 3
+    },
+    "company_address": {
+      "value": "Building a 9, 18 Station. Road\nLeeds LS1 2AB",
+      "bbox": [
+        532,
+        180,
+        870,
+        235
+      ],
+      "confidence": 0.883,
+      "token_count": 10,
+      "line_boxes": [
+        [
+          532,
+          180,
+          870,
+          204
+        ],
+        [
+          532,
+          216,
+          713,
+          235
+        ]
+      ]
+    },
+    "invoice_number": {
+      "value": "AT-982/26",
+      "bbox": [
+        65,
+        202,
+        208,
+        225
+      ],
+      "confidence": 0.9168,
+      "token_count": 1
+    },
+    "invoice_date": {
+      "value": "26 August 2026",
+      "bbox": [
+        67,
+        317,
+        263,
+        340
+      ],
+      "confidence": 0.8664,
+      "token_count": 3,
+      "normalized": "2026-08-26"
+    },
+    "total": {
+      "value": "GBP 2,940.00",
+      "bbox": [
+        721,
+        1196,
+        938,
+        1222
+      ],
+      "confidence": 0.9475,
+      "token_count": 2,
+      "currency": "GBP"
+    }
+  }
+}

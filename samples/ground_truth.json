@@ -1,0 +1,311 @@
+[
+  {
+    "file": "classic.png",
+    "split": "development",
+    "note": "Left issuer, key-above-value metadata, INR total.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1600
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "Northstar Analytics Pvt. Ltd.",
+        "bbox": [
+          75,
+          71,
+          590,
+          102
+        ],
+        "line_boxes": [
+          [
+            75,
+            71,
+            590,
+            102
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+        "bbox": [
+          75,
+          130,
+          481,
+          190
+        ],
+        "line_boxes": [
+          [
+            75,
+            130,
+            296,
+            149
+          ],
+          [
+            75,
+            166,
+            481,
+            190
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "NS-2026-01842",
+        "bbox": [
+          720,
+          309,
+          958,
+          329
+        ],
+        "line_boxes": [
+          [
+            720,
+            309,
+            958,
+            329
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "15/08/2026",
+        "bbox": [
+          720,
+          409,
+          874,
+          430
+        ],
+        "line_boxes": [
+          [
+            720,
+            409,
+            874,
+            430
+          ]
+        ]
+      },
+      "total": {
+        "value": "INR 2,891.00",
+        "bbox": [
+          915,
+          1226,
+          1112,
+          1250
+        ],
+        "line_boxes": [
+          [
+            915,
+            1226,
+            1112,
+            1250
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "right_header.png",
+    "split": "development",
+    "note": "Right issuer, left buyer, partial payment and balance due.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1500
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "Oakbridge Office Supplies",
+        "bbox": [
+          660,
+          75,
+          1097,
+          104
+        ],
+        "line_boxes": [
+          [
+            660,
+            75,
+            1097,
+            104
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "17 Willow Street\nBristol BS1 4AA",
+        "bbox": [
+          660,
+          130,
+          865,
+          185
+        ],
+        "line_boxes": [
+          [
+            660,
+            130,
+            865,
+            149
+          ],
+          [
+            660,
+            166,
+            854,
+            185
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "OB/2026/0719",
+        "bbox": [
+          237,
+          331,
+          431,
+          353
+        ],
+        "line_boxes": [
+          [
+            237,
+            331,
+            431,
+            353
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "21 August 2026",
+        "bbox": [
+          190,
+          386,
+          390,
+          409
+        ],
+        "line_boxes": [
+          [
+            190,
+            386,
+            390,
+            409
+          ]
+        ]
+      },
+      "total": {
+        "value": "GBP 2,940.00",
+        "bbox": [
+          360,
+          1116,
+          566,
+          1140
+        ],
+        "line_boxes": [
+          [
+            360,
+            1116,
+            566,
+            1140
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "ledger.png",
+    "split": "development",
+    "note": "Wide ledger, uppercase issuer, separate metadata columns.",
+    "rotate": 0,
+    "image_size": [
+      1400,
+      1650
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "CEDAR & FINCH DESIGN STUDIO",
+        "bbox": [
+          90,
+          72,
+          721,
+          98
+        ],
+        "line_boxes": [
+          [
+            90,
+            72,
+            721,
+            98
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "Suite 4, 280 Market Street\nSan Francisco, CA 94103",
+        "bbox": [
+          90,
+          130,
+          420,
+          188
+        ],
+        "line_boxes": [
+          [
+            90,
+            130,
+            420,
+            152
+          ],
+          [
+            90,
+            166,
+            401,
+            188
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "CFD-1048-A",
+        "bbox": [
+          90,
+          391,
+          261,
+          412
+        ],
+        "line_boxes": [
+          [
+            90,
+            391,
+            261,
+            412
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "2026-08-24",
+        "bbox": [
+          630,
+          391,
+          794,
+          412
+        ],
+        "line_boxes": [
+          [
+            630,
+            391,
+            794,
+            412
+          ]
+        ]
+      },
+      "total": {
+        "value": "USD 2,646.00",
+        "bbox": [
+          1090,
+          1266,
+          1296,
+          1290
+        ],
+        "line_boxes": [
+          [
+            1090,
+            1266,
+            1296,
+            1290
+          ]
+        ]
+      }
+    }
+  }
+]

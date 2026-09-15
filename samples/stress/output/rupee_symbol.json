@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "input_file": "rupee_symbol.png",
+    "image_size": [
+      1400,
+      1650
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+    "processing_time_sec": 0.971
+  },
+  "fields": {
+    "vendor_name": {
+      "value": "CEDAR & FINCH DESIGN STUDIO",
+      "bbox": [
+        92,
+        72,
+        719,
+        98
+      ],
+      "confidence": 0.7709,
+      "token_count": 5
+    },
+    "company_address": {
+      "value": "Suite 4, 280 Market Street\nSan Francisco, CA 94103",
+      "bbox": [
+        92,
+        130,
+        419,
+        188
+      ],
+      "confidence": 0.9537,
+      "token_count": 9,
+      "line_boxes": [
+        [
+          92,
+          130,
+          419,
+          152
+        ],
+        [
+          92,
+          166,
+          399,
+          188
+        ]
+      ]
+    },
+    "invoice_number": {
+      "value": "CFD-1048-A",
+      "bbox": [
+        92,
+        391,
+        260,
+        412
+      ],
+      "confidence": 0.8916,
+      "token_count": 1
+    },
+    "invoice_date": {
+      "value": "2026-08-24",
+      "bbox": [
+        632,
+        391,
+        793,
+        412
+      ],
+      "confidence": 0.96,
+      "token_count": 1,
+      "normalized": "2026-08-24"
+    },
+    "total": null
+  }
+}

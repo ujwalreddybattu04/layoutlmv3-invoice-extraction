@@ -1,0 +1,208 @@
+[
+  {
+    "file": "sidebar.png",
+    "split": "heldout",
+    "note": "Reserved layout: right supplier block and left metadata sidebar.",
+    "rotate": 0,
+    "image_size": [
+      1200,
+      1500
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "Atlas Technical Services",
+        "bbox": [
+          530,
+          122,
+          969,
+          146
+        ],
+        "line_boxes": [
+          [
+            530,
+            122,
+            969,
+            146
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "Building 9, 18 Station Road\nLeeds LS1 2AB",
+        "bbox": [
+          530,
+          180,
+          872,
+          235
+        ],
+        "line_boxes": [
+          [
+            530,
+            180,
+            872,
+            204
+          ],
+          [
+            530,
+            216,
+            715,
+            235
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "AT-982/26",
+        "bbox": [
+          65,
+          202,
+          210,
+          225
+        ],
+        "line_boxes": [
+          [
+            65,
+            202,
+            210,
+            225
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "26 August 2026",
+        "bbox": [
+          65,
+          317,
+          265,
+          340
+        ],
+        "line_boxes": [
+          [
+            65,
+            317,
+            265,
+            340
+          ]
+        ]
+      },
+      "total": {
+        "value": "GBP 2,940.00",
+        "bbox": [
+          720,
+          1196,
+          939,
+          1222
+        ],
+        "line_boxes": [
+          [
+            720,
+            1196,
+            939,
+            1222
+          ]
+        ]
+      }
+    }
+  },
+  {
+    "file": "centered.png",
+    "split": "heldout",
+    "note": "Reserved layout: centered issuer and left-aligned total.",
+    "rotate": 0,
+    "image_size": [
+      1100,
+      1500
+    ],
+    "fields": {
+      "vendor_name": {
+        "value": "MAPLE CREEK CONSULTING",
+        "bbox": [
+          260,
+          77,
+          772,
+          101
+        ],
+        "line_boxes": [
+          [
+            260,
+            77,
+            772,
+            101
+          ]
+        ]
+      },
+      "company_address": {
+        "value": "61 Harbour Avenue\nToronto, ON M5J 2N8",
+        "bbox": [
+          259,
+          135,
+          523,
+          196
+        ],
+        "line_boxes": [
+          [
+            260,
+            135,
+            503,
+            154
+          ],
+          [
+            259,
+            173,
+            523,
+            196
+          ]
+        ]
+      },
+      "invoice_number": {
+        "value": "MC-2026-557",
+        "bbox": [
+          305,
+          306,
+          486,
+          326
+        ],
+        "line_boxes": [
+          [
+            305,
+            306,
+            486,
+            326
+          ]
+        ]
+      },
+      "invoice_date": {
+        "value": "2026/08/27",
+        "bbox": [
+          305,
+          366,
+          459,
+          388
+        ],
+        "line_boxes": [
+          [
+            305,
+            366,
+            459,
+            388
+          ]
+        ]
+      },
+      "total": {
+        "value": "CAD 2,768.50",
+        "bbox": [
+          470,
+          1086,
+          698,
+          1112
+        ],
+        "line_boxes": [
+          [
+            470,
+            1086,
+            698,
+            1112
+          ]
+        ]
+      }
+    }
+  }
+]

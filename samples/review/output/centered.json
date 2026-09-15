@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "input_file": "centered.png",
+    "image_size": [
+      1100,
+      1500
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+    "processing_time_sec": 0.58
+  },
+  "fields": {
+    "vendor_name": {
+      "value": "MAPLE CREEK CONSULTING",
+      "bbox": [
+        263,
+        77,
+        770,
+        101
+      ],
+      "confidence": 0.8983,
+      "token_count": 3
+    },
+    "company_address": {
+      "value": "61 Harbour Avenue\nToronto, ON M5J 2N8",
+      "bbox": [
+        260,
+        135,
+        521,
+        196
+      ],
+      "confidence": 0.6515,
+      "token_count": 7,
+      "line_boxes": [
+        [
+          262,
+          135,
+          502,
+          154
+        ],
+        [
+          260,
+          173,
+          521,
+          196
+        ]
+      ]
+    },
+    "invoice_number": {
+      "value": "MC-2026-557",
+      "bbox": [
+        308,
+        306,
+        484,
+        326
+      ],
+      "confidence": 0.8718,
+      "token_count": 1
+    },
+    "invoice_date": {
+      "value": "2026/08/27",
+      "bbox": [
+        307,
+        366,
+        457,
+        388
+      ],
+      "confidence": 0.9599,
+      "token_count": 1,
+      "normalized": "2026-08-27"
+    },
+    "total": {
+      "value": "CAD 2,768.50",
+      "bbox": [
+        471,
+        1086,
+        697,
+        1112
+      ],
+      "confidence": 0.8617,
+      "token_count": 2,
+      "currency": "CAD"
+    }
+  }
+}

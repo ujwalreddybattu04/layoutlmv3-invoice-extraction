@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "input_file": "right_header.png",
+    "image_size": [
+      1200,
+      1500
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "none (explicit heuristic-only mode)",
+    "processing_time_sec": 0.581
+  },
+  "fields": {
+    "vendor_name": {
+      "value": "Oakbridge Office Supplies",
+      "bbox": [
+        661,
+        75,
+        1095,
+        104
+      ],
+      "confidence": 0.2808,
+      "token_count": 3
+    },
+    "company_address": {
+      "value": "17 Willow Street\nBristol BS1 4AA",
+      "bbox": [
+        662,
+        130,
+        864,
+        185
+      ],
+      "confidence": 0.2753,
+      "token_count": 6,
+      "line_boxes": [
+        [
+          663,
+          130,
+          864,
+          149
+        ],
+        [
+          662,
+          166,
+          854,
+          185
+        ]
+      ]
+    },
+    "invoice_number": null,
+    "invoice_date": {
+      "value": "21 August 2026",
+      "bbox": [
+        192,
+        386,
+        388,
+        409
+      ],
+      "confidence": 0.3217,
+      "token_count": 3,
+      "normalized": "2026-08-21"
+    },
+    "total": {
+      "value": "GBP 2,940.00",
+      "bbox": [
+        361,
+        1116,
+        565,
+        1140
+      ],
+      "confidence": 0.4308,
+      "token_count": 2,
+      "currency": "GBP"
+    }
+  }
+}
