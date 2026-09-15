@@ -5,7 +5,7 @@ from pathlib import Path
 from .aggregate import aggregate
 from .layout import readable_order
 from .merge import restore_box
-from .model import DEFAULT_MODEL, DEFAULT_REVISION, InvoiceModel
+from .model import DEFAULT_MODEL, DEFAULT_REVISION, DEFAULT_ADAPTER, InvoiceModel
 from .ocr import TesseractOCR, load_image
 from .types import FIELDS
 from .visualize import annotate
@@ -14,13 +14,16 @@ from .visualize import annotate
 class Pipeline:
     """Reuse OCR/model initialization when evaluating a collection of invoices."""
     def __init__(self, *, mode='hybrid', checkpoint=DEFAULT_MODEL, revision=None, device='auto',
-                 tesseract_cmd=None, language='eng', psm=3, cache_dir=None, local_files_only=False):
+                 tesseract_cmd=None, language='eng', psm=3, cache_dir=None, local_files_only=False,
+                 adapter=DEFAULT_ADAPTER):
         self.mode = mode
         self.ocr = TesseractOCR(tesseract_cmd, language, psm)
         self.model = None if mode == 'heuristic' else InvoiceModel(
-            checkpoint, revision, device, cache_dir, local_files_only)
+            checkpoint, revision, device, cache_dir, local_files_only, adapter)
         self.model_name = (f'{checkpoint}@{self.model.revision}' if self.model and self.model.revision
                            else checkpoint if self.model else 'none (explicit heuristic-only mode)')
+        if self.model and self.model.adapter_name:
+            self.model_name = f'{DEFAULT_MODEL}@{self.model.revision}+{self.model.adapter_name}'
 
     def run(self, input_path: Path, *, rotate: int = 0, pdf_dpi: int = 150):
         started = time.perf_counter()
@@ -46,4 +49,3 @@ class Pipeline:
                            'ocr_engine': f'tesseract-{self.ocr.version}', 'model': self.model_name,
                            'processing_time_sec': round(time.perf_counter()-started, 3)}, 'fields': fields}
         return output, image, trace
-

@@ -79,7 +79,7 @@ def plausible(field: str, value: str) -> bool:
     if not value or len(value) > 500:
         return False
     if field == 'invoice_number':
-        return bool(re.search(r'\d', value)) and len(value) <= 64 and not DATE.fullmatch(value)
+        return bool(IDENTIFIER.fullmatch(value)) and 2 <= len(value) <= 64 and not DATE.fullmatch(value)
     if field == 'invoice_date':
         if not DATE.fullmatch(value):
             return False
@@ -91,7 +91,9 @@ def plausible(field: str, value: str) -> bool:
     if field == 'total':
         return bool(MONEY.fullmatch(value)) and len(value) <= 40 and not re.search(r'\d\s+\d{4,}', value)
     if field == 'vendor_name':
-        return bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value) and not plausible_address(value)
+        return (bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value)
+                and not plausible_address(value) and value.lower() not in
+                {'for','from','to','thank','thanks','you','your','payment','terms','invoice','total','date'})
     return bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value)
 
 
@@ -162,7 +164,10 @@ def key_candidates(rows: list[Row]) -> list[Candidate]:
                     if following.bbox[1]-row.bbox[3] > 2.2*row.height:
                         break
                     options = [s for s in segments(following)
-                               if abs(s.bbox[0]-anchor['bbox'][0]) <= 2*row.height and not anchors_for(s)]
+                               if (abs(s.bbox[0]-anchor['bbox'][0]) <= 2*row.height or
+                                   (field in ('total', 'invoice_number', 'invoice_date') and
+                                    anchor['bbox'][0] <= s.bbox[0] <= anchor['bbox'][2]+8*row.height))
+                               and not anchors_for(s)]
                     if options:
                         nearest = min(options, key=lambda s: abs(s.bbox[0]-anchor['bbox'][0]))
                         pieces = select_value(nearest, 0, len(nearest.text), field)
@@ -185,9 +190,14 @@ def model_candidates(rows: list[Row], predictions: dict[int, Prediction]) -> lis
                 prediction = predictions.get(word.id, Prediction())
                 field = prediction.field
                 strength = prediction.scores.get(field, 0.0) if field else 0.0
+                following = predictions.get(segment.words[index+1].id, Prediction()) if index+1 < len(segment.words) else Prediction()
+                if (current and field != current.field and following.field == current.field
+                        and prediction.scores.get(current.field, 0) >= 0.15 and word.confidence >= 0.15):
+                    current.pieces.append(slice_word(word))
+                    current.reasons.append('Bridged one uncertain interior word')
+                    continue
                 if strength < 0.50 or word.confidence < 0.15:
                     # Bridge a single uncertain interior word only with model support.
-                    following = predictions.get(segment.words[index+1].id, Prediction()) if index+1 < len(segment.words) else Prediction()
                     if current and following.field == current.field and prediction.scores.get(current.field, 0) >= 0.15 and word.confidence >= 0.15:
                         current.pieces.append(slice_word(word))
                         current.reasons.append('Bridged one uncertain interior word')
@@ -202,7 +212,7 @@ def model_candidates(rows: list[Row], predictions: dict[int, Prediction]) -> lis
                 current.pieces.append(slice_word(word))
     # Offer multiline model spans only in the same column with a short vertical gap.
     for field in ('vendor_name', 'company_address'):
-        groups = [c for c in candidates if c.field == field]
+        groups = [c for c in candidates if c.field == field and plausible(field, stitch(c.pieces, field))]
         for first in groups:
             combined = list(first.pieces)
             previous = union_box(p.bbox for p in combined)
@@ -289,6 +299,8 @@ def rank_candidate(candidate: Candidate, rows: list[Row], predictions: dict[int,
     if candidate.anchor_strength:
         # A strong explicit key can repair a weak model; the result stays attributed.
         candidate.rank = max(candidate.rank, 0.58+0.18*candidate.anchor_strength+0.15*ocr+0.09*model_score)
+    elif candidate.field in ('invoice_number', 'invoice_date', 'total'):
+        candidate.rank = min(candidate.rank, 0.86)
     elif candidate.source == 'heuristic':
         candidate.rank = 0.57 + 0.20*ocr + 0.10*model_score
     if candidate.field == 'company_address' and len(piece_lines(candidate.pieces)) > 1:

@@ -1,16 +1,20 @@
 """Real LayoutLMv3 inference; no random classification head or silent fallback."""
 from pathlib import Path
+import hashlib
+import json
 
 from .merge import normalize_box
 from .types import LABEL_MAP, Prediction, Word
 
 DEFAULT_MODEL = 'Kapilydv6/layoutlmv3-invoice-parser'
 DEFAULT_REVISION = 'e464cfcadf6b766e105119c46e06f81ff1e4836a'
+DEFAULT_ADAPTER = str(Path(__file__).resolve().parents[1] / 'assets' / 'adaptation')
 
 
 class InvoiceModel:
     def __init__(self, checkpoint: str = DEFAULT_MODEL, revision: str | None = None,
-                 device: str = 'auto', cache_dir: str | None = None, local_files_only: bool = False):
+                 device: str = 'auto', cache_dir: str | None = None, local_files_only: bool = False,
+                 adapter: str | None = DEFAULT_ADAPTER):
         import torch
         from transformers import LayoutLMv3ForTokenClassification, LayoutLMv3ImageProcessor, LayoutLMv3TokenizerFast
 
@@ -27,6 +31,33 @@ class InvoiceModel:
         self.model = LayoutLMv3ForTokenClassification.from_pretrained(
             checkpoint, use_safetensors=True, **options,
         ).to(device).eval()
+        self.adapter_name = None
+        if adapter and adapter != 'none':
+            from safetensors.torch import load_file
+            directory = Path(adapter)
+            metadata = json.loads((directory/'config.json').read_text(encoding='utf-8'))
+            if Path(checkpoint).is_dir():
+                with (Path(checkpoint)/'model.safetensors').open('rb') as stream:
+                    sha = hashlib.file_digest(stream,'sha256').hexdigest()
+                if sha != metadata['base_weights_sha256']:
+                    raise ValueError('Adaptation requires its exact base weights; use --adapter none for another model.')
+                self.revision = metadata['base_revision']
+            elif checkpoint != metadata['base_model'] or self.revision != metadata['base_revision']:
+                raise ValueError('Adaptation requires its pinned base checkpoint; use --adapter none for another model.')
+            labels = metadata['labels']
+            self.model.classifier = torch.nn.Linear(self.model.config.hidden_size,len(labels)).to(device)
+            self.model.num_labels = len(labels)
+            self.model.config.num_labels = len(labels)
+            self.model.config.id2label = dict(enumerate(labels))
+            self.model.config.label2id = {label:index for index,label in enumerate(labels)}
+            state = load_file(str(directory/'weights.safetensors'))
+            if set(state) != set(metadata['trained_tensor_names']):
+                raise ValueError('Adaptation tensor manifest does not match weights')
+            incompatible = self.model.load_state_dict(state,strict=False)
+            if incompatible.unexpected_keys:
+                raise ValueError('Unexpected tensors in adaptation')
+            self.model.eval()
+            self.adapter_name = 'invoice-adaptation-flat6'
         self.tokenizer = LayoutLMv3TokenizerFast.from_pretrained(checkpoint, **options)
         # This checkpoint has processor_config.json but no preprocessor_config.json.
         # Use the base model's documented RGB / 224 px / mean=std=0.5 defaults.

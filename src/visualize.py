@@ -1,5 +1,6 @@
 """A side legend keeps field labels completely outside the invoice text."""
 from PIL import Image, ImageDraw, ImageFont
+from pathlib import Path
 
 from .types import FIELDS
 
@@ -8,7 +9,7 @@ COLORS = {'vendor_name': '#166534', 'company_address': '#1d4ed8', 'invoice_numbe
 
 
 def font(size: int):
-    return ImageFont.load_default(size=size)
+    return ImageFont.truetype(str(Path(__file__).resolve().parents[1] / 'assets/fonts/DejaVuSans.ttf'), size)
 
 
 def wrap_text(text: str, draw, face, width: int) -> list[str]:
@@ -61,4 +62,3 @@ def annotate(image: Image.Image, fields: dict, *, mode: str) -> Image.Image:
             y += line_height
         y += line_height
     return canvas
-

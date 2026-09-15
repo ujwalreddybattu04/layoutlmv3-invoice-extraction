@@ -11,4 +11,5 @@ result.json
 result.jpg
 result.png
 artifacts/
-
+pytest-cache-files-*/
+!assets/adaptation/weights.safetensors

@@ -1,0 +1,99 @@
+{
+  "base_model": "Kapilydv6/layoutlmv3-invoice-parser",
+  "base_revision": "e464cfcadf6b766e105119c46e06f81ff1e4836a",
+  "base_weights_sha256": "a6be323e1fe46aac11bc3a34055828513479a07cc8a8172dfd2574ae87a1374c",
+  "labels": [
+    "O",
+    "VENDOR_NAME",
+    "VENDOR_ADDR",
+    "INVOICE_NUM",
+    "INVOICE_DATE",
+    "TOTAL"
+  ],
+  "label_scheme": "flat",
+  "trainable_parameters": 7092486,
+  "trained_tensor_names": [
+    "layoutlmv3.encoder.layer.11.attention.self.query.weight",
+    "layoutlmv3.encoder.layer.11.attention.self.query.bias",
+    "layoutlmv3.encoder.layer.11.attention.self.key.weight",
+    "layoutlmv3.encoder.layer.11.attention.self.key.bias",
+    "layoutlmv3.encoder.layer.11.attention.self.value.weight",
+    "layoutlmv3.encoder.layer.11.attention.self.value.bias",
+    "layoutlmv3.encoder.layer.11.attention.output.dense.weight",
+    "layoutlmv3.encoder.layer.11.attention.output.dense.bias",
+    "layoutlmv3.encoder.layer.11.attention.output.LayerNorm.weight",
+    "layoutlmv3.encoder.layer.11.attention.output.LayerNorm.bias",
+    "layoutlmv3.encoder.layer.11.intermediate.dense.weight",
+    "layoutlmv3.encoder.layer.11.intermediate.dense.bias",
+    "layoutlmv3.encoder.layer.11.output.dense.weight",
+    "layoutlmv3.encoder.layer.11.output.dense.bias",
+    "layoutlmv3.encoder.layer.11.output.LayerNorm.weight",
+    "layoutlmv3.encoder.layer.11.output.LayerNorm.bias",
+    "classifier.weight",
+    "classifier.bias"
+  ],
+  "selected_epoch": 12,
+  "seed": 1729,
+  "train_invoices": 36,
+  "validation_invoices": 8,
+  "validation": {
+    "macro_f1_fields": 0.9719821162444113,
+    "per_field_f1": {
+      "VENDOR_NAME": 0.9090909090909091,
+      "VENDOR_ADDR": 0.9508196721311475,
+      "INVOICE_NUM": 1.0,
+      "INVOICE_DATE": 1.0,
+      "TOTAL": 1.0
+    },
+    "confusion": [
+      [
+        381,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        25,
+        5,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        58,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        16
+      ]
+    ]
+  }
+}

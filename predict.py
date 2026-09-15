@@ -16,6 +16,8 @@ def parser() -> argparse.ArgumentParser:
                          help='hybrid runs the model plus documented rules; heuristic explicitly disables the model')
     command.add_argument('--model', default='Kapilydv6/layoutlmv3-invoice-parser', dest='checkpoint')
     command.add_argument('--revision', help='HF commit hash for a custom checkpoint; default model revision is pinned')
+    command.add_argument('--adapter', default=str(Path(__file__).resolve().parent/'assets/adaptation'),
+                         help='Adapted tensors directory; use none to test the original public checkpoint')
     command.add_argument('--device', choices=['auto', 'cpu', 'cuda'], default='auto')
     command.add_argument('--tesseract-cmd', help='OCR executable path if tesseract is not on PATH')
     command.add_argument('--language', default='eng', help='Installed Tesseract language; model is English')
@@ -56,7 +58,7 @@ def main(argv=None) -> int:
         print(f'Initializing mode={args.mode}; first model download may take a few minutes.', file=sys.stderr)
         pipeline = Pipeline(mode=args.mode, checkpoint=args.checkpoint, revision=args.revision, device=args.device,
                             tesseract_cmd=args.tesseract_cmd, language=args.language, psm=args.psm,
-                            cache_dir=args.cache_dir, local_files_only=args.local_files_only)
+                            cache_dir=args.cache_dir, local_files_only=args.local_files_only, adapter=args.adapter)
         output, image, trace = pipeline.run(args.input, rotate=args.rotate, pdf_dpi=args.pdf_dpi)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         image.save(args.output, **({'quality': 95} if args.output.suffix.lower() != '.png' else {}))
@@ -77,4 +79,3 @@ def main(argv=None) -> int:
 
 if __name__ == '__main__':
     raise SystemExit(main())
-
