@@ -62,3 +62,17 @@ def test_wrapped_name_is_complete_and_separate_from_address():
                              3:Prediction('VENDOR_ADDR',0.99,{'company_address':0.99})})
     assert fields['vendor_name']['value']=='HORIZON\nRESEARCH LIMITED'
     assert fields['company_address']['value']=='42 River Road\nLeeds LS1 2AB'
+
+
+def test_multiline_name_cannot_absorb_a_street_fragment():
+    words=[Word(0,'MAPLE CONSULTING',(10,10,240,40),0.98),
+           Word(1,'61',(10,65,30,85),0.98),Word(2,'Harbour',(40,65,110,85),0.98),
+           Word(3,'Avenue',(120,65,180,85),0.98),Word(4,'Toronto ON M5J',(10,105,200,125),0.98)]
+    preds={0:Prediction('VENDOR_NAME',0.9,{'vendor_name':0.9}),
+           1:Prediction('VENDOR_ADDR',0.9,{'company_address':0.9}),
+           2:Prediction('VENDOR_NAME',0.98,{'vendor_name':0.98}),
+           3:Prediction('VENDOR_ADDR',0.98,{'company_address':0.98}),
+           4:Prediction('VENDOR_ADDR',0.98,{'company_address':0.98})}
+    fields,_=aggregate(words,preds)
+    assert fields['vendor_name']['value']=='MAPLE CONSULTING'
+    assert fields['company_address']['value']=='61 Harbour Avenue\nToronto ON M5J'

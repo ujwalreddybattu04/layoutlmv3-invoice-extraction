@@ -302,15 +302,16 @@ def rank_candidate(candidate: Candidate, rows: list[Row], predictions: dict[int,
         candidate.reasons.append('Rejected: value lies in a labelled buyer block')
         return
     if candidate.field == 'vendor_name':
-        box = union_box(p.bbox for p in candidate.pieces)
-        for row in rows:
-            for segment in segments(row):
-                if (vertical_overlap(box, segment.bbox) >= 0.5 and
-                        {p.word_id for p in candidate.pieces}.issubset({w.id for w in segment.words})
-                        and plausible_address(segment.text)):
-                    candidate.rank = -1.0
-                    candidate.reasons.append('Rejected: name is a fragment of a postal-address line')
-                    return
+        for line in piece_lines(candidate.pieces):
+            box = union_box(p.bbox for p in line)
+            for row in rows:
+                for segment in segments(row):
+                    if (vertical_overlap(box, segment.bbox) >= 0.5 and
+                            {p.word_id for p in line}.issubset({w.id for w in segment.words})
+                            and plausible_address(segment.text)):
+                        candidate.rank = -1.0
+                        candidate.reasons.append('Rejected: name is a fragment of a postal-address line')
+                        return
     candidate.rank = 0.55*model_score + 0.25*ocr + 0.20
     if candidate.anchor_strength:
         # A strong explicit key can repair a weak model; the result stays attributed.
