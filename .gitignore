@@ -1,0 +1,14 @@
+.venv*/
+.cache/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+*.safetensors
+*.bin
+*.pt
+*.zip
+result.json
+result.jpg
+result.png
+artifacts/
+
