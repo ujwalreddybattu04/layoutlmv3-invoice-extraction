@@ -45,3 +45,20 @@ def test_phone_line_cannot_poison_complete_address_candidate():
     predictions={i:Prediction('VENDOR_ADDR',0.99,{'company_address':0.99}) for i in range(3)}
     fields,_=aggregate(words,predictions,use_heuristics=False)
     assert fields['company_address']['value']=='17 River Road\nBristol BS1 4AA'
+
+
+def test_street_fragment_cannot_become_vendor():
+    words=[Word(0,'61',(10,50,30,70),0.99),Word(1,'Harbour',(40,50,110,70),0.99),
+           Word(2,'Avenue',(120,50,180,70),0.99)]
+    fields,_=aggregate(words,{1:Prediction('VENDOR_NAME',0.99,{'vendor_name':0.99})})
+    assert fields['vendor_name'] is None
+
+
+def test_wrapped_name_is_complete_and_separate_from_address():
+    words=[Word(0,'HORIZON',(10,10,120,40),0.99),Word(1,'RESEARCH LIMITED',(10,55,240,80),0.99),
+           Word(2,'42 River Road',(10,100,200,125),0.99),Word(3,'Leeds LS1 2AB',(10,140,200,165),0.99)]
+    fields,_=aggregate(words,{1:Prediction('VENDOR_ADDR',0.99,{'company_address':0.99}),
+                             2:Prediction('VENDOR_ADDR',0.99,{'company_address':0.99}),
+                             3:Prediction('VENDOR_ADDR',0.99,{'company_address':0.99})})
+    assert fields['vendor_name']['value']=='HORIZON\nRESEARCH LIMITED'
+    assert fields['company_address']['value']=='42 River Road\nLeeds LS1 2AB'

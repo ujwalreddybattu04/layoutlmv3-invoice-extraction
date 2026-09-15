@@ -94,7 +94,7 @@ def plausible(field: str, value: str) -> bool:
         return (bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value)
                 and not plausible_address(value) and value.lower() not in
                 {'for','from','to','thank','thanks','you','your','payment','terms','invoice','total','date'})
-    return bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value)
+    return bool(re.search(r'[A-Za-z]{2}', value)) and not CONTACT.search(value) and plausible_address(value)
 
 
 def select_value(row: Row, start: int, end: int, field: str) -> list[Piece]:
@@ -234,6 +234,12 @@ def clean_model_candidate(candidate: Candidate, words: dict[int, Word]) -> None:
     pieces = candidate.pieces
     if not pieces:
         return
+    if candidate.field == 'company_address':
+        lines = piece_lines(pieces)
+        while len(lines) > 1 and not plausible_address(stitch(lines[0], 'company_address')):
+            lines.pop(0)
+            candidate.reasons.append('Removed non-postal leading line from address span')
+        candidate.pieces = pieces = [piece for line in lines for piece in line]
     row = Row([words[p.word_id] for p in pieces])
     # Candidate pieces are full OCR words at this stage, except heuristic candidates.
     anchors = anchors_for(row)
@@ -295,6 +301,16 @@ def rank_candidate(candidate: Candidate, rows: list[Row], predictions: dict[int,
         candidate.rank = -1.0
         candidate.reasons.append('Rejected: value lies in a labelled buyer block')
         return
+    if candidate.field == 'vendor_name':
+        box = union_box(p.bbox for p in candidate.pieces)
+        for row in rows:
+            for segment in segments(row):
+                if (vertical_overlap(box, segment.bbox) >= 0.5 and
+                        {p.word_id for p in candidate.pieces}.issubset({w.id for w in segment.words})
+                        and plausible_address(segment.text)):
+                    candidate.rank = -1.0
+                    candidate.reasons.append('Rejected: name is a fragment of a postal-address line')
+                    return
     candidate.rank = 0.55*model_score + 0.25*ocr + 0.20
     if candidate.anchor_strength:
         # A strong explicit key can repair a weak model; the result stays attributed.
@@ -319,7 +335,7 @@ def aggregate(words: list[Word], predictions: dict[int, Prediction], *, use_heur
         candidates.extend(key_candidates(rows))
         # An unlabelled issuing-party header is considered only beside an address.
         image_bottom = max((w.bbox[3] for w in words), default=1)
-        for row in rows:
+        for row_index, row in enumerate(rows):
             if row.bbox[1] > image_bottom*0.32:
                 break
             for segment in segments(row):
@@ -328,6 +344,16 @@ def aggregate(words: list[Word], predictions: dict[int, Prediction], *, use_heur
                 pieces = segment.pieces()
                 if plausible('vendor_name', segment.text) and len(segment.words) >= 2 and address_after(pieces, rows):
                     candidates.append(Candidate('vendor_name', pieces, 'heuristic', reasons=['Header adjacent to a plausible postal address']))
+                elif plausible('vendor_name', segment.text) and row_index+1 < len(rows):
+                    following = rows[row_index+1]
+                    if 0 <= following.bbox[1]-segment.bbox[3] <= 1.8*segment.height:
+                        for continuation in segments(following):
+                            combined = pieces+continuation.pieces()
+                            if (same_column(segment.bbox,continuation.bbox,segment.height)
+                                    and not anchors_for(continuation) and plausible('vendor_name',continuation.text)
+                                    and address_after(combined,rows)):
+                                candidates.append(Candidate('vendor_name',combined,'heuristic',
+                                                            reasons=['Two aligned name lines followed by a postal address']))
         # Address continuation is anchored to a defensible seller-name candidate.
         for vendor in [c for c in candidates if c.field == 'vendor_name' and c.pieces]:
             rank_candidate(vendor, rows, predictions)
@@ -339,6 +365,18 @@ def aggregate(words: list[Word], predictions: dict[int, Prediction], *, use_heur
     candidates = [candidate for candidate in candidates if candidate.pieces]
     for candidate in candidates:
         rank_candidate(candidate, rows, predictions)
+    # A complete, well-supported name/address should not lose merely because one
+    # short fragment has a slightly higher mean probability. Only expand measured
+    # spans already admitted by geometry and syntax; never add text here.
+    for full in candidates:
+        if full.field not in ('vendor_name','company_address') or full.rank < minimum_rank or ocr_score(full.pieces) < 0.80:
+            continue
+        full_ids = {p.word_id for p in full.pieces}
+        for fragment in candidates:
+            if (fragment.field == full.field and fragment.rank >= minimum_rank and
+                    {p.word_id for p in fragment.pieces} < full_ids):
+                full.rank = min(0.999,max(full.rank,fragment.rank+0.015))
+                full.reasons.append('Preferred complete geometric span over its shorter fragment')
     fields = dict.fromkeys(FIELDS)
     trace = {'thresholds': {'model_seed': 0.50, 'ocr_word_floor': 0.15, 'ocr_field_floor': 0.35,
                             'minimum_rank': minimum_rank}, 'selected': {}, 'candidates': []}
