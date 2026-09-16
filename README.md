@@ -1,5 +1,10 @@
 # Invoice field extraction with LayoutLMv3
 
+**Reviewing the submission? Start with [00_START_HERE.md](00_START_HERE.md)**
+for the archive map, three main examples, run command, and suggested code-reading
+order. [samples/README.md](samples/README.md) distinguishes final results from
+preserved historical failures. The seven required technical sections follow below.
+
 A command-line extractor for five invoice fields: issuer name, issuer address,
 invoice number, issue date, and grand total. Each detected value has one merged
 pixel-space box. Missing or unresolved fields stay `null`.
