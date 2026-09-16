@@ -151,6 +151,9 @@ included in the final audit.
 [Original JSON](samples/error_analysis/low_resolution_initial/half_resolution.json) ·
 [Original trace](samples/error_analysis/low_resolution_initial/half_resolution.trace.json)
 
+[Corrected JSON](samples/edge_cases/output/half_resolution.json) ·
+[Corrected image](samples/edge_cases/output/half_resolution.png)
+
 ### Remaining scope
 
 The main remaining weaknesses are OCR quality and unfamiliar issuer/address

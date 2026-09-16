@@ -50,7 +50,9 @@ def annotate(image: Image.Image, fields: dict, *, mode: str) -> Image.Image:
     for field, result, lines in blocks:
         color = COLORS[field] if result else '#6b7280'
         if result:
-            draw.rectangle(result['bbox'], outline=color, width=max(2, int(3*scale)))
+            # Keep outlines thin on small scans so they do not cover tiny glyphs.
+            draw.rectangle(result['bbox'], outline=color,
+                           width=max(1, int(3*min(scale, image.width/1000))))
         draw.rectangle((x, y+3, x+10*scale, y+13*scale), fill=color)
         draw.text((x+18*scale, y), field.replace('_', ' ').upper(), fill=color, font=body)
         y += line_height*1.3

@@ -6,6 +6,8 @@ The original evaluation batch used code `b39062ce619319fd15c67e74cc03ca68f4fa646
 The final submission audit subsequently added a bounded address-continuation
 repair for a low-resolution contact-label fragment. The original measurements
 below are retained; the final audit report records the updated code and results.
+See [FINAL_AUDIT.md](FINAL_AUDIT.md) for the final 20-case CPU run, added edge
+cases, 42 passing tests, and the remaining failures.
 The model adaptation is unchanged after its eight-invoice validation selection.
 All bundled invoices are synthetic. The company supplied no invoice dataset.
 

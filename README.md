@@ -56,6 +56,8 @@ ordinary dependency installation also supports the documented CPU command.
 
 Pinned direct dependencies are in `requirements.txt`. A full tested environment
 lock and the final verification results are recorded in `VALIDATION.md`.
+The final pre-submission checks and the reproducible 20-case audit command are
+documented in [FINAL_AUDIT.md](FINAL_AUDIT.md).
 
 ## 2. How to run inference
 
