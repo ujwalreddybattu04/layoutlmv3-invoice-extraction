@@ -1,0 +1,239 @@
+{
+  "extraction_source_sha256": "e91da11d39f02b72f910daf5ba0a3f204c52728255151cedfe2246b76017de2e",
+  "python": "3.12.12 (main, Dec  2 2025, 19:43:54) [MSC v.1944 64 bit (AMD64)]",
+  "device": "cpu",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "case_count": 20,
+  "cases": [
+    {
+      "name": "development_classic",
+      "group": "development",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 3.622,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "development_right_header",
+      "group": "development",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 4.012,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "development_ledger",
+      "group": "development",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 4.26,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "reviewed_layouts_sidebar",
+      "group": "reviewed_layouts",
+      "exact": 4,
+      "fields": 5,
+      "seconds": 2.032,
+      "mismatches": {
+        "company_address": {
+          "expected": "Building 9, 18 Station Road\nLeeds LS1 2AB",
+          "actual": "Building a 9, 18 Station. Road\nLeeds LS1 2AB"
+        }
+      },
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "reviewed_layouts_centered",
+      "group": "reviewed_layouts",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.04,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "stress_faint_total",
+      "group": "stress",
+      "exact": 4,
+      "fields": 5,
+      "seconds": 2.067,
+      "mismatches": {
+        "total": {
+          "expected": "INR 2,891.00",
+          "actual": null
+        }
+      },
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "stress_wrapped_vendor",
+      "group": "stress",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.173,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "stress_rupee_symbol",
+      "group": "stress",
+      "exact": 4,
+      "fields": 5,
+      "seconds": 2.004,
+      "mismatches": {
+        "total": {
+          "expected": "₹2,646.00",
+          "actual": null
+        }
+      },
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "stress_blank",
+      "group": "stress",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 0.345,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": false
+    },
+    {
+      "name": "stress_missing_total",
+      "group": "stress",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.978,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "jpeg_quality_65",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.968,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "grayscale",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.879,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "half_resolution",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.628,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "rgba",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.98,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "rotation_90",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.019,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "rotation_180",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.016,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "rotation_270",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.224,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "missing_invoice_number",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.893,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "missing_invoice_date",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 1.977,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    },
+    {
+      "name": "pdf_first_page",
+      "group": "new_variants",
+      "exact": 5,
+      "fields": 5,
+      "seconds": 2.114,
+      "mismatches": {},
+      "schema_and_box_bounds": "pass",
+      "model_executed": true
+    }
+  ],
+  "runtime_checks": [
+    "90-degree correction: exact values and original-pixel box mapping",
+    "180-degree correction: exact values and original-pixel box mapping",
+    "270-degree correction: exact values and original-pixel box mapping",
+    "Two-page PDF returns first-page invoice, not second-page content",
+    "750 words: 2 windows; every word predicted",
+    "Exact assignment CLI: exit 0; JSON fields match pipeline; annotated JPG exists",
+    "missing_input: clear error, expected exit code, no traceback",
+    "input_overwrite: clear error, expected exit code, no traceback",
+    "output_collision: clear error, expected exit code, no traceback",
+    "bad_pdf_dpi: clear error, expected exit code, no traceback",
+    "bad_output_type: clear error, expected exit code, no traceback",
+    "corrupt_input: clear error, expected exit code, no traceback"
+  ],
+  "scope": "Synthetic fixtures and transformed variants; reviewed layouts are not unseen evaluation."
+}

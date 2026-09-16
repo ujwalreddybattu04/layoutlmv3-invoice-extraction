@@ -1,0 +1,85 @@
+{
+  "meta": {
+    "input_file": "half_resolution.png",
+    "image_size": [
+      600,
+      800
+    ],
+    "ocr_engine": "tesseract-5.5.3.20260724",
+    "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+    "processing_time_sec": 1.628
+  },
+  "fields": {
+    "vendor_name": {
+      "value": "Northstar Analytics Pvt. Ltd.",
+      "bbox": [
+        39,
+        35,
+        294,
+        51
+      ],
+      "confidence": 0.9417,
+      "token_count": 4
+    },
+    "company_address": {
+      "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+      "bbox": [
+        38,
+        65,
+        239,
+        95
+      ],
+      "confidence": 0.9382,
+      "token_count": 7,
+      "line_boxes": [
+        [
+          38,
+          65,
+          147,
+          75
+        ],
+        [
+          39,
+          83,
+          239,
+          95
+        ]
+      ]
+    },
+    "invoice_number": {
+      "value": "NS-2026-01842",
+      "bbox": [
+        361,
+        154,
+        478,
+        165
+      ],
+      "confidence": 0.4204,
+      "token_count": 1
+    },
+    "invoice_date": {
+      "value": "15/08/2026",
+      "bbox": [
+        361,
+        204,
+        436,
+        215
+      ],
+      "confidence": 0.5309,
+      "token_count": 1,
+      "normalized": "2026-08-15"
+    },
+    "total": {
+      "value": "INR 2,891.00",
+      "bbox": [
+        459,
+        613,
+        555,
+        625
+      ],
+      "confidence": 0.9543,
+      "token_count": 2,
+      "currency": "INR"
+    }
+  }
+}
