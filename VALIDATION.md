@@ -60,6 +60,13 @@ metric from end-to-end field exact match. It is reported separately in
   PyMuPDF **1.27.2**, and Tesseract **5.5.3.20260724** with English language data.
 - Direct dependency installation succeeded in the fresh environment. The complete
   resolved CPU environment is recorded in `requirements-lock.txt`.
+- A second fresh `python -m venv` environment was installed with standard pip
+  from locally cached wheels after a network download timed out. Cached package
+  contents were checked against their original wheel RECORD hashes before use.
+  `pip check` reported no broken requirements, all 39 tests passed from an
+  extracted submission ZIP, and the basic CLI extracted all five classic fields.
+  Its values, boxes, and confidences exactly matched the packaged example.
+  Model weights were reused from the verified local cache.
 - CPU CLI inference succeeded with the default checkpoint identity, bundled
   adaptation, verified local Hugging Face cache, and `--local-files-only`. All
   five classic fields were found. See `samples/runtime/default_cpu.json`.
@@ -86,6 +93,10 @@ metric from end-to-end field exact match. It is reported separately in
    handling check, not an invoice extraction accuracy case.
 6. Annotated development outputs were visually inspected for readable labels,
    one primary box per field, distinct colors, and no legend text over the invoice.
+7. The submission archive passed ZIP integrity checks. Its extracted copy passed
+   the deliverables checker, including schema and bounds checks on 33 result JSON
+   files. The archive excludes environments and base weights; no asset exceeds
+   100 MB.
 
 Machine-readable long-input/blank/rotation evidence is in
 `samples/runtime/runtime_checks.json`. The schema and bounds checker is
