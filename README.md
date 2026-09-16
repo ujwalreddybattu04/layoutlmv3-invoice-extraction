@@ -215,6 +215,12 @@ candidate. The maximum gap is **1.8 text heights**, with left-edge tolerance of
 
 ### 5.3 Explicit heuristic candidates
 
+Address continuation also checks nearby contact evidence across segment breaks.
+If a continuation fragment has no postal evidence and a contact segment starts
+within four times the larger segment text height on the same row, continuation
+stops. This handles damaged OCR labels separated from their email address without
+blocking explicit postal lines or distant contact columns.
+
 Hybrid mode also looks for field keys such as `Invoice Number`, `Issue Date`,
 `Grand Total`, and `Supplier`. Longer key matches take precedence. Negative keys
 such as `Sub Total`, `Balance Due`, `Tax`, and `Due Date` mask overlapping positive

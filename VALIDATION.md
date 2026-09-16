@@ -2,7 +2,10 @@
 
 ## Scope and measurements
 
-The final extraction code was frozen at `b39062ce619319fd15c67e74cc03ca68f4fa6461`.
+The original evaluation batch used code `b39062ce619319fd15c67e74cc03ca68f4fa6461`.
+The final submission audit subsequently added a bounded address-continuation
+repair for a low-resolution contact-label fragment. The original measurements
+below are retained; the final audit report records the updated code and results.
 The model adaptation is unchanged after its eight-invoice validation selection.
 All bundled invoices are synthetic. The company supplied no invoice dataset.
 
@@ -79,7 +82,8 @@ metric from end-to-end field exact match. It is reported separately in
 
 ### Checks actually run
 
-1. **39 unit/regression tests pass** in the isolated Python 3.12 environment.
+1. **42 unit/regression tests pass** in the isolated Python 3.12 environment
+   after adding three low-resolution contact-boundary regression checks.
    They cover grouping, fused/split tokens, multi-line values, negative keys,
    missing fields, confidence, conflicting candidates, character boxes, date
    ambiguity, box normalization, inverse rotation, and CLI path guards.

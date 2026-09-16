@@ -1,0 +1,4213 @@
+{
+  "thresholds": {
+    "model_seed": 0.5,
+    "ocr_word_floor": 0.15,
+    "ocr_field_floor": 0.35,
+    "minimum_rank": 0.68
+  },
+  "selected": {
+    "invoice_number": {
+      "decision": "selected",
+      "source": "heuristic",
+      "rank": 0.8991,
+      "model_score": 0.0127,
+      "anchor": "Invoice Number",
+      "word_ids": [
+        16
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    "invoice_date": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.9155,
+      "model_score": 0.5607,
+      "anchor": "Invoice Date",
+      "word_ids": [
+        19
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    "total": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.993,
+      "model_score": 0.9893,
+      "anchor": "Grand Total",
+      "word_ids": [
+        60,
+        61
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    "vendor_name": {
+      "decision": "selected",
+      "source": "model",
+      "rank": 0.9811,
+      "model_score": 0.9861,
+      "anchor": "",
+      "word_ids": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    "company_address": {
+      "decision": "selected",
+      "source": "hybrid",
+      "rank": 0.999,
+      "model_score": 0.9908,
+      "anchor": "",
+      "word_ids": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "approximate_box": false,
+      "reasons": [
+        "Postal lines directly below seller name",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    }
+  },
+  "candidates": [
+    {
+      "field": "vendor_name",
+      "value": "Northstar Analytics Pvt. Ltd.",
+      "bbox": [
+        39,
+        35,
+        294,
+        51
+      ],
+      "source": "model",
+      "rank": 0.9811,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "42 Crescent Road",
+      "bbox": [
+        38,
+        65,
+        147,
+        75
+      ],
+      "source": "model",
+      "rank": 0.99,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "Indore, Madhya Pradesh 452001",
+      "bbox": [
+        39,
+        83,
+        239,
+        95
+      ],
+      "source": "model",
+      "rank": 0.9767,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "Emai",
+      "bbox": [
+        38,
+        107,
+        59,
+        115
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: value syntax does not fit field"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "value": "\\9@example.test",
+      "bbox": [
+        97,
+        107,
+        178,
+        117
+      ],
+      "source": "model",
+      "rank": -1.0,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words",
+        "Rejected: value syntax does not fit field"
+      ]
+    },
+    {
+      "field": "invoice_date",
+      "value": "15/08/2026",
+      "bbox": [
+        361,
+        204,
+        436,
+        215
+      ],
+      "source": "model",
+      "rank": 0.6834,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "INR 2,891.00",
+      "bbox": [
+        459,
+        613,
+        555,
+        625
+      ],
+      "source": "model",
+      "rank": 0.86,
+      "anchor": "",
+      "reasons": [
+        "Adjacent model-labelled OCR words"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001",
+      "bbox": [
+        38,
+        65,
+        239,
+        95
+      ],
+      "source": "model",
+      "rank": 0.999,
+      "anchor": "",
+      "reasons": [
+        "Aligned multi-line model span",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    },
+    {
+      "field": "invoice_number",
+      "value": "NS-2026-01842",
+      "bbox": [
+        361,
+        154,
+        478,
+        165
+      ],
+      "source": "heuristic",
+      "rank": 0.8991,
+      "anchor": "Invoice Number",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "invoice_date",
+      "value": "15/08/2026",
+      "bbox": [
+        361,
+        204,
+        436,
+        215
+      ],
+      "source": "heuristic",
+      "rank": 0.9155,
+      "anchor": "Invoice Date",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "total",
+      "value": "INR 2,891.00",
+      "bbox": [
+        459,
+        613,
+        555,
+        625
+      ],
+      "source": "heuristic",
+      "rank": 0.993,
+      "anchor": "Grand Total",
+      "reasons": [
+        "OCR value linked to an explicit field key"
+      ]
+    },
+    {
+      "field": "vendor_name",
+      "value": "Northstar Analytics Pvt. Ltd.",
+      "bbox": [
+        39,
+        35,
+        294,
+        51
+      ],
+      "source": "heuristic",
+      "rank": 0.8596,
+      "anchor": "",
+      "reasons": [
+        "Header adjacent to a plausible postal address"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001\nEmai",
+      "bbox": [
+        38,
+        65,
+        239,
+        115
+      ],
+      "source": "heuristic",
+      "rank": 0.999,
+      "anchor": "",
+      "reasons": [
+        "Postal lines directly below seller name",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    },
+    {
+      "field": "company_address",
+      "value": "42 Crescent Road\nIndore, Madhya Pradesh 452001\nEmai",
+      "bbox": [
+        38,
+        65,
+        239,
+        115
+      ],
+      "source": "heuristic",
+      "rank": 0.999,
+      "anchor": "",
+      "reasons": [
+        "Postal lines directly below seller name",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment",
+        "Preferred complete geometric span over its shorter fragment"
+      ]
+    }
+  ],
+  "input_file": "samples/edge_cases/input/half_resolution.png",
+  "mode": "hybrid",
+  "rotation_clockwise": 0,
+  "working_image_size": [
+    600,
+    800
+  ],
+  "trace_box_space": "rotated working-image pixels",
+  "model": "Kapilydv6/layoutlmv3-invoice-parser@e464cfcadf6b766e105119c46e06f81ff1e4836a+invoice-adaptation-flat6",
+  "model_executed": true,
+  "model_windows": 1,
+  "words": [
+    {
+      "id": 0,
+      "text": "Northstar",
+      "bbox": [
+        39,
+        35,
+        125,
+        48
+      ],
+      "confidence": 0.96,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          39,
+          36,
+          50,
+          48
+        ],
+        [
+          52,
+          38,
+          61,
+          48
+        ],
+        [
+          57,
+          35,
+          65,
+          48
+        ],
+        [
+          63,
+          36,
+          77,
+          48
+        ],
+        [
+          79,
+          35,
+          88,
+          48
+        ],
+        [
+          85,
+          35,
+          93,
+          48
+        ],
+        [
+          90,
+          36,
+          106,
+          48
+        ],
+        [
+          103,
+          35,
+          111,
+          48
+        ],
+        [
+          107,
+          38,
+          125,
+          48
+        ]
+      ]
+    },
+    {
+      "id": 1,
+      "text": "Analytics",
+      "bbox": [
+        131,
+        35,
+        213,
+        51
+      ],
+      "confidence": 0.95,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          131,
+          36,
+          143,
+          48
+        ],
+        [
+          144,
+          38,
+          153,
+          48
+        ],
+        [
+          149,
+          35,
+          159,
+          51
+        ],
+        [
+          155,
+          38,
+          164,
+          48
+        ],
+        [
+          167,
+          35,
+          170,
+          48
+        ],
+        [
+          171,
+          36,
+          189,
+          51
+        ],
+        [
+          190,
+          35,
+          193,
+          48
+        ],
+        [
+          195,
+          38,
+          203,
+          48
+        ],
+        [
+          205,
+          38,
+          213,
+          48
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Pvt.",
+      "bbox": [
+        220,
+        36,
+        253,
+        48
+      ],
+      "confidence": 0.95,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          220,
+          36,
+          230,
+          48
+        ],
+        [
+          227,
+          36,
+          237,
+          48
+        ],
+        [
+          231,
+          36,
+          249,
+          48
+        ],
+        [
+          250,
+          44,
+          253,
+          48
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "text": "Ltd.",
+      "bbox": [
+        261,
+        35,
+        294,
+        48
+      ],
+      "confidence": 0.96,
+      "line": "line_1_1",
+      "char_boxes": [
+        [
+          261,
+          36,
+          270,
+          48
+        ],
+        [
+          270,
+          36,
+          278,
+          48
+        ],
+        [
+          278,
+          35,
+          288,
+          48
+        ],
+        [
+          290,
+          44,
+          294,
+          48
+        ]
+      ]
+    },
+    {
+      "id": 13,
+      "text": "INVOICE",
+      "bbox": [
+        407,
+        36,
+        501,
+        52
+      ],
+      "confidence": 0.96,
+      "line": "line_1_6",
+      "char_boxes": [
+        [
+          407,
+          36,
+          411,
+          52
+        ],
+        [
+          415,
+          36,
+          429,
+          52
+        ],
+        [
+          431,
+          36,
+          446,
+          52
+        ],
+        [
+          448,
+          36,
+          464,
+          52
+        ],
+        [
+          467,
+          36,
+          471,
+          52
+        ],
+        [
+          474,
+          36,
+          487,
+          52
+        ],
+        [
+          490,
+          36,
+          501,
+          52
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "text": "42",
+      "bbox": [
+        38,
+        65,
+        52,
+        75
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          38,
+          65,
+          45,
+          75
+        ],
+        [
+          46,
+          65,
+          52,
+          75
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Crescent",
+      "bbox": [
+        58,
+        65,
+        112,
+        75
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          58,
+          65,
+          66,
+          75
+        ],
+        [
+          67,
+          67,
+          71,
+          75
+        ],
+        [
+          72,
+          67,
+          78,
+          75
+        ],
+        [
+          79,
+          67,
+          85,
+          75
+        ],
+        [
+          86,
+          67,
+          91,
+          75
+        ],
+        [
+          93,
+          67,
+          99,
+          75
+        ],
+        [
+          100,
+          67,
+          107,
+          75
+        ],
+        [
+          108,
+          65,
+          112,
+          75
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "text": "Road",
+      "bbox": [
+        118,
+        65,
+        147,
+        75
+      ],
+      "confidence": 0.96,
+      "line": "line_1_2",
+      "char_boxes": [
+        [
+          118,
+          65,
+          125,
+          75
+        ],
+        [
+          126,
+          67,
+          132,
+          75
+        ],
+        [
+          133,
+          67,
+          139,
+          75
+        ],
+        [
+          141,
+          65,
+          147,
+          75
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "text": "Indore,",
+      "bbox": [
+        39,
+        83,
+        80,
+        94
+      ],
+      "confidence": 0.96,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          39,
+          83,
+          40,
+          93
+        ],
+        [
+          42,
+          85,
+          48,
+          93
+        ],
+        [
+          50,
+          83,
+          56,
+          93
+        ],
+        [
+          58,
+          85,
+          64,
+          93
+        ],
+        [
+          63,
+          83,
+          70,
+          94
+        ],
+        [
+          65,
+          85,
+          77,
+          93
+        ],
+        [
+          78,
+          91,
+          80,
+          94
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "text": "Madhya",
+      "bbox": [
+        86,
+        83,
+        134,
+        95
+      ],
+      "confidence": 0.96,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          86,
+          83,
+          95,
+          93
+        ],
+        [
+          97,
+          85,
+          103,
+          93
+        ],
+        [
+          104,
+          83,
+          111,
+          93
+        ],
+        [
+          112,
+          83,
+          119,
+          93
+        ],
+        [
+          120,
+          85,
+          126,
+          95
+        ],
+        [
+          128,
+          85,
+          134,
+          93
+        ]
+      ]
+    },
+    {
+      "id": 9,
+      "text": "Pradesh",
+      "bbox": [
+        140,
+        83,
+        188,
+        93
+      ],
+      "confidence": 0.95,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          140,
+          83,
+          146,
+          93
+        ],
+        [
+          147,
+          85,
+          151,
+          93
+        ],
+        [
+          152,
+          85,
+          158,
+          93
+        ],
+        [
+          159,
+          83,
+          166,
+          93
+        ],
+        [
+          167,
+          85,
+          174,
+          93
+        ],
+        [
+          175,
+          85,
+          180,
+          93
+        ],
+        [
+          181,
+          83,
+          188,
+          93
+        ]
+      ]
+    },
+    {
+      "id": 10,
+      "text": "452001",
+      "bbox": [
+        193,
+        83,
+        239,
+        93
+      ],
+      "confidence": 0.89,
+      "line": "line_1_3",
+      "char_boxes": [
+        [
+          193,
+          83,
+          200,
+          93
+        ],
+        [
+          201,
+          83,
+          208,
+          93
+        ],
+        [
+          209,
+          83,
+          215,
+          93
+        ],
+        [
+          217,
+          83,
+          224,
+          93
+        ],
+        [
+          225,
+          83,
+          232,
+          93
+        ],
+        [
+          234,
+          83,
+          239,
+          93
+        ]
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Emai",
+      "bbox": [
+        38,
+        107,
+        59,
+        115
+      ],
+      "confidence": 0.85,
+      "line": "line_1_4",
+      "char_boxes": [
+        [
+          38,
+          107,
+          43,
+          115
+        ],
+        [
+          45,
+          109,
+          53,
+          115
+        ],
+        [
+          54,
+          109,
+          59,
+          115
+        ],
+        [
+          57,
+          107,
+          59,
+          115
+        ]
+      ]
+    },
+    {
+      "id": 12,
+      "text": "\\9@example.test",
+      "bbox": [
+        97,
+        107,
+        178,
+        117
+      ],
+      "confidence": 0.24,
+      "line": "line_1_5",
+      "char_boxes": [
+        [
+          97,
+          107,
+          98,
+          117
+        ],
+        [
+          97,
+          109,
+          103,
+          117
+        ],
+        [
+          104,
+          107,
+          113,
+          117
+        ],
+        [
+          114,
+          109,
+          119,
+          115
+        ],
+        [
+          120,
+          109,
+          125,
+          115
+        ],
+        [
+          126,
+          109,
+          131,
+          115
+        ],
+        [
+          132,
+          109,
+          141,
+          115
+        ],
+        [
+          137,
+          107,
+          145,
+          117
+        ],
+        [
+          142,
+          107,
+          150,
+          117
+        ],
+        [
+          151,
+          109,
+          156,
+          115
+        ],
+        [
+          155,
+          107,
+          159,
+          117
+        ],
+        [
+          160,
+          108,
+          163,
+          115
+        ],
+        [
+          164,
+          109,
+          169,
+          115
+        ],
+        [
+          170,
+          109,
+          174,
+          115
+        ],
+        [
+          175,
+          108,
+          178,
+          115
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "text": "Invoice",
+      "bbox": [
+        361,
+        135,
+        401,
+        144
+      ],
+      "confidence": 0.95,
+      "line": "line_1_7",
+      "char_boxes": [
+        [
+          361,
+          135,
+          363,
+          144
+        ],
+        [
+          364,
+          137,
+          370,
+          144
+        ],
+        [
+          371,
+          137,
+          377,
+          144
+        ],
+        [
+          378,
+          137,
+          385,
+          144
+        ],
+        [
+          386,
+          135,
+          387,
+          144
+        ],
+        [
+          388,
+          137,
+          394,
+          144
+        ],
+        [
+          395,
+          137,
+          401,
+          144
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "text": "Number:",
+      "bbox": [
+        406,
+        135,
+        454,
+        144
+      ],
+      "confidence": 0.94,
+      "line": "line_1_7",
+      "char_boxes": [
+        [
+          406,
+          135,
+          413,
+          144
+        ],
+        [
+          414,
+          137,
+          420,
+          144
+        ],
+        [
+          422,
+          137,
+          431,
+          144
+        ],
+        [
+          431,
+          135,
+          437,
+          144
+        ],
+        [
+          433,
+          135,
+          439,
+          144
+        ],
+        [
+          440,
+          137,
+          451,
+          144
+        ],
+        [
+          452,
+          142,
+          454,
+          144
+        ]
+      ]
+    },
+    {
+      "id": 16,
+      "text": "NS-2026-01842",
+      "bbox": [
+        361,
+        154,
+        478,
+        165
+      ],
+      "confidence": 0.92,
+      "line": "line_1_8",
+      "char_boxes": [
+        [
+          361,
+          154,
+          371,
+          165
+        ],
+        [
+          372,
+          154,
+          381,
+          165
+        ],
+        [
+          382,
+          159,
+          387,
+          162
+        ],
+        [
+          388,
+          154,
+          396,
+          165
+        ],
+        [
+          398,
+          154,
+          406,
+          165
+        ],
+        [
+          407,
+          154,
+          415,
+          165
+        ],
+        [
+          417,
+          154,
+          425,
+          165
+        ],
+        [
+          426,
+          159,
+          431,
+          162
+        ],
+        [
+          432,
+          154,
+          441,
+          165
+        ],
+        [
+          442,
+          154,
+          450,
+          165
+        ],
+        [
+          451,
+          154,
+          459,
+          165
+        ],
+        [
+          460,
+          154,
+          469,
+          165
+        ],
+        [
+          470,
+          154,
+          478,
+          165
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "text": "Invoice",
+      "bbox": [
+        361,
+        185,
+        401,
+        194
+      ],
+      "confidence": 0.96,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          361,
+          185,
+          363,
+          194
+        ],
+        [
+          364,
+          187,
+          370,
+          194
+        ],
+        [
+          371,
+          187,
+          377,
+          194
+        ],
+        [
+          378,
+          187,
+          385,
+          194
+        ],
+        [
+          386,
+          185,
+          387,
+          194
+        ],
+        [
+          388,
+          187,
+          394,
+          194
+        ],
+        [
+          395,
+          187,
+          401,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 18,
+      "text": "Date:",
+      "bbox": [
+        406,
+        185,
+        432,
+        194
+      ],
+      "confidence": 0.96,
+      "line": "line_1_9",
+      "char_boxes": [
+        [
+          406,
+          185,
+          413,
+          194
+        ],
+        [
+          413,
+          185,
+          418,
+          194
+        ],
+        [
+          414,
+          185,
+          425,
+          194
+        ],
+        [
+          424,
+          185,
+          430,
+          194
+        ],
+        [
+          426,
+          187,
+          432,
+          194
+        ]
+      ]
+    },
+    {
+      "id": 19,
+      "text": "15/08/2026",
+      "bbox": [
+        361,
+        204,
+        436,
+        215
+      ],
+      "confidence": 0.7,
+      "line": "line_1_10",
+      "char_boxes": [
+        [
+          361,
+          204,
+          367,
+          214
+        ],
+        [
+          370,
+          204,
+          376,
+          214
+        ],
+        [
+          377,
+          204,
+          381,
+          215
+        ],
+        [
+          382,
+          204,
+          389,
+          214
+        ],
+        [
+          391,
+          204,
+          398,
+          214
+        ],
+        [
+          398,
+          204,
+          403,
+          215
+        ],
+        [
+          404,
+          204,
+          410,
+          214
+        ],
+        [
+          412,
+          204,
+          419,
+          214
+        ],
+        [
+          421,
+          204,
+          427,
+          214
+        ],
+        [
+          429,
+          204,
+          436,
+          214
+        ]
+      ]
+    },
+    {
+      "id": 20,
+      "text": "BILL",
+      "bbox": [
+        38,
+        257,
+        64,
+        266
+      ],
+      "confidence": 0.83,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          38,
+          257,
+          45,
+          266
+        ],
+        [
+          47,
+          257,
+          49,
+          266
+        ],
+        [
+          51,
+          257,
+          57,
+          266
+        ],
+        [
+          58,
+          257,
+          64,
+          266
+        ]
+      ]
+    },
+    {
+      "id": 21,
+      "text": "TO",
+      "bbox": [
+        68,
+        257,
+        84,
+        266
+      ],
+      "confidence": 0.7,
+      "line": "line_1_11",
+      "char_boxes": [
+        [
+          68,
+          257,
+          75,
+          266
+        ],
+        [
+          76,
+          257,
+          84,
+          266
+        ]
+      ]
+    },
+    {
+      "id": 22,
+      "text": "Mistral",
+      "bbox": [
+        39,
+        277,
+        80,
+        288
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          39,
+          278,
+          48,
+          288
+        ],
+        [
+          49,
+          277,
+          51,
+          288
+        ],
+        [
+          53,
+          280,
+          58,
+          288
+        ],
+        [
+          59,
+          278,
+          64,
+          288
+        ],
+        [
+          65,
+          280,
+          69,
+          288
+        ],
+        [
+          70,
+          280,
+          77,
+          288
+        ],
+        [
+          78,
+          277,
+          80,
+          288
+        ]
+      ]
+    },
+    {
+      "id": 23,
+      "text": "Retail",
+      "bbox": [
+        86,
+        277,
+        121,
+        288
+      ],
+      "confidence": 0.96,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          86,
+          278,
+          93,
+          288
+        ],
+        [
+          93,
+          277,
+          98,
+          288
+        ],
+        [
+          95,
+          278,
+          107,
+          288
+        ],
+        [
+          108,
+          280,
+          114,
+          288
+        ],
+        [
+          112,
+          277,
+          117,
+          288
+        ],
+        [
+          116,
+          277,
+          121,
+          288
+        ]
+      ]
+    },
+    {
+      "id": 24,
+      "text": "Limited",
+      "bbox": [
+        127,
+        277,
+        173,
+        288
+      ],
+      "confidence": 0.92,
+      "line": "line_1_12",
+      "char_boxes": [
+        [
+          127,
+          278,
+          133,
+          288
+        ],
+        [
+          134,
+          277,
+          136,
+          288
+        ],
+        [
+          137,
+          280,
+          148,
+          288
+        ],
+        [
+          150,
+          277,
+          152,
+          288
+        ],
+        [
+          153,
+          278,
+          157,
+          288
+        ],
+        [
+          158,
+          280,
+          165,
+          288
+        ],
+        [
+          166,
+          278,
+          173,
+          288
+        ]
+      ]
+    },
+    {
+      "id": 30,
+      "text": "Due",
+      "bbox": [
+        361,
+        277,
+        382,
+        286
+      ],
+      "confidence": 0.96,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          361,
+          277,
+          368,
+          286
+        ],
+        [
+          369,
+          280,
+          375,
+          286
+        ],
+        [
+          376,
+          279,
+          382,
+          286
+        ]
+      ]
+    },
+    {
+      "id": 31,
+      "text": "Date:",
+      "bbox": [
+        387,
+        277,
+        412,
+        286
+      ],
+      "confidence": 0.96,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          387,
+          277,
+          394,
+          286
+        ],
+        [
+          395,
+          279,
+          400,
+          286
+        ],
+        [
+          399,
+          277,
+          404,
+          286
+        ],
+        [
+          401,
+          278,
+          412,
+          286
+        ],
+        [
+          410,
+          277,
+          412,
+          286
+        ]
+      ]
+    },
+    {
+      "id": 32,
+      "text": "30/08/2026",
+      "bbox": [
+        420,
+        277,
+        482,
+        287
+      ],
+      "confidence": 0.95,
+      "line": "line_1_14",
+      "char_boxes": [
+        [
+          420,
+          277,
+          426,
+          286
+        ],
+        [
+          427,
+          277,
+          433,
+          286
+        ],
+        [
+          434,
+          277,
+          437,
+          286
+        ],
+        [
+          438,
+          277,
+          443,
+          286
+        ],
+        [
+          445,
+          277,
+          450,
+          286
+        ],
+        [
+          450,
+          277,
+          455,
+          287
+        ],
+        [
+          451,
+          277,
+          461,
+          287
+        ],
+        [
+          462,
+          277,
+          468,
+          286
+        ],
+        [
+          469,
+          277,
+          475,
+          286
+        ],
+        [
+          476,
+          277,
+          482,
+          286
+        ]
+      ]
+    },
+    {
+      "id": 25,
+      "text": "8",
+      "bbox": [
+        38,
+        298,
+        44,
+        307
+      ],
+      "confidence": 0.93,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          38,
+          298,
+          44,
+          307
+        ]
+      ]
+    },
+    {
+      "id": 26,
+      "text": "Lake",
+      "bbox": [
+        49,
+        298,
+        75,
+        307
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          49,
+          298,
+          55,
+          307
+        ],
+        [
+          49,
+          298,
+          61,
+          307
+        ],
+        [
+          63,
+          298,
+          68,
+          307
+        ],
+        [
+          69,
+          300,
+          75,
+          307
+        ]
+      ]
+    },
+    {
+      "id": 27,
+      "text": "Avenue,",
+      "bbox": [
+        79,
+        298,
+        126,
+        308
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          79,
+          298,
+          87,
+          307
+        ],
+        [
+          87,
+          300,
+          93,
+          307
+        ],
+        [
+          94,
+          300,
+          101,
+          307
+        ],
+        [
+          102,
+          300,
+          108,
+          307
+        ],
+        [
+          109,
+          300,
+          115,
+          307
+        ],
+        [
+          116,
+          300,
+          123,
+          307
+        ],
+        [
+          124,
+          305,
+          126,
+          308
+        ]
+      ]
+    },
+    {
+      "id": 28,
+      "text": "Pune",
+      "bbox": [
+        131,
+        298,
+        159,
+        307
+      ],
+      "confidence": 0.96,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          131,
+          298,
+          137,
+          307
+        ],
+        [
+          138,
+          300,
+          143,
+          307
+        ],
+        [
+          145,
+          300,
+          151,
+          307
+        ],
+        [
+          152,
+          300,
+          159,
+          307
+        ]
+      ]
+    },
+    {
+      "id": 29,
+      "text": "411001",
+      "bbox": [
+        163,
+        298,
+        206,
+        307
+      ],
+      "confidence": 0.9,
+      "line": "line_1_13",
+      "char_boxes": [
+        [
+          163,
+          298,
+          169,
+          307
+        ],
+        [
+          171,
+          298,
+          176,
+          307
+        ],
+        [
+          179,
+          298,
+          184,
+          307
+        ],
+        [
+          186,
+          298,
+          192,
+          307
+        ],
+        [
+          193,
+          298,
+          199,
+          307
+        ],
+        [
+          201,
+          298,
+          206,
+          307
+        ]
+      ]
+    },
+    {
+      "id": 33,
+      "text": "SCRIPTION",
+      "bbox": [
+        60,
+        356,
+        119,
+        364
+      ],
+      "confidence": 0.0,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          60,
+          357,
+          66,
+          364
+        ],
+        [
+          67,
+          357,
+          73,
+          364
+        ],
+        [
+          75,
+          356,
+          81,
+          364
+        ],
+        [
+          82,
+          357,
+          84,
+          364
+        ],
+        [
+          86,
+          357,
+          92,
+          364
+        ],
+        [
+          93,
+          356,
+          99,
+          364
+        ],
+        [
+          100,
+          357,
+          102,
+          364
+        ],
+        [
+          104,
+          357,
+          111,
+          364
+        ],
+        [
+          112,
+          357,
+          119,
+          364
+        ]
+      ]
+    },
+    {
+      "id": 34,
+      "text": "ary",
+      "bbox": [
+        408,
+        357,
+        430,
+        365
+      ],
+      "confidence": 0.33,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          408,
+          357,
+          415,
+          365
+        ],
+        [
+          418,
+          357,
+          421,
+          364
+        ],
+        [
+          424,
+          357,
+          430,
+          364
+        ]
+      ]
+    },
+    {
+      "id": 35,
+      "text": "‘AMOU",
+      "bbox": [
+        473,
+        357,
+        504,
+        364
+      ],
+      "confidence": 0.53,
+      "line": "line_1_15",
+      "char_boxes": [
+        [
+          473,
+          357,
+          474,
+          364
+        ],
+        [
+          473,
+          357,
+          480,
+          364
+        ],
+        [
+          480,
+          357,
+          488,
+          364
+        ],
+        [
+          491,
+          357,
+          498,
+          364
+        ],
+        [
+          499,
+          357,
+          504,
+          364
+        ]
+      ]
+    },
+    {
+      "id": 36,
+      "text": "Implementation",
+      "bbox": [
+        45,
+        390,
+        134,
+        401
+      ],
+      "confidence": 0.85,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          45,
+          390,
+          47,
+          399
+        ],
+        [
+          48,
+          392,
+          58,
+          399
+        ],
+        [
+          59,
+          392,
+          65,
+          401
+        ],
+        [
+          67,
+          390,
+          68,
+          399
+        ],
+        [
+          69,
+          392,
+          76,
+          399
+        ],
+        [
+          77,
+          392,
+          86,
+          399
+        ],
+        [
+          88,
+          392,
+          94,
+          399
+        ],
+        [
+          95,
+          392,
+          101,
+          399
+        ],
+        [
+          99,
+          390,
+          104,
+          401
+        ],
+        [
+          102,
+          390,
+          112,
+          399
+        ],
+        [
+          111,
+          390,
+          116,
+          401
+        ],
+        [
+          113,
+          390,
+          120,
+          399
+        ],
+        [
+          121,
+          392,
+          127,
+          399
+        ],
+        [
+          128,
+          392,
+          134,
+          399
+        ]
+      ]
+    },
+    {
+      "id": 37,
+      "text": "services",
+      "bbox": [
+        139,
+        390,
+        185,
+        399
+      ],
+      "confidence": 0.95,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          139,
+          392,
+          144,
+          399
+        ],
+        [
+          145,
+          392,
+          151,
+          399
+        ],
+        [
+          150,
+          390,
+          156,
+          399
+        ],
+        [
+          152,
+          392,
+          162,
+          399
+        ],
+        [
+          164,
+          390,
+          165,
+          399
+        ],
+        [
+          166,
+          392,
+          172,
+          399
+        ],
+        [
+          173,
+          392,
+          179,
+          399
+        ],
+        [
+          180,
+          392,
+          185,
+          399
+        ]
+      ]
+    },
+    {
+      "id": 38,
+      "text": "1",
+      "bbox": [
+        419,
+        390,
+        424,
+        399
+      ],
+      "confidence": 0.75,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          419,
+          390,
+          424,
+          399
+        ]
+      ]
+    },
+    {
+      "id": 39,
+      "text": "2,000.00",
+      "bbox": [
+        473,
+        390,
+        524,
+        400
+      ],
+      "confidence": 0.92,
+      "line": "line_1_16",
+      "char_boxes": [
+        [
+          473,
+          390,
+          479,
+          399
+        ],
+        [
+          481,
+          397,
+          483,
+          400
+        ],
+        [
+          484,
+          390,
+          490,
+          399
+        ],
+        [
+          492,
+          390,
+          498,
+          399
+        ],
+        [
+          499,
+          390,
+          505,
+          399
+        ],
+        [
+          507,
+          397,
+          509,
+          399
+        ],
+        [
+          510,
+          390,
+          516,
+          399
+        ],
+        [
+          518,
+          390,
+          524,
+          399
+        ]
+      ]
+    },
+    {
+      "id": 40,
+      "text": "Support",
+      "bbox": [
+        45,
+        421,
+        90,
+        432
+      ],
+      "confidence": 0.95,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          45,
+          421,
+          51,
+          430
+        ],
+        [
+          52,
+          423,
+          58,
+          430
+        ],
+        [
+          60,
+          423,
+          66,
+          432
+        ],
+        [
+          67,
+          423,
+          73,
+          432
+        ],
+        [
+          74,
+          423,
+          81,
+          430
+        ],
+        [
+          78,
+          421,
+          83,
+          432
+        ],
+        [
+          82,
+          421,
+          90,
+          430
+        ]
+      ]
+    },
+    {
+      "id": 41,
+      "text": "and",
+      "bbox": [
+        94,
+        421,
+        114,
+        430
+      ],
+      "confidence": 0.96,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          94,
+          423,
+          100,
+          430
+        ],
+        [
+          101,
+          423,
+          107,
+          430
+        ],
+        [
+          108,
+          421,
+          114,
+          430
+        ]
+      ]
+    },
+    {
+      "id": 42,
+      "text": "maintenance",
+      "bbox": [
+        120,
+        421,
+        194,
+        430
+      ],
+      "confidence": 0.96,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          120,
+          423,
+          129,
+          430
+        ],
+        [
+          131,
+          423,
+          136,
+          430
+        ],
+        [
+          138,
+          421,
+          139,
+          430
+        ],
+        [
+          141,
+          423,
+          147,
+          430
+        ],
+        [
+          148,
+          421,
+          152,
+          430
+        ],
+        [
+          152,
+          423,
+          159,
+          430
+        ],
+        [
+          160,
+          423,
+          166,
+          430
+        ],
+        [
+          167,
+          423,
+          173,
+          430
+        ],
+        [
+          174,
+          423,
+          180,
+          430
+        ],
+        [
+          181,
+          423,
+          187,
+          430
+        ],
+        [
+          188,
+          423,
+          194,
+          430
+        ]
+      ]
+    },
+    {
+      "id": 43,
+      "text": "1",
+      "bbox": [
+        419,
+        421,
+        424,
+        430
+      ],
+      "confidence": 0.82,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          419,
+          421,
+          424,
+          430
+        ]
+      ]
+    },
+    {
+      "id": 44,
+      "text": "450.00",
+      "bbox": [
+        473,
+        421,
+        513,
+        430
+      ],
+      "confidence": 0.89,
+      "line": "line_1_17",
+      "char_boxes": [
+        [
+          473,
+          421,
+          479,
+          430
+        ],
+        [
+          481,
+          421,
+          487,
+          430
+        ],
+        [
+          488,
+          421,
+          494,
+          430
+        ],
+        [
+          496,
+          428,
+          498,
+          430
+        ],
+        [
+          499,
+          421,
+          505,
+          430
+        ],
+        [
+          507,
+          421,
+          513,
+          430
+        ]
+      ]
+    },
+    {
+      "id": 45,
+      "text": "Subtotal:",
+      "bbox": [
+        361,
+        509,
+        412,
+        537
+      ],
+      "confidence": 0.94,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          361,
+          518,
+          367,
+          527
+        ],
+        [
+          369,
+          520,
+          375,
+          527
+        ],
+        [
+          373,
+          509,
+          381,
+          537
+        ],
+        [
+          377,
+          517,
+          389,
+          527
+        ],
+        [
+          387,
+          509,
+          392,
+          537
+        ],
+        [
+          389,
+          520,
+          396,
+          527
+        ],
+        [
+          397,
+          518,
+          401,
+          527
+        ],
+        [
+          402,
+          520,
+          408,
+          527
+        ],
+        [
+          410,
+          517,
+          412,
+          527
+        ]
+      ]
+    },
+    {
+      "id": 46,
+      "text": "2,450.00",
+      "bbox": [
+        483,
+        518,
+        538,
+        528
+      ],
+      "confidence": 0.87,
+      "line": "line_1_18",
+      "char_boxes": [
+        [
+          483,
+          518,
+          489,
+          527
+        ],
+        [
+          491,
+          525,
+          493,
+          528
+        ],
+        [
+          495,
+          518,
+          502,
+          527
+        ],
+        [
+          504,
+          518,
+          510,
+          527
+        ],
+        [
+          511,
+          518,
+          518,
+          527
+        ],
+        [
+          516,
+          518,
+          524,
+          528
+        ],
+        [
+          523,
+          518,
+          530,
+          527
+        ],
+        [
+          531,
+          518,
+          538,
+          527
+        ]
+      ]
+    },
+    {
+      "id": 47,
+      "text": "Tax:",
+      "bbox": [
+        360,
+        533,
+        382,
+        561
+      ],
+      "confidence": 0.94,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          360,
+          543,
+          368,
+          552
+        ],
+        [
+          368,
+          545,
+          374,
+          552
+        ],
+        [
+          372,
+          533,
+          380,
+          561
+        ],
+        [
+          376,
+          545,
+          382,
+          552
+        ]
+      ]
+    },
+    {
+      "id": 48,
+      "text": "441.00",
+      "bbox": [
+        483,
+        543,
+        526,
+        552
+      ],
+      "confidence": 0.86,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          483,
+          543,
+          490,
+          552
+        ],
+        [
+          491,
+          543,
+          498,
+          552
+        ],
+        [
+          500,
+          543,
+          505,
+          552
+        ],
+        [
+          504,
+          543,
+          512,
+          552
+        ],
+        [
+          511,
+          543,
+          518,
+          552
+        ],
+        [
+          519,
+          543,
+          526,
+          552
+        ]
+      ]
+    },
+    {
+      "id": 58,
+      "text": "Grand",
+      "bbox": [
+        360,
+        582,
+        404,
+        593
+      ],
+      "confidence": 0.96,
+      "line": "line_1_21",
+      "char_boxes": [
+        [
+          360,
+          583,
+          370,
+          593
+        ],
+        [
+          367,
+          582,
+          375,
+          593
+        ],
+        [
+          371,
+          585,
+          385,
+          593
+        ],
+        [
+          387,
+          585,
+          394,
+          593
+        ],
+        [
+          396,
+          582,
+          404,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 59,
+      "text": "Total:",
+      "bbox": [
+        409,
+        582,
+        451,
+        593
+      ],
+      "confidence": 0.96,
+      "line": "line_1_21",
+      "char_boxes": [
+        [
+          409,
+          583,
+          418,
+          593
+        ],
+        [
+          414,
+          582,
+          422,
+          593
+        ],
+        [
+          419,
+          585,
+          427,
+          593
+        ],
+        [
+          428,
+          583,
+          434,
+          593
+        ],
+        [
+          434,
+          585,
+          441,
+          593
+        ],
+        [
+          443,
+          582,
+          451,
+          593
+        ]
+      ]
+    },
+    {
+      "id": 60,
+      "text": "INR",
+      "bbox": [
+        459,
+        613,
+        484,
+        623
+      ],
+      "confidence": 0.96,
+      "line": "line_1_22",
+      "char_boxes": [
+        [
+          459,
+          613,
+          461,
+          623
+        ],
+        [
+          464,
+          613,
+          473,
+          623
+        ],
+        [
+          475,
+          613,
+          484,
+          623
+        ]
+      ]
+    },
+    {
+      "id": 61,
+      "text": "2,891.00",
+      "bbox": [
+        490,
+        613,
+        555,
+        625
+      ],
+      "confidence": 0.96,
+      "line": "line_1_22",
+      "char_boxes": [
+        [
+          490,
+          613,
+          497,
+          623
+        ],
+        [
+          499,
+          620,
+          502,
+          625
+        ],
+        [
+          504,
+          613,
+          512,
+          623
+        ],
+        [
+          514,
+          613,
+          522,
+          623
+        ],
+        [
+          524,
+          613,
+          531,
+          623
+        ],
+        [
+          533,
+          620,
+          536,
+          623
+        ],
+        [
+          538,
+          613,
+          546,
+          623
+        ],
+        [
+          547,
+          613,
+          555,
+          623
+        ]
+      ]
+    },
+    {
+      "id": 49,
+      "text": "Payment",
+      "bbox": [
+        38,
+        712,
+        81,
+        722
+      ],
+      "confidence": 0.9,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          38,
+          712,
+          43,
+          719
+        ],
+        [
+          44,
+          714,
+          49,
+          720
+        ],
+        [
+          50,
+          714,
+          55,
+          722
+        ],
+        [
+          55,
+          712,
+          62,
+          722
+        ],
+        [
+          56,
+          714,
+          71,
+          720
+        ],
+        [
+          72,
+          714,
+          77,
+          720
+        ],
+        [
+          78,
+          713,
+          81,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 50,
+      "text": "terms:",
+      "bbox": [
+        85,
+        713,
+        113,
+        720
+      ],
+      "confidence": 0.94,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          85,
+          713,
+          88,
+          720
+        ],
+        [
+          89,
+          714,
+          94,
+          720
+        ],
+        [
+          94,
+          713,
+          100,
+          720
+        ],
+        [
+          95,
+          714,
+          113,
+          720
+        ],
+        [
+          106,
+          713,
+          111,
+          720
+        ],
+        [
+          111,
+          713,
+          113,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 51,
+      "text": "15",
+      "bbox": [
+        121,
+        712,
+        132,
+        720
+      ],
+      "confidence": 0.94,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          121,
+          712,
+          125,
+          720
+        ],
+        [
+          127,
+          712,
+          132,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 52,
+      "text": "days.",
+      "bbox": [
+        136,
+        712,
+        159,
+        722
+      ],
+      "confidence": 0.94,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          136,
+          712,
+          141,
+          720
+        ],
+        [
+          142,
+          714,
+          147,
+          720
+        ],
+        [
+          148,
+          712,
+          153,
+          722
+        ],
+        [
+          148,
+          714,
+          159,
+          722
+        ],
+        [
+          157,
+          712,
+          159,
+          722
+        ]
+      ]
+    },
+    {
+      "id": 53,
+      "text": "Thank",
+      "bbox": [
+        165,
+        712,
+        195,
+        720
+      ],
+      "confidence": 0.96,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          165,
+          712,
+          171,
+          719
+        ],
+        [
+          172,
+          712,
+          177,
+          720
+        ],
+        [
+          178,
+          714,
+          183,
+          720
+        ],
+        [
+          184,
+          714,
+          189,
+          720
+        ],
+        [
+          191,
+          712,
+          195,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 54,
+      "text": "you",
+      "bbox": [
+        199,
+        714,
+        217,
+        722
+      ],
+      "confidence": 0.95,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          199,
+          714,
+          205,
+          722
+        ],
+        [
+          205,
+          714,
+          211,
+          720
+        ],
+        [
+          212,
+          714,
+          217,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 55,
+      "text": "for",
+      "bbox": [
+        221,
+        712,
+        234,
+        720
+      ],
+      "confidence": 0.95,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          221,
+          712,
+          224,
+          719
+        ],
+        [
+          225,
+          712,
+          228,
+          720
+        ],
+        [
+          224,
+          714,
+          234,
+          720
+        ]
+      ]
+    },
+    {
+      "id": 56,
+      "text": "your",
+      "bbox": [
+        239,
+        702,
+        258,
+        730
+      ],
+      "confidence": 0.96,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          239,
+          714,
+          243,
+          722
+        ],
+        [
+          243,
+          714,
+          249,
+          720
+        ],
+        [
+          250,
+          714,
+          255,
+          720
+        ],
+        [
+          253,
+          702,
+          258,
+          730
+        ]
+      ]
+    },
+    {
+      "id": 57,
+      "text": "business.",
+      "bbox": [
+        264,
+        702,
+        310,
+        730
+      ],
+      "confidence": 0.95,
+      "line": "line_1_19",
+      "char_boxes": [
+        [
+          264,
+          712,
+          268,
+          720
+        ],
+        [
+          270,
+          714,
+          275,
+          720
+        ],
+        [
+          274,
+          702,
+          279,
+          730
+        ],
+        [
+          276,
+          714,
+          283,
+          720
+        ],
+        [
+          284,
+          714,
+          289,
+          720
+        ],
+        [
+          288,
+          702,
+          296,
+          730
+        ],
+        [
+          290,
+          714,
+          301,
+          720
+        ],
+        [
+          301,
+          714,
+          306,
+          720
+        ],
+        [
+          304,
+          702,
+          310,
+          730
+        ]
+      ]
+    }
+  ],
+  "predictions": {
+    "0": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.995449960231781,
+      "scores": {
+        "O": 0.0010251167695969343,
+        "vendor_name": 0.995449960231781,
+        "company_address": 0.0033250385895371437,
+        "invoice_number": 0.0001834864669945091,
+        "invoice_date": 1.1776710380217992e-06,
+        "total": 1.5137994523684029e-05
+      }
+    },
+    "1": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.9984386563301086,
+      "scores": {
+        "O": 1.1217794053663965e-06,
+        "vendor_name": 0.9984386563301086,
+        "company_address": 0.0015418592374771833,
+        "invoice_number": 1.5626914091626531e-06,
+        "invoice_date": 1.2326941032370087e-06,
+        "total": 1.567843537486624e-05
+      }
+    },
+    "2": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.9412047863006592,
+      "scores": {
+        "O": 1.0900290590143413e-06,
+        "vendor_name": 0.9412047863006592,
+        "company_address": 0.058589253574609756,
+        "invoice_number": 1.2383275134197902e-05,
+        "invoice_date": 5.339314611774171e-06,
+        "total": 0.00018712681776378304
+      }
+    },
+    "3": {
+      "label": "VENDOR_NAME",
+      "confidence": 0.9818724989891052,
+      "scores": {
+        "O": 3.6304047625890234e-06,
+        "vendor_name": 0.9818724989891052,
+        "company_address": 0.018051443621516228,
+        "invoice_number": 3.207027702956111e-06,
+        "invoice_date": 2.4714923711144365e-05,
+        "total": 4.462683864403516e-05
+      }
+    },
+    "13": {
+      "label": "O",
+      "confidence": 0.9990315437316895,
+      "scores": {
+        "O": 0.9990315437316895,
+        "vendor_name": 0.0005847088759765029,
+        "company_address": 8.498222996422555e-06,
+        "invoice_number": 0.00011146563338115811,
+        "invoice_date": 6.6596530814422294e-06,
+        "total": 0.0002570997166913003
+      }
+    },
+    "4": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9999840259552002,
+      "scores": {
+        "O": 9.045618476477557e-09,
+        "vendor_name": 3.2336226922780043e-06,
+        "company_address": 0.9999840259552002,
+        "invoice_number": 3.6598441965907114e-06,
+        "invoice_date": 2.2046133381081745e-06,
+        "total": 6.939337254152633e-06
+      }
+    },
+    "5": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9998985528945923,
+      "scores": {
+        "O": 1.2899946000288764e-08,
+        "vendor_name": 8.211890235543251e-05,
+        "company_address": 0.9998985528945923,
+        "invoice_number": 1.4377555999089964e-06,
+        "invoice_date": 4.250202437106054e-06,
+        "total": 1.3646328625327442e-05
+      }
+    },
+    "6": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9999837875366211,
+      "scores": {
+        "O": 7.837505222596519e-08,
+        "vendor_name": 5.0619592002476566e-06,
+        "company_address": 0.9999837875366211,
+        "invoice_number": 1.4832610304438276e-06,
+        "invoice_date": 2.5106041903200094e-06,
+        "total": 7.124298463168088e-06
+      }
+    },
+    "7": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9998648166656494,
+      "scores": {
+        "O": 5.493355956787127e-07,
+        "vendor_name": 3.740606553037651e-05,
+        "company_address": 0.9998648166656494,
+        "invoice_number": 3.3897369576152414e-05,
+        "invoice_date": 2.70619989350962e-06,
+        "total": 6.064757690182887e-05
+      }
+    },
+    "8": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9999673366546631,
+      "scores": {
+        "O": 2.324833303646301e-08,
+        "vendor_name": 4.96177381137386e-06,
+        "company_address": 0.9999673366546631,
+        "invoice_number": 1.680005334492307e-05,
+        "invoice_date": 5.2093150770815555e-06,
+        "total": 5.60416583539336e-06
+      }
+    },
+    "9": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9441437721252441,
+      "scores": {
+        "O": 0.0015437399270012975,
+        "vendor_name": 0.005536869168281555,
+        "company_address": 0.9441437721252441,
+        "invoice_number": 0.037479136139154434,
+        "invoice_date": 0.0028563698288053274,
+        "total": 0.008440040051937103
+      }
+    },
+    "10": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.9980602860450745,
+      "scores": {
+        "O": 6.066017022021697e-07,
+        "vendor_name": 2.252312015116331e-06,
+        "company_address": 0.9980602860450745,
+        "invoice_number": 0.001689119846560061,
+        "invoice_date": 0.00024302746169269085,
+        "total": 4.650526989280479e-06
+      }
+    },
+    "11": {
+      "label": "VENDOR_ADDR",
+      "confidence": 0.999970555305481,
+      "scores": {
+        "O": 3.3861645079014124e-06,
+        "vendor_name": 4.777630692842649e-06,
+        "company_address": 0.999970555305481,
+        "invoice_number": 1.0414973075967282e-05,
+        "invoice_date": 3.2643652048136573e-06,
+        "total": 7.713333616266027e-06
+      }
+    },
+    "12": {
+      "label": "INVOICE_NUM",
+      "confidence": 0.6628425121307373,
+      "scores": {
+        "O": 0.0014689220115542412,
+        "vendor_name": 5.319278898241464e-06,
+        "company_address": 0.33559173345565796,
+        "invoice_number": 0.6628425121307373,
+        "invoice_date": 7.068576087476686e-05,
+        "total": 2.0750858311657794e-05
+      }
+    },
+    "14": {
+      "label": "O",
+      "confidence": 0.9999603033065796,
+      "scores": {
+        "O": 0.9999603033065796,
+        "vendor_name": 1.5986732648798352e-07,
+        "company_address": 2.2928017529011413e-07,
+        "invoice_number": 1.0914467566180974e-05,
+        "invoice_date": 2.593111821624916e-05,
+        "total": 2.342264679100481e-06
+      }
+    },
+    "15": {
+      "label": "O",
+      "confidence": 0.9999643564224243,
+      "scores": {
+        "O": 0.9999643564224243,
+        "vendor_name": 5.951334358655913e-08,
+        "company_address": 1.5972501898886549e-07,
+        "invoice_number": 1.3215637864050223e-06,
+        "invoice_date": 3.344809738337062e-05,
+        "total": 7.533059829256672e-07
+      }
+    },
+    "16": {
+      "label": "O",
+      "confidence": 0.9803084135055542,
+      "scores": {
+        "O": 0.9803084135055542,
+        "vendor_name": 0.005747518036514521,
+        "company_address": 0.00013820567983202636,
+        "invoice_number": 0.012689060531556606,
+        "invoice_date": 0.00020702976325992495,
+        "total": 0.00090965093113482
+      }
+    },
+    "17": {
+      "label": "O",
+      "confidence": 0.999981164932251,
+      "scores": {
+        "O": 0.999981164932251,
+        "vendor_name": 2.400170551197789e-08,
+        "company_address": 7.63817542548395e-09,
+        "invoice_number": 3.6420485685084714e-06,
+        "invoice_date": 1.4894708328938577e-05,
+        "total": 2.841882178472588e-07
+      }
+    },
+    "18": {
+      "label": "O",
+      "confidence": 0.9999890327453613,
+      "scores": {
+        "O": 0.9999890327453613,
+        "vendor_name": 1.767899426852182e-08,
+        "company_address": 5.589158469376798e-09,
+        "invoice_number": 4.503420569790251e-08,
+        "invoice_date": 1.0905208910116926e-05,
+        "total": 8.994536671025344e-08
+      }
+    },
+    "19": {
+      "label": "INVOICE_DATE",
+      "confidence": 0.5606880784034729,
+      "scores": {
+        "O": 0.43469882011413574,
+        "vendor_name": 2.902772564539191e-07,
+        "company_address": 6.139119068393484e-05,
+        "invoice_number": 0.004150021821260452,
+        "invoice_date": 0.5606880784034729,
+        "total": 0.0004014540172647685
+      }
+    },
+    "20": {
+      "label": "O",
+      "confidence": 0.9983211159706116,
+      "scores": {
+        "O": 0.9983211159706116,
+        "vendor_name": 1.1199463187949732e-05,
+        "company_address": 3.8946403947193176e-05,
+        "invoice_number": 0.001578689320012927,
+        "invoice_date": 3.485298657324165e-05,
+        "total": 1.5194692423392553e-05
+      }
+    },
+    "21": {
+      "label": "O",
+      "confidence": 0.9931584000587463,
+      "scores": {
+        "O": 0.9931584000587463,
+        "vendor_name": 0.0004036124446429312,
+        "company_address": 0.002072414383292198,
+        "invoice_number": 0.003641441697254777,
+        "invoice_date": 0.00028632392059080303,
+        "total": 0.000437895767390728
+      }
+    },
+    "22": {
+      "label": "O",
+      "confidence": 0.9987114667892456,
+      "scores": {
+        "O": 0.9987114667892456,
+        "vendor_name": 5.893422439839924e-06,
+        "company_address": 2.2815240299678408e-05,
+        "invoice_number": 0.0012490032240748405,
+        "invoice_date": 1.0042052963399328e-05,
+        "total": 7.369318382188794e-07
+      }
+    },
+    "23": {
+      "label": "O",
+      "confidence": 0.9999762773513794,
+      "scores": {
+        "O": 0.9999762773513794,
+        "vendor_name": 1.4590849559681374e-06,
+        "company_address": 1.047186287905788e-05,
+        "invoice_number": 5.380252787290374e-06,
+        "invoice_date": 5.52474466530839e-06,
+        "total": 9.321664151684672e-07
+      }
+    },
+    "24": {
+      "label": "O",
+      "confidence": 0.9999825954437256,
+      "scores": {
+        "O": 0.9999825954437256,
+        "vendor_name": 5.7896377256838605e-06,
+        "company_address": 1.5105275679161423e-06,
+        "invoice_number": 7.3058026828221045e-06,
+        "invoice_date": 2.225277285106131e-06,
+        "total": 5.121843287270167e-07
+      }
+    },
+    "30": {
+      "label": "O",
+      "confidence": 0.9999966621398926,
+      "scores": {
+        "O": 0.9999966621398926,
+        "vendor_name": 5.600600871957795e-08,
+        "company_address": 3.6949532322694267e-10,
+        "invoice_number": 4.9610719088377664e-08,
+        "invoice_date": 3.3008179798343917e-06,
+        "total": 3.71350310501839e-08
+      }
+    },
+    "31": {
+      "label": "O",
+      "confidence": 0.9999974966049194,
+      "scores": {
+        "O": 0.9999974966049194,
+        "vendor_name": 2.472563309652287e-08,
+        "company_address": 1.0175360554143253e-09,
+        "invoice_number": 1.566560214882884e-08,
+        "invoice_date": 2.499090896890266e-06,
+        "total": 2.6037882960849856e-08
+      }
+    },
+    "32": {
+      "label": "O",
+      "confidence": 0.998349666595459,
+      "scores": {
+        "O": 0.998349666595459,
+        "vendor_name": 8.532432502761367e-07,
+        "company_address": 1.863614613739628e-07,
+        "invoice_number": 1.8943457689601928e-05,
+        "invoice_date": 0.0016228731255978346,
+        "total": 7.556847776868381e-06
+      }
+    },
+    "25": {
+      "label": "O",
+      "confidence": 0.8799223899841309,
+      "scores": {
+        "O": 0.8799223899841309,
+        "vendor_name": 0.00010864139767363667,
+        "company_address": 0.030242687091231346,
+        "invoice_number": 0.08141933381557465,
+        "invoice_date": 0.006538478657603264,
+        "total": 0.001768433372490108
+      }
+    },
+    "26": {
+      "label": "O",
+      "confidence": 0.9990523457527161,
+      "scores": {
+        "O": 0.9990523457527161,
+        "vendor_name": 1.2810003227059497e-06,
+        "company_address": 0.0008914974750950933,
+        "invoice_number": 3.339061004226096e-05,
+        "invoice_date": 1.7716256479616277e-05,
+        "total": 3.743526121979812e-06
+      }
+    },
+    "27": {
+      "label": "O",
+      "confidence": 0.9999868869781494,
+      "scores": {
+        "O": 0.9999868869781494,
+        "vendor_name": 5.27212549172873e-08,
+        "company_address": 2.4416697215201566e-06,
+        "invoice_number": 4.907375569018768e-06,
+        "invoice_date": 5.720786703022895e-06,
+        "total": 1.223675525352519e-07
+      }
+    },
+    "28": {
+      "label": "O",
+      "confidence": 0.9999696016311646,
+      "scores": {
+        "O": 0.9999696016311646,
+        "vendor_name": 1.0597478876661626e-06,
+        "company_address": 1.1763909242290538e-05,
+        "invoice_number": 7.169276159402216e-06,
+        "invoice_date": 9.569181202095933e-06,
+        "total": 8.541714464627148e-07
+      }
+    },
+    "29": {
+      "label": "O",
+      "confidence": 0.9953985810279846,
+      "scores": {
+        "O": 0.9953985810279846,
+        "vendor_name": 9.88830265669094e-07,
+        "company_address": 1.8128253032045905e-06,
+        "invoice_number": 0.0043074581772089005,
+        "invoice_date": 0.0002891799376811832,
+        "total": 2.0131833480263595e-06
+      }
+    },
+    "33": {
+      "label": "O",
+      "confidence": 0.9918801188468933,
+      "scores": {
+        "O": 0.9918801188468933,
+        "vendor_name": 0.0005436412175185978,
+        "company_address": 0.0010474857408553362,
+        "invoice_number": 0.006397509016096592,
+        "invoice_date": 3.5712411772692576e-05,
+        "total": 9.544786007609218e-05
+      }
+    },
+    "34": {
+      "label": "O",
+      "confidence": 0.9999997615814209,
+      "scores": {
+        "O": 0.9999997615814209,
+        "vendor_name": 2.4323233205336692e-08,
+        "company_address": 4.094568240020635e-09,
+        "invoice_number": 2.391299958048876e-08,
+        "invoice_date": 7.772366927838448e-08,
+        "total": 1.0799222138757614e-07
+      }
+    },
+    "35": {
+      "label": "O",
+      "confidence": 0.9999983310699463,
+      "scores": {
+        "O": 0.9999983310699463,
+        "vendor_name": 9.823323665614225e-08,
+        "company_address": 8.685172758760018e-08,
+        "invoice_number": 5.128003977006301e-07,
+        "invoice_date": 4.0662431644022945e-08,
+        "total": 9.271900012208789e-07
+      }
+    },
+    "36": {
+      "label": "O",
+      "confidence": 0.9999974966049194,
+      "scores": {
+        "O": 0.9999974966049194,
+        "vendor_name": 2.3629686438653152e-06,
+        "company_address": 1.2058214426957647e-09,
+        "invoice_number": 1.3117949038132792e-07,
+        "invoice_date": 3.446374918780748e-08,
+        "total": 1.604279020739341e-08
+      }
+    },
+    "37": {
+      "label": "O",
+      "confidence": 0.9999974966049194,
+      "scores": {
+        "O": 0.9999974966049194,
+        "vendor_name": 2.03678109755856e-06,
+        "company_address": 9.94567983525485e-10,
+        "invoice_number": 3.347578854118183e-07,
+        "invoice_date": 1.7000706975522917e-07,
+        "total": 1.702110630219522e-08
+      }
+    },
+    "38": {
+      "label": "O",
+      "confidence": 0.999134361743927,
+      "scores": {
+        "O": 0.999134361743927,
+        "vendor_name": 6.734187627444044e-05,
+        "company_address": 4.8955502279568464e-05,
+        "invoice_number": 3.3275093301199377e-05,
+        "invoice_date": 0.00021992791153024882,
+        "total": 0.0004962768871337175
+      }
+    },
+    "39": {
+      "label": "O",
+      "confidence": 0.999201238155365,
+      "scores": {
+        "O": 0.999201238155365,
+        "vendor_name": 3.892403583449777e-06,
+        "company_address": 4.381190592539497e-06,
+        "invoice_number": 1.4697442566102836e-05,
+        "invoice_date": 2.7952861273661256e-05,
+        "total": 0.0007477752515114844
+      }
+    },
+    "40": {
+      "label": "O",
+      "confidence": 0.9999978542327881,
+      "scores": {
+        "O": 0.9999978542327881,
+        "vendor_name": 2.140705873898696e-06,
+        "company_address": 1.0334499922493023e-09,
+        "invoice_number": 2.6048871504258386e-08,
+        "invoice_date": 1.6628911581051398e-08,
+        "total": 2.7714815331592035e-08
+      }
+    },
+    "41": {
+      "label": "O",
+      "confidence": 0.9999996423721313,
+      "scores": {
+        "O": 0.9999996423721313,
+        "vendor_name": 1.8886787245264713e-07,
+        "company_address": 4.985243773347747e-09,
+        "invoice_number": 7.668757007195381e-08,
+        "invoice_date": 4.489822558184642e-08,
+        "total": 2.5971624850740227e-08
+      }
+    },
+    "42": {
+      "label": "O",
+      "confidence": 0.999998927116394,
+      "scores": {
+        "O": 0.999998927116394,
+        "vendor_name": 8.403817446378525e-07,
+        "company_address": 3.341102505771687e-09,
+        "invoice_number": 7.080054587049744e-08,
+        "invoice_date": 6.232154703411652e-08,
+        "total": 5.923250867567731e-08
+      }
+    },
+    "43": {
+      "label": "O",
+      "confidence": 0.9992057681083679,
+      "scores": {
+        "O": 0.9992057681083679,
+        "vendor_name": 5.872828114661388e-05,
+        "company_address": 5.143440284882672e-05,
+        "invoice_number": 2.800667607516516e-05,
+        "invoice_date": 0.00017397612100467086,
+        "total": 0.0004820568719878793
+      }
+    },
+    "44": {
+      "label": "O",
+      "confidence": 0.9999979734420776,
+      "scores": {
+        "O": 0.9999979734420776,
+        "vendor_name": 4.003811326924733e-08,
+        "company_address": 2.2472200100764894e-08,
+        "invoice_number": 6.121071578490955e-07,
+        "invoice_date": 1.1202824623524066e-07,
+        "total": 1.297959443036234e-06
+      }
+    },
+    "45": {
+      "label": "O",
+      "confidence": 0.9999992847442627,
+      "scores": {
+        "O": 0.9999992847442627,
+        "vendor_name": 5.13438749294437e-08,
+        "company_address": 3.886511557027461e-09,
+        "invoice_number": 1.1174797265312009e-07,
+        "invoice_date": 1.6804291647076752e-07,
+        "total": 4.840750307266717e-07
+      }
+    },
+    "46": {
+      "label": "O",
+      "confidence": 0.6827433705329895,
+      "scores": {
+        "O": 0.6827433705329895,
+        "vendor_name": 7.18734081601724e-05,
+        "company_address": 0.00020918560039717704,
+        "invoice_number": 0.00019252269703429192,
+        "invoice_date": 0.0004877543542534113,
+        "total": 0.3162953853607178
+      }
+    },
+    "47": {
+      "label": "O",
+      "confidence": 0.9999778270721436,
+      "scores": {
+        "O": 0.9999778270721436,
+        "vendor_name": 2.4948423060777714e-07,
+        "company_address": 1.0073612166650037e-08,
+        "invoice_number": 2.1153915952254465e-07,
+        "invoice_date": 1.3301201988724642e-06,
+        "total": 2.0396906620590016e-05
+      }
+    },
+    "48": {
+      "label": "O",
+      "confidence": 0.9859866499900818,
+      "scores": {
+        "O": 0.9859866499900818,
+        "vendor_name": 1.6082491356428363e-06,
+        "company_address": 4.1183291614288464e-05,
+        "invoice_number": 0.0010870249243453145,
+        "invoice_date": 1.08967315100017e-05,
+        "total": 0.012872646562755108
+      }
+    },
+    "58": {
+      "label": "O",
+      "confidence": 0.9926540851593018,
+      "scores": {
+        "O": 0.9926540851593018,
+        "vendor_name": 1.7850397853180766e-06,
+        "company_address": 1.1358664778526872e-05,
+        "invoice_number": 4.264385097485501e-06,
+        "invoice_date": 8.449536107946187e-05,
+        "total": 0.007244046777486801
+      }
+    },
+    "59": {
+      "label": "O",
+      "confidence": 0.9999110698699951,
+      "scores": {
+        "O": 0.9999110698699951,
+        "vendor_name": 1.384917567293087e-07,
+        "company_address": 1.0100398384338405e-07,
+        "invoice_number": 3.457283810348599e-07,
+        "invoice_date": 7.211510819615796e-07,
+        "total": 8.761326171224937e-05
+      }
+    },
+    "60": {
+      "label": "TOTAL",
+      "confidence": 0.9994127750396729,
+      "scores": {
+        "O": 0.00042322336230427027,
+        "vendor_name": 1.03839091991631e-07,
+        "company_address": 0.00011290073598502204,
+        "invoice_number": 3.9000857213977724e-05,
+        "invoice_date": 1.1974134395131841e-05,
+        "total": 0.9994127750396729
+      }
+    },
+    "61": {
+      "label": "TOTAL",
+      "confidence": 0.9854468107223511,
+      "scores": {
+        "O": 0.013085736893117428,
+        "vendor_name": 5.905340003664605e-05,
+        "company_address": 0.0005203458713367581,
+        "invoice_number": 0.00014271604595705867,
+        "invoice_date": 0.0007453564321622252,
+        "total": 0.9854468107223511
+      }
+    },
+    "49": {
+      "label": "O",
+      "confidence": 0.9999963045120239,
+      "scores": {
+        "O": 0.9999963045120239,
+        "vendor_name": 3.1560900879412657e-06,
+        "company_address": 1.0411173256841266e-08,
+        "invoice_number": 1.9332102851876698e-07,
+        "invoice_date": 4.880226001091614e-08,
+        "total": 3.227277431960829e-07
+      }
+    },
+    "50": {
+      "label": "O",
+      "confidence": 0.9999983310699463,
+      "scores": {
+        "O": 0.9999983310699463,
+        "vendor_name": 7.255183476218008e-08,
+        "company_address": 2.1743289835285395e-08,
+        "invoice_number": 6.980693001423788e-07,
+        "invoice_date": 8.033114795580332e-08,
+        "total": 7.340148613366182e-07
+      }
+    },
+    "51": {
+      "label": "O",
+      "confidence": 0.999870777130127,
+      "scores": {
+        "O": 0.999870777130127,
+        "vendor_name": 6.98819405897666e-07,
+        "company_address": 1.2925898772664368e-05,
+        "invoice_number": 1.5262710803654045e-05,
+        "invoice_date": 2.6540263206698e-05,
+        "total": 7.381645264104009e-05
+      }
+    },
+    "52": {
+      "label": "O",
+      "confidence": 0.9999614953994751,
+      "scores": {
+        "O": 0.9999614953994751,
+        "vendor_name": 1.1139772482238186e-07,
+        "company_address": 1.0529378414503299e-05,
+        "invoice_number": 5.220827915763948e-06,
+        "invoice_date": 5.031870387028903e-06,
+        "total": 1.75848908838816e-05
+      }
+    },
+    "53": {
+      "label": "O",
+      "confidence": 0.9999979734420776,
+      "scores": {
+        "O": 0.9999979734420776,
+        "vendor_name": 8.881708879471262e-08,
+        "company_address": 1.7874801017114805e-07,
+        "invoice_number": 1.2400957984937122e-06,
+        "invoice_date": 3.2280061645906244e-07,
+        "total": 2.186009879778794e-07
+      }
+    },
+    "54": {
+      "label": "O",
+      "confidence": 0.9999845027923584,
+      "scores": {
+        "O": 0.9999845027923584,
+        "vendor_name": 6.106628802626801e-07,
+        "company_address": 6.096788638387807e-07,
+        "invoice_number": 1.079263824976806e-06,
+        "invoice_date": 4.537236691248836e-06,
+        "total": 8.682129191583954e-06
+      }
+    },
+    "55": {
+      "label": "O",
+      "confidence": 0.9997572302818298,
+      "scores": {
+        "O": 0.9997572302818298,
+        "vendor_name": 0.00015868186892475933,
+        "company_address": 1.7202763046952896e-05,
+        "invoice_number": 3.5518485674401745e-05,
+        "invoice_date": 1.5156316294451244e-05,
+        "total": 1.6308093108818866e-05
+      }
+    },
+    "56": {
+      "label": "O",
+      "confidence": 0.9993022680282593,
+      "scores": {
+        "O": 0.9993022680282593,
+        "vendor_name": 0.00030252410215325654,
+        "company_address": 1.0948439921776298e-05,
+        "invoice_number": 1.15729035314871e-05,
+        "invoice_date": 0.00020653876708820462,
+        "total": 0.00016602552204858512
+      }
+    },
+    "57": {
+      "label": "O",
+      "confidence": 0.9998180270195007,
+      "scores": {
+        "O": 0.9998180270195007,
+        "vendor_name": 2.690059773158282e-05,
+        "company_address": 3.0720919312443584e-05,
+        "invoice_number": 7.324188118218444e-06,
+        "invoice_date": 4.617887316271663e-05,
+        "total": 7.092029409250244e-05
+      }
+    }
+  }
+}

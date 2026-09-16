@@ -136,6 +136,15 @@ def address_after(seed: list[Piece], rows: list[Row]) -> list[Piece]:
         segment = min(possible, key=lambda s: abs(s.bbox[0]-start_x))
         if anchors_for(segment) or CONTACT.search(segment.text):
             break
+        # OCR can split a damaged contact label from its email/URL with a gap
+        # just large enough to create a new segment. Do not append the orphan
+        # label as a postal continuation when nearby same-row contact evidence
+        # explains it. Keep explicit postal lines and distant columns eligible.
+        if not plausible_address(segment.text) and any(
+                CONTACT.search(neighbor.text)
+                and 0 <= neighbor.bbox[0]-segment.bbox[2] <= 4*max(segment.height, neighbor.height)
+                for neighbor in segments(row)):
+            break
         if not result and not plausible_address(segment.text):
             break
         if not re.search(r'[A-Za-z]', segment.text) and not re.fullmatch(r'[\d -]{4,12}', segment.text):

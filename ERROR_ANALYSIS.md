@@ -133,6 +133,26 @@ the observations can be checked, rather than replaced by corrected screenshots.
 
 ## What the failures say about scope
 
+### Final-audit addition: reduced-resolution contact fragment
+
+At 600 x 800 pixels, the classic invoice's address gained a third line, `Emai`.
+OCR separated this damaged email label from the adjacent email address with a
+gap large enough to create another text segment. The address continuation logic
+checked only the first segment and missed the nearby contact evidence.
+
+The fix stops a non-postal continuation fragment when a same-row contact segment
+starts within four times the larger text height. Explicit postal lines and distant
+contact columns remain eligible. Three regression checks cover these decisions.
+The original failing image and trace are preserved below; the corrected run is
+included in the final audit.
+
+![Original low-resolution address failure](samples/error_analysis/low_resolution_initial/half_resolution.png)
+
+[Original JSON](samples/error_analysis/low_resolution_initial/half_resolution.json) ·
+[Original trace](samples/error_analysis/low_resolution_initial/half_resolution.trace.json)
+
+### Remaining scope
+
 The main remaining weaknesses are OCR quality and unfamiliar issuer/address
 arrangements. The current synthetic fixtures cannot establish performance on
 real vendor documents. The next useful experiment is a vendor-disjoint real

@@ -69,6 +69,30 @@ def test_missing_total_does_not_select_subtotal_or_balance():
     assert any('blocked_total' in ' '.join(c['reasons']) for c in trace['candidates'])
 
 
+def test_address_does_not_append_damaged_contact_label_in_separate_segment():
+    # Real reduced-resolution failure: "Emai" and the email are separated by
+    # 38 pixels, enough to split an 8-10 px-high OCR row into two segments.
+    words = [Word(0,'Northstar',(39,35,125,48),.96),
+             Word(1,'Analytics',(131,35,213,51),.96),
+             Word(2,'42 Crescent Road',(38,65,147,75),.96),
+             Word(3,'Indore, Madhya Pradesh 452001',(39,83,239,95),.96),
+             Word(4,'Emai',(38,107,59,115),.85),
+             Word(5,'someone@example.test',(97,107,210,117),.24)]
+    result,_ = aggregate(words,predictions(words,['vendor_name']*2+['company_address']*3+[None]))
+    assert result['company_address']['value'] == '42 Crescent Road\nIndore, Madhya Pradesh 452001'
+    assert result['company_address']['bbox'] == [38,65,239,95]
+
+
+@pytest.mark.parametrize('tail,contact_x', [('India',400),('Pune 411001',100)])
+def test_address_contact_guard_keeps_distant_columns_and_postal_lines(tail,contact_x):
+    words = [Word(0,'Example',(10,10,60,20),.96),Word(1,'Limited',(65,10,110,20),.96),
+             Word(2,'42 River Road',(10,35,90,45),.96),
+             Word(3,tail,(10,60,60,70),.96),
+             Word(4,'hello@example.test',(contact_x,60,contact_x+120,70),.96)]
+    result,_=aggregate(words,predictions(words,['vendor_name']*2+['company_address']*2+[None]))
+    assert result['company_address']['value'] == '42 River Road\n'+tail
+
+
 def test_grand_total_beats_high_model_subtotal():
     words = [word(0,'Sub',10,100),word(1,'Total:',50,100),word(2,'100.00',230,100),
              word(3,'Grand',10,150),word(4,'Total:',70,150),word(5,'118.00',230,150)]
@@ -134,4 +158,3 @@ def test_bare_dollar_does_not_imply_usd():
     words = [word(0,'Total:',10,20),word(1,'$100.00',100,20)]
     result, _ = aggregate(words,{})
     assert 'currency' not in result['total']
-
