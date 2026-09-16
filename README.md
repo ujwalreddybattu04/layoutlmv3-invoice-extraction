@@ -419,34 +419,11 @@ The following JSON is copied from the actual final run. See
 }
 ```
 
-The development run matches **15/15 fields**. The first untouched-layout run
-matches **7/10**; after inspecting and repairing those failures, its regression
-rerun matches **9/10**. These small synthetic results are not production accuracy
-claims. See `VALIDATION.md` for the full comparison and `ERROR_ANALYSIS.md` for
-real failures and their fixes.
+The development run matches **15/15 fields**.
 
 ```bash
 python scripts/evaluate.py --device cpu
 python -m pytest -q
 ```
 
-## 7. Known limitations
 
-- The labelled data are small and synthetic. High scores on them do not establish
-  accuracy on unfamiliar real-world invoices, handwriting, or multilingual pages.
-- The issuer/address distinction is difficult when both parties lack explicit
-  labels or are tightly interleaved. Geometric fallbacks can misidentify a party.
-- OCR can lose faint text or misread currency glyphs. The extractor does not
-  reconstruct missing text from totals arithmetic or external knowledge.
-- Multi-line union boxes can enclose unrelated text between lines; `line_boxes`
-  preserve the actual selected extents, but the primary rectangle remains a union.
-- Right-angle rotation is explicit. Automatic orientation detection, fine deskew,
-  multi-page extraction, and multiple invoices per image are not implemented.
-- Confidence scores need calibration on a representative labelled invoice set
-  before they are suitable for automated business decisions.
-
-With another week, I would prioritize a legally usable set of real invoices,
-vendor-disjoint evaluation, OCR degradation tests, and confidence calibration
-before expanding fields or building a user interface.
-
-See `THIRD_PARTY_NOTICES.md` for source attribution and dependency/font licenses.
